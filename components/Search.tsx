@@ -114,14 +114,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
   if (!isOpen) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[100] flex flex-col bg-brand-950/98 backdrop-blur-xl animate-fade-in-up transition-all duration-300">
+    <div className="fixed inset-0 z-[100] flex flex-col bg-brand-950/99 backdrop-blur-xl animate-fade-in-up transition-all duration-300">
 
       {/* Header / Input Area */}
       <div className="container mx-auto px-4 md:px-6 pt-6 md:pt-12 pb-6 flex-shrink-0">
         <div className="flex justify-end mb-8">
           <button
             onClick={onClose}
-            className="p-3 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-brand-red transition-all duration-300 group shadow-lg"
+            className="p-3 rounded-full bg-slate-800 text-slate-300 hover:text-white hover:bg-brand-red transition-all duration-300 group shadow-lg border border-slate-700"
           >
             <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
           </button>
@@ -137,14 +137,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
               ref={inputRef}
               type="text"
               placeholder="Поиск по услугам, статьям..."
-              className="w-full bg-white/10 backdrop-blur-md rounded-2xl py-5 pl-16 pr-6 text-white text-xl md:text-2xl font-medium placeholder:text-white/40 border border-white/10 focus:border-brand-gold/50 focus:bg-white/15 outline-none transition-all shadow-xl"
+              className="w-full bg-brand-900 rounded-2xl py-5 pl-16 pr-6 text-white text-xl md:text-2xl font-medium placeholder:text-slate-500 border border-brand-800 focus:border-brand-gold/50 focus:bg-brand-800 outline-none transition-all shadow-xl"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
             {query && (
               <button
                 onClick={() => setQuery('')}
-                className="absolute inset-y-0 right-4 flex items-center text-white/40 hover:text-white transition-colors"
+                className="absolute inset-y-0 right-4 flex items-center text-slate-500 hover:text-white transition-colors"
               >
                 <X size={20} />
               </button>
@@ -166,7 +166,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                   <button
                     key={tag}
                     onClick={() => setQuery(tag)}
-                    className="px-6 py-3 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 hover:border-brand-gold hover:text-white hover:bg-brand-900 transition-all duration-300 text-sm md:text-base font-medium shadow-md"
+                    className="px-6 py-3 rounded-xl bg-brand-900 text-slate-300 border border-brand-800 hover:border-brand-gold hover:text-white hover:bg-brand-800 transition-all duration-300 text-sm md:text-base font-medium shadow-md"
                   >
                     {tag}
                   </button>
@@ -187,9 +187,9 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                 <div
                   key={idx}
                   onClick={() => handleLinkClick(result.link)}
-                  className="group flex items-center p-4 rounded-2xl bg-white/5 hover:bg-white/10 cursor-pointer transition-all duration-300 border border-white/5 hover:border-brand-gold/30 hover:shadow-lg hover:shadow-brand-gold/5 active:scale-[0.99]"
+                  className="group flex items-center p-4 rounded-2xl bg-brand-900 hover:bg-brand-800 cursor-pointer transition-all duration-300 border border-brand-800 hover:border-brand-gold/50 hover:shadow-lg hover:shadow-brand-gold/5 active:scale-[0.99]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-brand-900 border border-white/10 flex items-center justify-center text-brand-gold shrink-0 transition-transform group-hover:scale-105 shadow-inner">
+                  <div className="w-12 h-12 rounded-xl bg-brand-950 border border-brand-800 flex items-center justify-center text-brand-gold shrink-0 transition-transform group-hover:scale-105 shadow-inner">
                     {result.type === 'service' && <Briefcase size={22} />}
                     {result.type === 'blog' && <FileText size={22} />}
                     {result.type === 'faq' && <HelpCircle size={22} />}
@@ -200,8 +200,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                     </h4>
                     <div className="flex items-center mt-1 gap-3">
                       <span className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider ${result.type === 'service' ? 'bg-blue-500/20 text-blue-300' :
-                          result.type === 'blog' ? 'bg-purple-500/20 text-purple-300' :
-                            'bg-yellow-500/20 text-yellow-300'
+                        result.type === 'blog' ? 'bg-purple-500/20 text-purple-300' :
+                          'bg-yellow-500/20 text-yellow-300'
                         }`}>
                         {result.type === 'service' ? 'Услуга' : result.type === 'blog' ? 'Статья' : 'Вопрос'}
                       </span>
