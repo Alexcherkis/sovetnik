@@ -1,9 +1,4 @@
-
-import React, { useState, useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { SectionHeader, Button, ServiceCard } from '../components/Components';
-import { SERVICES, SERVICE_CATEGORIES } from '../constants';
-import { CheckCircle2, ArrowRight, FileText, HelpCircle, Briefcase, FileCheck, MapPin, Filter, ChevronRight, Clock, Search, X, LayoutGrid } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const ServicesList: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
