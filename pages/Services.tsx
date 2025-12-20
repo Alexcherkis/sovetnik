@@ -1,3 +1,8 @@
+import React, { useState, useMemo } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { SectionHeader, Button, ServiceCard } from '../components/Components';
+import { SERVICES, SERVICE_CATEGORIES } from '../constants';
+import { CheckCircle2, ArrowRight, FileText, HelpCircle, Briefcase, FileCheck, MapPin, Filter, ChevronRight, Clock, Search, X, LayoutGrid } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 export const ServicesList: React.FC = () => {
@@ -31,7 +36,7 @@ export const ServicesList: React.FC = () => {
     }
   }, [activeCategory, searchQuery]);
 
-  import { SEO } from '../components/SEO';
+
 
   return (
     <div className="bg-slate-50 min-h-screen">
