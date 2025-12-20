@@ -18,40 +18,43 @@ const ScrollToTop = () => {
   return null;
 };
 
+import { HelmetProvider } from 'react-helmet-async';
+
 const App: React.FC = () => {
   return (
-    <Router>
-      <ScrollToTop />
-      {/* Analytics Tracker runs on every route change */}
-      <AnalyticsTracker />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          
-          {/* Service Routes */}
-          <Route path="/services" element={<ServicesList />} />
-          <Route path="/services/category/:categorySlug" element={<ServiceCategoryLanding />} /> {/* New Hub Route */}
-          <Route path="/services/:slug" element={<ServiceDetail />} />
-          
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/price" element={<Price />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          
-          {/* Shortcuts */}
-          <Route path="/team" element={<About />} />
-          <Route path="/reviews" element={<Home />} />
-          
-          {/* 404 Fallback */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
-    </Router>
-  );
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        {/* Analytics Tracker runs on every route change */}
+        <AnalyticsTracker />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+
+            {/* Service Routes */}
+            <Route path="/services" element={<ServicesList />} />
+            <Route path="/services/category/:categorySlug" element={<ServiceCategoryLanding />} /> {/* New Hub Route */}
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+
+            <Route path="/about" element={<About />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/price" element={<Price />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+
+            {/* Shortcuts */}
+            <Route path="/team" element={<About />} />
+            <Route path="/reviews" element={<Home />} />
+
+            {/* 404 Fallback */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </Router>
+      );
 };
 
-export default App;
+      export default App;
