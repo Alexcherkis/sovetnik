@@ -58,7 +58,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
     // 1. Search Services
     SERVICES.forEach(service => {
       if (
-        service.title.toLowerCase().includes(q) || 
+        service.title.toLowerCase().includes(q) ||
         service.shortDesc.toLowerCase().includes(q) ||
         service.tasks.some(t => t.toLowerCase().includes(q))
       ) {
@@ -74,7 +74,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
     // 2. Search Blog
     BLOG_POSTS.forEach(post => {
       if (
-        post.title.toLowerCase().includes(q) || 
+        post.title.toLowerCase().includes(q) ||
         post.excerpt.toLowerCase().includes(q)
       ) {
         newResults.push({
@@ -90,7 +90,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
     FAQ_GROUPS.forEach(group => {
       group.items.forEach(item => {
         if (
-          item.question.toLowerCase().includes(q) || 
+          item.question.toLowerCase().includes(q) ||
           item.answer.toLowerCase().includes(q)
         ) {
           newResults.push({
@@ -115,45 +115,58 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
 
   return createPortal(
     <div className="fixed inset-0 z-[100] flex flex-col bg-brand-950/98 backdrop-blur-xl animate-fade-in-up transition-all duration-300">
-      
+
       {/* Header / Input Area */}
       <div className="container mx-auto px-4 md:px-6 pt-6 md:pt-12 pb-6 flex-shrink-0">
         <div className="flex justify-end mb-8">
-          <button 
+          <button
             onClick={onClose}
             className="p-3 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-brand-red transition-all duration-300 group shadow-lg"
           >
             <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
           </button>
         </div>
-        
-        <div className="relative max-w-4xl mx-auto">
-          <SearchIcon className="absolute left-0 top-1/2 -translate-y-1/2 text-brand-gold w-8 h-8 md:w-10 md:h-10 opacity-80" />
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Поиск по услугам, статьям..."
-            className="w-full bg-transparent border-b-2 border-white/20 text-white text-2xl md:text-4xl lg:text-5xl font-serif font-bold py-4 pl-12 md:pl-16 pr-4 focus:outline-none focus:border-brand-gold transition-colors placeholder:text-white/20"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
+
+        <div className="relative max-w-3xl mx-auto">
+          {/* New Input Design: Solid Block */}
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+              <SearchIcon className="text-brand-gold w-6 h-6 group-focus-within:text-white transition-colors duration-300" />
+            </div>
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Поиск по услугам, статьям..."
+              className="w-full bg-white/10 backdrop-blur-md rounded-2xl py-5 pl-16 pr-6 text-white text-xl md:text-2xl font-medium placeholder:text-white/40 border border-white/10 focus:border-brand-gold/50 focus:bg-white/15 outline-none transition-all shadow-xl"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            {query && (
+              <button
+                onClick={() => setQuery('')}
+                className="absolute inset-y-0 right-4 flex items-center text-white/40 hover:text-white transition-colors"
+              >
+                <X size={20} />
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
       {/* Results Area */}
       <div className="flex-grow overflow-y-auto no-scrollbar">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl pb-20">
-          
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl pb-20">
+
           {query.trim() === '' ? (
             // Empty State - Suggestions
             <div className="mt-8 md:mt-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <h3 className="text-slate-400 text-sm font-bold uppercase tracking-widest mb-6">Популярные запросы</h3>
+              <h3 className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-6 ml-1">Популярные запросы</h3>
               <div className="flex flex-wrap gap-3 md:gap-4">
                 {['Оценка бизнеса', 'Банкротство', 'Приемка квартиры', 'Рецензия на экспертизу'].map((tag) => (
                   <button
                     key={tag}
                     onClick={() => setQuery(tag)}
-                    className="px-5 py-2.5 rounded-full border border-white/20 bg-white/5 text-slate-200 hover:border-brand-gold hover:text-brand-gold hover:bg-white/10 transition-all duration-300 text-sm md:text-base font-medium"
+                    className="px-6 py-3 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 hover:border-brand-gold hover:text-white hover:bg-brand-900 transition-all duration-300 text-sm md:text-base font-medium shadow-md"
                   >
                     {tag}
                   </button>
@@ -162,46 +175,43 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
             </div>
           ) : results.length > 0 ? (
             // Results List
-            <div className="mt-8 space-y-3">
-              <div className="flex justify-between items-end mb-4 border-b border-white/10 pb-2">
-                 <h3 className="text-slate-400 text-sm font-bold uppercase tracking-widest">
-                   Результаты поиска
-                 </h3>
-                 <span className="text-brand-gold text-xs font-bold">{results.length} найдено</span>
+            <div className="mt-6 space-y-4">
+              <div className="flex justify-between items-end mb-2 px-1">
+                <h3 className="text-slate-500 text-xs font-bold uppercase tracking-widest">
+                  Результаты поиска
+                </h3>
+                <span className="text-brand-gold text-xs font-bold">{results.length} найдено</span>
               </div>
-              
+
               {results.map((result, idx) => (
-                <div 
+                <div
                   key={idx}
                   onClick={() => handleLinkClick(result.link)}
-                  className="group flex items-center p-4 md:p-6 rounded-xl bg-white/5 hover:bg-white/10 cursor-pointer transition-all duration-300 border border-white/5 hover:border-white/20 hover:translate-x-1"
+                  className="group flex items-center p-4 rounded-2xl bg-white/5 hover:bg-white/10 cursor-pointer transition-all duration-300 border border-white/5 hover:border-brand-gold/30 hover:shadow-lg hover:shadow-brand-gold/5 active:scale-[0.99]"
                 >
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-900 border border-white/20 flex items-center justify-center text-brand-gold shrink-0 transition-transform group-hover:scale-110">
-                    {result.type === 'service' && <Briefcase size={20} />}
-                    {result.type === 'blog' && <FileText size={20} />}
-                    {result.type === 'faq' && <HelpCircle size={20} />}
+                  <div className="w-12 h-12 rounded-xl bg-brand-900 border border-white/10 flex items-center justify-center text-brand-gold shrink-0 transition-transform group-hover:scale-105 shadow-inner">
+                    {result.type === 'service' && <Briefcase size={22} />}
+                    {result.type === 'blog' && <FileText size={22} />}
+                    {result.type === 'faq' && <HelpCircle size={22} />}
                   </div>
-                  <div className="ml-4 md:ml-6 flex-grow min-w-0">
-                    <h4 className="text-lg md:text-xl font-bold text-slate-100 group-hover:text-white transition-colors truncate">
+                  <div className="ml-5 flex-grow min-w-0">
+                    <h4 className="text-lg font-bold text-white group-hover:text-brand-gold transition-colors truncate">
                       {result.title}
                     </h4>
-                    <div className="flex items-center mt-1.5 flex-wrap gap-2">
-                      <span className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider ${
-                        result.type === 'service' ? 'bg-blue-500/20 text-blue-300' :
-                        result.type === 'blog' ? 'bg-purple-500/20 text-purple-300' :
-                        'bg-yellow-500/20 text-yellow-300'
-                      }`}>
+                    <div className="flex items-center mt-1 gap-3">
+                      <span className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider ${result.type === 'service' ? 'bg-blue-500/20 text-blue-300' :
+                          result.type === 'blog' ? 'bg-purple-500/20 text-purple-300' :
+                            'bg-yellow-500/20 text-yellow-300'
+                        }`}>
                         {result.type === 'service' ? 'Услуга' : result.type === 'blog' ? 'Статья' : 'Вопрос'}
                       </span>
-                      <span className="text-xs text-slate-400 border-l border-white/20 pl-2 truncate">
+                      <span className="text-sm text-slate-400 truncate max-w-[200px] md:max-w-none">
                         {result.subtitle}
                       </span>
                     </div>
                   </div>
                   <div className="pl-4">
-                     <div className="w-8 h-8 rounded-full flex items-center justify-center bg-transparent group-hover:bg-brand-gold text-white/20 group-hover:text-white transition-all duration-300">
-                        <ArrowRight size={20} className="-ml-0.5" />
-                     </div>
+                    <ChevronRight size={20} className="text-slate-600 group-hover:text-white transition-colors" />
                   </div>
                 </div>
               ))}
@@ -210,13 +220,13 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
             // No Results
             <div className="mt-20 text-center text-slate-500">
               <div className="inline-flex p-6 rounded-full bg-white/5 mb-6">
-                 <SearchIcon size={48} className="opacity-50" />
+                <SearchIcon size={48} className="opacity-30" />
               </div>
-              <p className="text-xl md:text-2xl font-serif text-slate-300">Ничего не найдено по запросу "{query}"</p>
-              <p className="text-sm mt-2 text-slate-500">Попробуйте использовать синонимы или более общий запрос</p>
+              <p className="text-xl md:text-2xl font-serif text-slate-400">Ничего не найдено</p>
+              <p className="text-sm mt-2 text-slate-600">Попробуйте изменить запрос</p>
             </div>
           )}
-          
+
         </div>
       </div>
     </div>,
