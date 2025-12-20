@@ -123,12 +123,12 @@ const Navbar: React.FC = () => {
               </span>
             </Link>
 
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-8">
               {NAV_ITEMS.map((item) => (
                 <div key={item.path} className="relative group h-full py-2">
                   <Link
                     to={item.path}
-                    className={`text-sm font-bold uppercase tracking-wider transition-all flex items-center relative ${isActive(item.path) ? 'text-brand-gold' : textClass
+                    className={`text-sm font-bold uppercase tracking-wider transition-all flex items-center relative whitespace-nowrap ${isActive(item.path) ? 'text-brand-gold' : textClass
                       } hover:text-brand-gold`}
                   >
                     {item.label}
@@ -145,8 +145,8 @@ const Navbar: React.FC = () => {
                               key={sub.path}
                               to={sub.path}
                               className={`block px-6 py-3 text-sm transition-colors border-l-4 font-medium font-serif ${isActive(sub.path)
-                                  ? 'bg-brand-50 text-brand-gold border-brand-gold'
-                                  : 'text-gray-700 hover:bg-brand-50 hover:text-brand-gold border-transparent hover:border-brand-gold'
+                                ? 'bg-brand-50 text-brand-gold border-brand-gold'
+                                : 'text-gray-700 hover:bg-brand-50 hover:text-brand-gold border-transparent hover:border-brand-gold'
                                 }`}
                             >
                               {sub.label}
