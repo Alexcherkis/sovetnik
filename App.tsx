@@ -54,7 +54,8 @@ const App: React.FC = () => {
           </Routes>
         </Layout>
       </Router>
-      );
+    </HelmetProvider>
+  );
 };
 
-      export default App;
+export default App;
