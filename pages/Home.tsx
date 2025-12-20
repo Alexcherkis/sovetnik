@@ -65,7 +65,7 @@ export const Home: React.FC = () => {
       <section className="relative min-h-screen flex flex-col bg-brand-950 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2600&auto=format&fit=crop"
+            src="/images/home-hero.png"
             alt="Бизнес центр Москва Сити"
             className="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_15s_ease-in-out_infinite]"
           />

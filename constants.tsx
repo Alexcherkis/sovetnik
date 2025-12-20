@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
-  Calculator, 
-  FileText, 
-  Briefcase, 
-  Scale, 
-  Search, 
+import {
+  Calculator,
+  FileText,
+  Briefcase,
+  Scale,
+  Search,
   TrendingUp,
   Home,
   Building2,
@@ -39,7 +39,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategoryData> = {
     title: 'Финансовая экспертиза',
     subtitle: 'Выявляем скрытые активы, преднамеренное банкротство и бухгалтерские ошибки',
     description: 'Комплексный анализ хозяйственной деятельности для арбитражных споров, банкротных дел и корпоративных конфликтов. Мы говорим на языке цифр, который понятен суду.',
-    heroImage: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop',
+    heroImage: '/images/financial.png',
     icon: TrendingUp,
     benefits: [
       { title: 'Поиск активов', desc: 'Находим выведенные средства и замаскированные сделки.' },
@@ -52,7 +52,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategoryData> = {
     title: 'Строительная экспертиза',
     subtitle: 'Технический надзор, споры по качеству и объемам работ, раздел недвижимости',
     description: 'Инструментальное обследование зданий и сооружений. Мы даем точные ответы на вопросы о безопасности, стоимости устранения дефектов и соответствии СНиП.',
-    heroImage: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop',
+    heroImage: '/images/construction.png',
     icon: HardHat,
     benefits: [
       { title: 'Приемка объектов', desc: 'Выявляем дефекты, которые застройщик хочет скрыть.' },
@@ -77,14 +77,14 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategoryData> = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Главная", path: "/" },
-  { 
-    label: "Услуги", 
+  {
+    label: "Услуги",
     path: "/services", // Acts as a fallback, but users should use dropdown
     subItems: [
       { label: "Финансовая экспертиза", path: "/services/category/financial" },
       { label: "Строительная экспертиза", path: "/services/category/construction" },
       { label: "Оценка и Активы", path: "/services/category/valuation" },
-    ] 
+    ]
   },
   { label: "Блог", path: "/blog" },
   { label: "Прайс", path: "/price" },
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
     categorySlug: "financial",
     categoryLabel: "Финансы",
     region: "РФ",
-    heroImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop",
+    heroImage: "/images/financial.png",
     tasks: ["Анализ фин. состояния", "Причины неплатежеспособности", "Преднамеренное банкротство", "Расчет стоимости доли"],
     questions: ["Каково финансовое состояние?", "Позволяло ли состояние платить дивиденды?", "Есть ли признаки преднамеренного банкротства?", "Целевое ли использование средств?"],
     documents: ["Бухгалтерский баланс", "Оборотно-сальдовые ведомости", "Выписки счетов", "Договоры"]
@@ -247,7 +247,7 @@ export const SERVICES: Service[] = [
     categorySlug: "construction",
     categoryLabel: "Строительство",
     region: "Башкортостан",
-    heroImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000&auto=format&fit=crop",
+    heroImage: "/images/construction.png",
     tasks: ["Приемка от застройщика", "Дефекты ремонта", "Смета на устранение"],
     questions: ["Соответствуют ли работы СНиП?", "Какова стоимость устранения?"],
     documents: ["Договор", "Смета", "Акты"]
@@ -472,11 +472,11 @@ export const BLOG_POSTS: BlogPost[] = [
     content: (
       <>
         <p className="font-medium text-lg text-gray-700 mb-6">
-          Вы сидите в офисе, смотрите на квартальный отчет, и понимаете: деньги есть, но их нет. 
-          На счетах компании лежит 50 млн рублей, а платить сотрудникам нечем. Знакомая ситуация? 
+          Вы сидите в офисе, смотрите на квартальный отчет, и понимаете: деньги есть, но их нет.
+          На счетах компании лежит 50 млн рублей, а платить сотрудникам нечем. Знакомая ситуация?
           Это не обязательно кража. Это может быть <strong>вывод средств</strong>.
         </p>
-        <BlogCTA 
+        <BlogCTA
           text="Вы замечаете странные операции в бухгалтерии? Сомневаетесь в честности финансовых отчетов?"
           link="/contacts"
           label="ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ"
