@@ -3,6 +3,7 @@ import { SectionHeader, Button, AccordionItem } from '../components/Components';
 import { TEAM, FAQ_GROUPS, PRICES, BLOG_POSTS, SERVICES } from '../constants';
 import { MapPin, Phone, Mail, Clock, CheckCircle2, Calendar, User, ArrowLeft, ArrowRight, Share2, Tag, ChevronRight, Send } from 'lucide-react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+import homeHeroImg from '../assets/images/home-hero.png';
 
 // --- ABOUT PAGE ---
 export const About: React.FC = () => {

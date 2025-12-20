@@ -54,6 +54,8 @@ const ProcessStep: React.FC<{
 
 import { SEO } from '../components/SEO';
 
+import homeHeroImg from '../assets/images/home-hero.png';
+
 export const Home: React.FC = () => {
   return (
     <>
@@ -65,7 +67,7 @@ export const Home: React.FC = () => {
       <section className="relative min-h-screen flex flex-col bg-brand-950 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/home-hero.png"
+            src={homeHeroImg}
             alt="Бизнес центр Москва Сити"
             className="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_15s_ease-in-out_infinite]"
           />

@@ -20,6 +20,9 @@ import {
 import { NavItem, Service, Testimonial, FAQGroup, PriceRow, BlogPost, TeamMember, ServiceCategoryData } from "./types";
 import { Link } from 'react-router-dom';
 
+import financialImg from './assets/images/financial.png';
+import constructionImg from './assets/images/construction.png';
+
 // Simple internal helper for CTA in blog posts
 const BlogCTA = ({ text, link, label }: { text: string, link: string, label: string }) => (
   <div className="my-10 p-8 bg-brand-50 border border-brand-100 rounded-xl text-center">
@@ -39,7 +42,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategoryData> = {
     title: 'Финансовая экспертиза',
     subtitle: 'Выявляем скрытые активы, преднамеренное банкротство и бухгалтерские ошибки',
     description: 'Комплексный анализ хозяйственной деятельности для арбитражных споров, банкротных дел и корпоративных конфликтов. Мы говорим на языке цифр, который понятен суду.',
-    heroImage: '/images/financial.png',
+    heroImage: financialImg,
     icon: TrendingUp,
     benefits: [
       { title: 'Поиск активов', desc: 'Находим выведенные средства и замаскированные сделки.' },
@@ -52,7 +55,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategoryData> = {
     title: 'Строительная экспертиза',
     subtitle: 'Технический надзор, споры по качеству и объемам работ, раздел недвижимости',
     description: 'Инструментальное обследование зданий и сооружений. Мы даем точные ответы на вопросы о безопасности, стоимости устранения дефектов и соответствии СНиП.',
-    heroImage: '/images/construction.png',
+    heroImage: constructionImg,
     icon: HardHat,
     benefits: [
       { title: 'Приемка объектов', desc: 'Выявляем дефекты, которые застройщик хочет скрыть.' },
@@ -107,7 +110,7 @@ export const SERVICES: Service[] = [
     categorySlug: "financial",
     categoryLabel: "Финансы",
     region: "РФ",
-    heroImage: "/images/financial.png",
+    heroImage: financialImg,
     tasks: ["Анализ фин. состояния", "Причины неплатежеспособности", "Преднамеренное банкротство", "Расчет стоимости доли"],
     questions: ["Каково финансовое состояние?", "Позволяло ли состояние платить дивиденды?", "Есть ли признаки преднамеренного банкротства?", "Целевое ли использование средств?"],
     documents: ["Бухгалтерский баланс", "Оборотно-сальдовые ведомости", "Выписки счетов", "Договоры"]
@@ -247,7 +250,7 @@ export const SERVICES: Service[] = [
     categorySlug: "construction",
     categoryLabel: "Строительство",
     region: "Башкортостан",
-    heroImage: "/images/construction.png",
+    heroImage: constructionImg,
     tasks: ["Приемка от застройщика", "Дефекты ремонта", "Смета на устранение"],
     questions: ["Соответствуют ли работы СНиП?", "Какова стоимость устранения?"],
     documents: ["Договор", "Смета", "Акты"]
