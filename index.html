@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Советникъ — Экспертное Бюро | Финансовая и Строительная Экспертиза</title>
+    <meta name="title" content="Советникъ — Экспертное Бюро | Финансовая и Строительная Экспертиза">
+    <meta name="description" content="Независимая экспертиза и оценка для суда. Финансовая, строительная, землеустроительная экспертиза. Работаем по ФЗ-73.">
+    <meta name="keywords" content="экспертиза, оценка, суд, финансовая экспертиза, строительная экспертиза, оценка бизнеса, Советникъ">
+    <meta name="author" content="Экспертное Бюро Советникъ">
+
+    <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sovetnik-expert.ru/">
+    <meta property="og:title" content="Советникъ — Экспертное Бюро">
+    <meta property="og:description" content="Профессиональная независимая экспертиза. Защита ваших интересов в суде. Финансы, Строительство, Оценка.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      /* Smooth Scaling for huge screens */
+      @media (min-width: 2000px) {
+        html { font-size: 18px; }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: '1rem',
+              sm: '1.5rem',
+              md: '2rem',
+              lg: '4rem',
+              xl: '5rem',
+              '2xl': '6rem',
+              '3xl': '8rem',
+            },
+            screens: {
+               sm: '640px',
+               md: '768px',
+               lg: '1024px',
+               xl: '1280px',
+               '2xl': '1536px',
+               '3xl': '1800px',
+            }
+          },
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              brand: {
+                950: '#0a0f1c',
+                900: '#111827', 
+                800: '#1f2937',
+                700: '#374151',
+                red: '#991b1b',
+                gold: '#d97706',
+                light: '#f9fafb',
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'shimmer': 'shimmer 2s infinite linear',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%) skewX(-12deg)' },
+                '100%': { transform: 'translateX(200%) skewX(-12deg)' }
+              }
+            },
+            screens: {
+              'xs': '375px', // iPhone Mini/Small screens
+              '3xl': '1920px',
+              '4xl': '2560px', // 4K monitors
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-gold selection:text-white overflow-x-hidden">
+    <div id="root"></div>
+  </body>
+</html>
