@@ -22,6 +22,7 @@ import { Link } from 'react-router-dom';
 
 import financialImg from './assets/images/financial.png';
 import constructionImg from './assets/images/construction.png';
+import valuationImg from './assets/images/valuation.png';
 
 // Simple internal helper for CTA in blog posts
 const BlogCTA = ({ text, link, label }: { text: string, link: string, label: string }) => (
@@ -68,7 +69,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategoryData> = {
     title: 'Оценка и Активы',
     subtitle: 'Независимая оценка бизнеса, недвижимости и интеллектуальной собственности',
     description: 'Определяем реальную рыночную стоимость любых активов для сделок, залогов, судов и управленческих решений. От квартиры до завода.',
-    heroImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop',
+    heroImage: valuationImg,
     icon: PieChart,
     benefits: [
       { title: 'Бизнес и Акции', desc: 'Оценка для продажи, выхода участника или наследства.' },
@@ -163,7 +164,7 @@ export const SERVICES: Service[] = [
     categorySlug: "valuation",
     categoryLabel: "Оценка",
     region: "РФ",
-    heroImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop",
+    heroImage: valuationImg,
     tasks: ["Оценка долей/акций", "Оценка комплексов", "Инвест. проекты", "Наследство"],
     questions: ["Какова стоимость доли?", "Какова инвестиционная стоимость?", "Стоимость чистых активов?", "Рыночная ли цена сделки?"],
     documents: ["Устав", "Отчетность (3-5 лет)", "Ведомость ОС", "Расшифровки"]
@@ -214,7 +215,7 @@ export const SERVICES: Service[] = [
     categorySlug: "valuation",
     categoryLabel: "Оценка",
     region: "Башкортостан",
-    heroImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop",
+    heroImage: valuationImg,
     tasks: ["Кредитование", "Арендная ставка", "Оспаривание кадастра"],
     questions: ["Какова рыночная стоимость?", "Какова арендная плата?"],
     documents: ["Правоустанавливающие", "Техпаспорт", "Справки о балансе"]
