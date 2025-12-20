@@ -131,7 +131,7 @@ export const Home: React.FC = () => {
                     alt={cat.title}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/70 to-transparent opacity-90 group-hover:opacity-85 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/60 to-transparent opacity-60 group-hover:opacity-50 transition-opacity"></div>
                 </div>
 
                 <div className="absolute inset-0 p-6 xs:p-8 md:p-10 flex flex-col justify-end items-start z-10">
