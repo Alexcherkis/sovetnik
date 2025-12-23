@@ -385,7 +385,7 @@ export const Blog: React.FC = () => {
         {/* Grid: 2 cols on Tablet, 3 cols on Desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BLOG_POSTS.map((post) => (
-            <Link key={post.id} to={`/blog/${post.slug}`} className="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full border border-gray-100 hover:-translate-y-1">
+            <Link key={post.id} to={`/blog/${post.slug}`} className="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-2xl hover:shadow-brand-gold/10 transition-all duration-500 overflow-hidden h-full border border-gray-100 hover:border-brand-gold/30 hover:-translate-y-2">
               <div className="aspect-[16/9] overflow-hidden relative">
                 <img
                   src={post.image}

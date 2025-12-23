@@ -285,22 +285,22 @@ const FooterColumn: React.FC<FooterColumnProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-brand-800 md:border-none last:border-none">
+    <div className="border-b border-white/5 md:border-none last:border-none">
       <h4 className="hidden md:block text-lg font-serif font-bold mb-6 text-white tracking-wide border-l-2 border-brand-gold pl-3">
         {title}
       </h4>
       <button
-        className="md:hidden flex items-center justify-between w-full py-5 text-left text-white font-serif font-bold tracking-wide focus:outline-none"
+        className={`md:hidden flex items-center justify-between w-full py-3.5 text-left font-serif font-bold tracking-wide focus:outline-none transition-colors duration-300 ${isOpen ? 'text-brand-gold' : 'text-white'}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{title}</span>
         <ChevronDown
-          size={18}
-          className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''} text-brand-gold`}
+          size={16}
+          className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-gold' : 'text-gray-500'}`}
         />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'
+        className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] ${isOpen ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0'
           } md:max-h-none md:opacity-100 md:pb-0`}
       >
         {children}
@@ -312,42 +312,41 @@ const FooterColumn: React.FC<FooterColumnProps> = ({ title, children }) => {
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-brand-950 text-white pt-16 pb-8 border-t border-brand-900">
+    <footer className="bg-gradient-to-b from-brand-950 to-[#020408] text-white pt-8 pb-24 md:py-16 border-t border-brand-900/50">
       <div className="container mx-auto px-4 md:px-6">
         {/* Tablet Optimization: md:grid-cols-2 for better spacing, lg:grid-cols-4 for desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:gap-16 mb-12">
-          <div className="space-y-6 pb-10 md:pb-0 border-b border-brand-800 md:border-none">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 lg:gap-16 mb-8 md:mb-12">
+          <div className="space-y-4 pb-6 md:pb-0 border-b border-white/5 md:border-none">
             <Link to="/" className="inline-block group">
-              <span className="text-3xl font-serif font-bold tracking-wide text-white">
+              <span className="text-2xl md:text-3xl font-serif font-bold tracking-wide text-white">
                 Советникъ<span className="text-brand-gold">.</span>
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Экспертное бюро. Независимая финансовая и строительная экспертиза. Профессиональная защита ваших интересов.
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs font-light">
+              Экспертное бюро. Независимая финансовая и строительная экспертиза.
             </p>
-            <div className="flex space-x-4 pt-2">
-              <a href="#" className="w-10 h-10 bg-brand-900 rounded-full flex items-center justify-center hover:bg-brand-gold transition-colors cursor-pointer text-slate-300 hover:text-white border border-brand-800">
-                <Send size={18} />
+            <div className="flex space-x-3 pt-2">
+              <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-gold transition-all duration-300 cursor-pointer text-slate-300 hover:text-white border border-white/5 hover:scale-105 hover:shadow-lg hover:shadow-brand-gold/20">
+                <Send size={16} />
               </a>
-              <a href="mailto:info@sovetnik-expert.ru" className="w-10 h-10 bg-brand-900 rounded-full flex items-center justify-center hover:bg-brand-gold transition-colors cursor-pointer text-slate-300 hover:text-white border border-brand-800">
-                <Mail size={18} />
+              <a href="mailto:info@sovetnik-expert.ru" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-gold transition-all duration-300 cursor-pointer text-slate-300 hover:text-white border border-white/5 hover:scale-105 hover:shadow-lg hover:shadow-brand-gold/20">
+                <Mail size={16} />
               </a>
             </div>
           </div>
 
           <FooterColumn title="Направления">
-            <ul className="space-y-3 text-sm text-slate-400">
+            <ul className="space-y-2.5 text-[15px] text-slate-400 font-light">
               <li><Link to="/services/category/financial" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200">Финансы и Экономика</Link></li>
               <li><Link to="/services/category/construction" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200">Строительство и Земля</Link></li>
               <li><Link to="/services/category/valuation" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200">Оценка и Активы</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200 text-brand-gold font-bold">Все услуги</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200 text-brand-gold font-medium mt-1">Все услуги →</Link></li>
             </ul>
           </FooterColumn>
 
           <FooterColumn title="Бюро">
-            <ul className="space-y-3 text-sm text-slate-400">
+            <ul className="space-y-2.5 text-[15px] text-slate-400 font-light">
               <li><Link to="/about" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200">О компании</Link></li>
-              <li><Link to="/team" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200">Команда экспертов</Link></li>
               <li><Link to="/reviews" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200">Отзывы доверителей</Link></li>
               <li><Link to="/blog" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200">Блог</Link></li>
               <li><Link to="/price" className="hover:text-white transition-colors flex items-center hover:translate-x-1 duration-200">Стоимость услуг</Link></li>
@@ -355,31 +354,31 @@ const Footer: React.FC = () => {
           </FooterColumn>
 
           <FooterColumn title="Контакты">
-            <ul className="space-y-5 text-sm text-slate-400">
+            <ul className="space-y-4 text-[15px] text-slate-400 font-light">
               <li className="flex items-start group">
-                <MapPin className="mr-4 text-brand-gold shrink-0 mt-0.5" size={20} />
+                <MapPin className="mr-3 text-brand-gold shrink-0 mt-1" size={18} />
                 <span className="leading-relaxed group-hover:text-white transition-colors">
                   ЖК «Статус»,<br />
                   20 этаж, офис 157
                 </span>
               </li>
               <li className="flex items-center group">
-                <Phone className="mr-4 text-brand-gold shrink-0" size={20} />
-                <a href="tel:+79991234567" className="hover:text-white font-medium text-lg font-serif">+7 (999) 123-45-67</a>
+                <Phone className="mr-3 text-brand-gold shrink-0" size={18} />
+                <a href="tel:+79991234567" className="hover:text-white font-medium text-white transition-colors tracking-wide">+7 (999) 123-45-67</a>
               </li>
               <li className="flex items-center group">
-                <Mail className="mr-4 text-brand-gold shrink-0" size={20} />
-                <a href="mailto:info@sovetnik-expert.ru" className="hover:text-white">info@sovetnik-expert.ru</a>
+                <Mail className="mr-3 text-brand-gold shrink-0" size={18} />
+                <a href="mailto:info@sovetnik-expert.ru" className="hover:text-white transition-colors">info@sovetnik-expert.ru</a>
               </li>
             </ul>
           </FooterColumn>
         </div>
 
-        <div className="border-t border-brand-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600 gap-4 text-center md:text-left">
-          <p>© {currentYear} Экспертное бюро "Советникъ". Все права защищены.</p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link to="/privacy" className="hover:text-slate-400 transition-colors">Политика конфиденциальности</Link>
-            <Link to="/terms" className="hover:text-slate-400 transition-colors">Оферта</Link>
+        <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4 text-center md:text-left font-light tracking-wide">
+          <p className="max-w-xs md:max-w-none opacity-80">© {currentYear} Экспертное бюро "Советникъ".<br className="md:hidden" /> Все права защищены.</p>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 opacity-80">
+            <Link to="/privacy" className="hover:text-slate-300 transition-colors">Политика конфиденциальности</Link>
+            <Link to="/terms" className="hover:text-slate-300 transition-colors">Оферта</Link>
           </div>
         </div>
       </div>
