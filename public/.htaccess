@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # 1. Force HTTPS (Remove '#' from the next 2 lines if you want to force SSL via code, but Panel setting is safer)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. SPA Routing (The Logic for Refreshing Pages)
+  # Look for existing files or directories
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # If not found, send to index.html so React can handle the route
+  RewriteRule . /index.html [L]
+</IfModule>
