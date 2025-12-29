@@ -56,7 +56,7 @@ export const ServiceCategoryLanding: React.FC = () => {
               <Button size="lg" to="/contacts" className="shadow-xl shadow-brand-red/20 px-10">
                 Заказать экспертизу
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-slate-500 hover:bg-white hover:text-brand-900" onClick={() => {
+              <Button size="lg" variant="outline-white" onClick={() => {
                 document.getElementById('services-grid')?.scrollIntoView({ behavior: 'smooth' });
               }}>
                 Выбрать услугу

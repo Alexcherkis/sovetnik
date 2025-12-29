@@ -3,12 +3,18 @@ import { SectionHeader, Button, AccordionItem } from '../components/Components';
 import { TEAM, FAQ_GROUPS, PRICES, BLOG_POSTS, SERVICES } from '../constants';
 import { MapPin, Phone, Mail, Clock, CheckCircle2, Calendar, User, ArrowLeft, ArrowRight, Share2, Tag, ChevronRight, Send } from 'lucide-react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 import homeHeroImg from '../assets/images/home-hero.png';
 
 // --- ABOUT PAGE ---
 export const About: React.FC = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="О Бюро"
+        description="Экспертное бюро Советникъ — 15 лет опыта в финансовой и строительной экспертизе. Команда профессионалов для защиты ваших интересов в суде."
+        breadcrumbs={[{ name: 'О Бюро', item: '/about' }]}
+      />
       {/* Intro Section - Increased padding */}
       <div className="bg-brand-light py-32 md:py-40 2xl:py-48">
         <div className="container mx-auto px-4 md:px-6">
@@ -87,6 +93,53 @@ export const Contacts: React.FC = () => {
 
   // --- Form Logic ---
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
+  const [errors, setErrors] = useState({ phone: false });
+
+  // Premium Phone Masking Logic
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const cleanValue = value.replace(/\D/g, '');
+
+    // Handle backspace/deletion to empty
+    if (!cleanValue) {
+      setFormData(prev => ({ ...prev, phone: '' }));
+      return;
+    }
+
+    // Normalizing 8 -> 7 at start
+    let inputNumbers = cleanValue;
+    if (cleanValue[0] === '7' || cleanValue[0] === '8') {
+      inputNumbers = cleanValue.substring(1);
+    }
+
+    // Formatting
+    let formattedValue = '+7';
+    if (inputNumbers.length > 0) {
+      formattedValue += ' (' + inputNumbers.substring(0, 3);
+    }
+    if (inputNumbers.length >= 4) {
+      formattedValue += ') ' + inputNumbers.substring(3, 6);
+    }
+    if (inputNumbers.length >= 7) {
+      formattedValue += '-' + inputNumbers.substring(6, 8);
+    }
+    if (inputNumbers.length >= 9) {
+      formattedValue += '-' + inputNumbers.substring(8, 10);
+    }
+
+    setFormData(prev => ({ ...prev, phone: formattedValue }));
+
+    // Clear error if valid length (11 digits total = 10 input + 1 country)
+    if (inputNumbers.length >= 10) {
+      setErrors(prev => ({ ...prev, phone: false }));
+    }
+  };
+
+  const handlePhoneFocus = () => {
+    if (!formData.phone) {
+      setFormData(prev => ({ ...prev, phone: '+7 (' }));
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -94,6 +147,14 @@ export const Contacts: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate Phone (must be full length: +7 (XXX) XXX-XX-XX is 18 chars)
+    if (formData.phone.length < 18) {
+      setErrors(prev => ({ ...prev, phone: true }));
+      alert('Пожалуйста, введите корректный номер телефона.');
+      return;
+    }
+
     setFormState('submitting');
 
     try {
@@ -105,6 +166,7 @@ export const Contacts: React.FC = () => {
 
       if (response.ok) {
         setFormState('success');
+        setFormData({ name: '', phone: '', message: '' }); // Clear form
 
         // Track Goal in Yandex Metrika
         // @ts-ignore
@@ -125,6 +187,11 @@ export const Contacts: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen">
+      <SEO
+        title="Контакты"
+        description="Свяжитесь с нами для бесплатной консультации. Офис в Москва Сити, работаем по всей России."
+        breadcrumbs={[{ name: 'Контакты', item: '/contacts' }]}
+      />
       {/* Increased top padding */}
       <div className="bg-brand-900 text-white pt-32 pb-32 2xl:pt-48 2xl:pb-40">
         <div className="container mx-auto px-4 md:px-6 text-center">
@@ -212,7 +279,7 @@ export const Contacts: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit}>
                   <h3 className="text-2xl font-serif font-bold text-brand-900 mb-6 flex items-center">
-                    Напишите нам
+                    Бесплатная консультация
                     <span className="hidden md:inline-block ml-4 h-px bg-gray-200 flex-grow"></span>
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -234,11 +301,17 @@ export const Contacts: React.FC = () => {
                         required
                         name="phone"
                         value={formData.phone}
-                        onChange={handleChange}
+                        onChange={handlePhoneChange}
+                        onFocus={handlePhoneFocus}
                         type="tel"
-                        placeholder="+7 (___) ___-__-__"
-                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-red focus:bg-white transition-all text-brand-900"
+                        placeholder="+7 (999) 000-00-00"
+                        className={`w-full bg-gray-50 border rounded-lg px-4 py-3 focus:outline-none focus:bg-white transition-all text-brand-900 ${errors.phone
+                          ? 'border-red-500 focus:border-red-500 bg-red-50'
+                          : 'border-gray-200 focus:border-brand-red'
+                          }`}
+                        maxLength={18}
                       />
+                      {errors.phone && <p className="text-xs text-red-500 font-medium">Введите номер полностью</p>}
                     </div>
                   </div>
                   <div className="space-y-2 mb-8">
@@ -297,6 +370,25 @@ export const FAQ: React.FC = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen py-32 md:py-40 2xl:py-48">
+      <SEO
+        title="Частые вопросы"
+        description="Ответы на популярные вопросы о судебной экспертизе, оценке и сроках работы."
+        breadcrumbs={[{ name: 'FAQ', item: '/faq' }]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": FAQ_GROUPS.flatMap(group =>
+            group.items.map(item => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+              }
+            }))
+          )
+        }}
+      />
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <SectionHeader
           title="База знаний"
@@ -346,6 +438,11 @@ export const FAQ: React.FC = () => {
 export const Price: React.FC = () => {
   return (
     <div className="bg-white min-h-screen py-32 md:py-40 2xl:py-48">
+      <SEO
+        title="Стоимость услуг"
+        description="Прайс-лист на услуги экспертизы и оценки. Строительная, финансовая, землеустроительная экспертиза."
+        breadcrumbs={[{ name: 'Цены', item: '/price' }]}
+      />
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <SectionHeader title="Стоимость услуг" subtitle="Прозрачное ценообразование без скрытых доплат" />
 
@@ -407,6 +504,11 @@ export const Price: React.FC = () => {
 export const Blog: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-screen py-32 md:py-40 2xl:py-48">
+      <SEO
+        title="Блог экспертов"
+        description="Статьи и кейсы от экспертов бюро Советникъ. Разбор судебной практики."
+        breadcrumbs={[{ name: 'Блог', item: '/blog' }]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeader title="Блог экспертов" subtitle="Практические кейсы, новости законодательства и советы" />
 
@@ -468,6 +570,14 @@ export const BlogPostPage: React.FC = () => {
 
   return (
     <article className="bg-white min-h-screen pb-20">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        breadcrumbs={[
+          { name: 'Блог', item: '/blog' },
+          { name: post.title, item: `/blog/${post.slug}` }
+        ]}
+      />
       {/* Article Header */}
       <div className="bg-brand-900 text-white pt-40 pb-24 2xl:pt-48 2xl:pb-32 relative overflow-hidden">
         <div className="absolute inset-0">

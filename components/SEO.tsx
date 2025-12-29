@@ -1,89 +1,59 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-interface SEOProps {
-    title: string;
-    description: string;
-    keywords?: string;
-    image?: string;
-    url?: string;
-    type?: 'website' | 'article' | 'profile';
-    schema?: Record<string, any>;
+interface BreadcrumbItem {
+    name: string;
+    item: string;
 }
 
-const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop";
-const SITE_URL = "https://sovetnik-expert.ru"; // Update if using a different domain
-const SITE_NAME = "Советникъ — Экспертное Бюро";
+interface SEOProps {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    breadcrumbs?: BreadcrumbItem[];
+    schema?: Record<string, any> | Record<string, any>[]; // Support for custom schema injection
+}
 
-export const SEO: React.FC<SEOProps> = ({
-    title,
-    description,
-    keywords,
-    image = DEFAULT_IMAGE,
-    url = SITE_URL,
-    type = 'website',
-    schema
-}) => {
-    const fullTitle = `${title} | Советникъ`;
-    const absoluteUrl = url.startsWith('http') ? url : `${SITE_URL}${url}`;
+export const SEO: React.FC<SEOProps> = ({ title, description, keywords, breadcrumbs, schema }) => {
+    const siteTitle = "Советникъ — Экспертное Бюро";
+    const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 
-    // Default Organization Schema (JSON-LD)
-    const defaultSchema = {
+    // Generate BreadcrumbList JSON-LD
+    const breadcrumbSchema = breadcrumbs ? {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Экспертное Бюро Советникъ",
-        "image": DEFAULT_IMAGE,
-        "url": SITE_URL,
-        "telephone": "+79991234567",
-        "email": "info@sovetnik-expert.ru",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Москва",
-            "streetAddress": "ЖК «Статус», 20 этаж, офис 157"
-        },
-        "priceRange": "₽₽",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "18:00"
-        }
-    };
-
-    const structuredData = schema ? { ...defaultSchema, ...schema } : defaultSchema;
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((crumb, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": crumb.name,
+            "item": crumb.item.startsWith('http') ? crumb.item : `https://buro-sovetnik.com${crumb.item}`
+        }))
+    } : null;
 
     return (
         <Helmet>
-            {/* Standard Metadata */}
-            <title>{fullTitle}</title>
-            <meta name="description" content={description} />
+            {title && <title>{fullTitle}</title>}
+            {description && <meta name="description" content={description} />}
             {keywords && <meta name="keywords" content={keywords} />}
-            <link rel="canonical" href={absoluteUrl} />
+            {title && <meta property="og:title" content={fullTitle} />}
+            {description && <meta property="og:description" content={description} />}
 
-            {/* Open Graph (Facebook / WhatsApp / Telegram) */}
-            <meta property="og:type" content={type} />
-            <meta property="og:url" content={absoluteUrl} />
-            <meta property="og:title" content={fullTitle} />
-            <meta property="og:description" content={description} />
-            <meta property="og:image" content={image} />
-            <meta property="og:site_name" content={SITE_NAME} />
+            {/* Favicons (Self-referencing for robustness) */}
+            <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+            <link rel="apple-touch-icon" href="/favicon.svg" />
 
-            {/* Twitter Cards */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={fullTitle} />
-            <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={image} />
+            {/* JSON-LD Schemas */}
+            {breadcrumbSchema && (
+                <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbSchema)}
+                </script>
+            )}
 
-            {/* Structured Data (JSON-LD) */}
-            <script type="application/ld+json">
-                {JSON.stringify(structuredData)}
-            </script>
+            {schema && (
+                <script type="application/ld+json">
+                    {JSON.stringify(schema)}
+                </script>
+            )}
         </Helmet>
     );
 };

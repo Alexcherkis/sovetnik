@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://buro-sovetnik.com/</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2025-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,9 +12,39 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://buro-sovetnik.com/services/category/financial</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buro-sovetnik.com/services/category/construction</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buro-sovetnik.com/services/category/valuation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://buro-sovetnik.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buro-sovetnik.com/blog/kak-osporit-kadastrovuyu-stoimost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buro-sovetnik.com/blog/ekspertiza-kachestva-remonta</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buro-sovetnik.com/blog/recenziya-na-sudebnuyu-ekspertizu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buro-sovetnik.com/about</loc>
@@ -24,6 +54,16 @@
   <url>
     <loc>https://buro-sovetnik.com/contacts</loc>
     <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://buro-sovetnik.com/price</loc>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buro-sovetnik.com/faq</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>

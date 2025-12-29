@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
                   >
                     {item.label}
                     {item.subItems && <ChevronDown size={14} className="ml-1 opacity-70 group-hover:rotate-180 transition-transform" />}
-                    {isActive(item.path) && <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-brand-gold rounded-full"></span>}
+                    {/* Simplified active state: removed underline */}
                   </Link>
 
                   {item.subItems && (
@@ -177,7 +177,7 @@ const Navbar: React.FC = () => {
                 >
                   +7 (999) 123-45-67
                 </a>
-                <span className="text-[10px] opacity-70 uppercase tracking-wider">Ежедневно 9:00-18:00</span>
+                <span className={`text-xs font-bold uppercase tracking-wider mt-1 ${isScrolledOrNotHome ? 'text-gray-500' : 'text-slate-300'}`}>Ежедневно 09:00 — 20:00</span>
               </div>
 
               <Button

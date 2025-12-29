@@ -46,22 +46,38 @@ export default {
             },
             animation: {
                 'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                'fade-in-right': 'fadeInRight 1s ease-out forwards',
                 'shimmer': 'shimmer 2s infinite linear',
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'ken-burns': 'kenBurns 20s ease-out infinite alternate',
+                'fade-in': 'fadeIn 1s ease-out forwards',
             },
             keyframes: {
                 fadeInUp: {
                     '0%': { opacity: '0', transform: 'translateY(20px)' },
                     '100%': { opacity: '1', transform: 'translateY(0)' },
                 },
+                fadeInRight: {
+                    '0%': { opacity: '0', transform: 'translateX(50px)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+                fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
                 shimmer: {
                     '0%': { transform: 'translateX(-100%) skewX(-12deg)' },
                     '100%': { transform: 'translateX(200%) skewX(-12deg)' }
+                },
+                kenBurns: {
+                    '0%': { transform: 'scale(1.0)' },
+                    '100%': { transform: 'scale(1.1)' }
                 }
             },
             screens: {
-                'xs': '375px', // iPhone Mini/Small screens
+                'xs': '375px',
                 '3xl': '1920px',
-                '4xl': '2560px', // 4K monitors
+                '4xl': '2560px',
             }
         }
     },
