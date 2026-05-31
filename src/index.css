@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    position: relative;
+    width: 100%;
+    background-color: #0f0f10;
+    /* Match Hero Color for seamless top edge */
+    scroll-padding-top: 120px;
+    overflow-x: hidden;
+}
+
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar,
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.t-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #d97706 #f3f4f600;
+    /* Gold thumb, gray track */
+}
+
+.t-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    /* Vertical scrollbar width */
+    height: 6px;
+    /* Horizontal scrollbar height */
+}
+
+.t-scrollbar::-webkit-scrollbar-track {
+    background: #f3f4f600;
+    /* Transparent track or very light gray */
+    border-radius: 100vh;
+}
+
+.t-scrollbar::-webkit-scrollbar-thumb {
+    background: #d97706;
+    /* brand-gold */
+    border-radius: 100vh;
+    border: 2px solid #f3f4f600;
+    /* Optional border to make it look floating if track is colored, but here transparent */
+}
+
+.t-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #b45309;
+    /* Darker gold */
+}
+
+/* Smooth Scaling for huge screens (4K+) */
+@media (min-width: 2500px) {
+    html {
+        font-size: 22px;
+    }
+
+    .container {
+        max-width: 2400px;
+    }
+}

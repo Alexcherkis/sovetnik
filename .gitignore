@@ -119,6 +119,10 @@ dist
 # Valid local build folder
 сайт_для_загрузки/
 
+# FTP credentials (secret)
+.env.ftp
+
 # OS specific
 .DS_Store
 Thumbs.db
+.vercel

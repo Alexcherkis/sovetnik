@@ -1,23 +1,101 @@
 import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import fs from 'fs';
 
 export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-      },
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
+  const isClone = mode === 'clone';
+
+  const cloneOrigin = 'https://sovetnik-cno.ru';
+
+  const robotsTxt = isClone
+    ? [
+        'User-agent: *',
+        'Disallow: /',
+        `Host: ${cloneOrigin}`
+      ].join('\n')
+    : [
+        'User-agent: *',
+        'Allow: /',
+        'Host: https://buro-sovetnik.com',
+        'Crawl-delay: 5',
+        'Sitemap: https://buro-sovetnik.com/sitemap-index.xml',
+        'Sitemap: https://buro-sovetnik.com/sitemap-core.xml',
+        'Sitemap: https://buro-sovetnik.com/sitemap-pseo.xml',
+        '',
+        '# Disallow tracking parameters',
+        'Disallow: /*?utm_',
+        'Disallow: /*?yclid=',
+        'Disallow: /*?gclid=',
+        '',
+        '# Disallow non-content directories',
+        'Disallow: /tmp_logos/',
+        'Disallow: /favicon_options/'
+      ].join('\n');
+
+  return {
+    server: {
+      port: 3000,
+      host: '0.0.0.0',
+    },
+    plugins: [
+      react(),
+      {
+        name: 'robots-per-mode',
+        apply: 'build',
+        closeBundle() {
+          try {
+            const distDir = path.join(process.cwd(), 'dist');
+            fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsTxt);
+
+            // For clone builds we must not leak main-domain sitemap links.
+            if (isClone) {
+              const today = new Date().toISOString().slice(0, 10);
+              const minimalUrlset = [
+                '<?xml version="1.0" encoding="UTF-8"?>',
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+                '  <url>',
+                `    <loc>${cloneOrigin}/</loc>`,
+                `    <lastmod>${today}</lastmod>`,
+                '  </url>',
+                '</urlset>',
+                ''
+              ].join('\n');
+
+              // Overwrite any copied public sitemaps with minimal clone-safe versions.
+              for (const f of ['sitemap.xml', 'sitemap-index.xml', 'sitemap-core.xml', 'sitemap-pseo.xml']) {
+                try {
+                  fs.writeFileSync(path.join(distDir, f), minimalUrlset);
+                } catch {
+                  // ignore
+                }
+              }
+            }
+          } catch (e) {
+            // ignore
+          }
         }
       }
-    };
+    ],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      }
+    },
+    build: {
+      // In clone mode we prefer stability over bundle size.
+      // Some minified builds can trigger TDZ errors in certain environments.
+      minify: isClone ? false : 'esbuild',
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
+            ui: ['lucide-react'],
+            utils: ['fuse.js']
+          }
+        }
+      }
+    }
+  };
 });

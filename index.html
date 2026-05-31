@@ -4,42 +4,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="%VITE_FAVICON_SVG%" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-  <title>Советникъ — Экспертное Бюро</title>
-  <meta name="description"
-    content="Независимые финансовые, строительные и экономические экспертизы в Москве и РФ. Профессиональная правовая поддержка и оценка активов." />
-  <meta property="og:title" content="Советникъ — Экспертное Бюро" />
-  <meta property="og:description" content="Независимая экспертиза и оценка для суда и бизнеса." />
+  <title>%VITE_SITE_NAME%</title>
+  <meta name="description" content="Независимая судебная экспертиза по всей России. Строительная, финансовая, почерковедческая экспертиза, оценка бизнеса, рецензии. Заключения по ФЗ-73. 15 лет опыта." />
+  <meta name="keywords" content="судебная экспертиза, строительная экспертиза, финансовая экспертиза, оценка бизнеса, экспертное бюро, фз-73" />
+  <meta property="og:title" content="%VITE_SITE_NAME%" />
+  <meta property="og:description" content="Независимая судебная экспертиза по всей России. Заключения по ФЗ-73." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://buro-sovetnik.com/" />
-  <meta property="og:image" content="https://buro-sovetnik.com/og-image.jpg" />
+  <meta property="og:url" content="%VITE_SITE_ORIGIN%" />
+  <meta property="og:image" content="%VITE_OG_IMAGE_URL%" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="google-site-verification" content="D18iZxaDKC49gYZQltF0D0glh4dUXwIL21zQtz3zM-0" />
+  <meta name="yandex-verification" content="d703877afb98edec" />
+  <!-- SEO handled by React Helmet Async (overrides above on JS render) -->
 
-  <!-- Yandex.Metrika counter -->
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function (m, e, t, r, i, k, a) {
-      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-      m[i].l = 1 * new Date();
-      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106024104', 'ym');
 
-    ym(106024104, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", accurateTrackBounce: true, trackLinks: true });
-  </script>
-  <!-- /Yandex.Metrika counter -->
+  <!-- Analytics are loaded after cookie consent (SPA) via src/components/Analytics.tsx -->
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://mc.yandex.ru">
+  <link rel="preconnect" href="https://mc.yandex.ru">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link href="%VITE_FONTS_HREF%" rel="stylesheet">
 </head>
 
 <body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-gold selection:text-white overflow-x-hidden">
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/106024104" style="position:absolute; left:-9999px;" alt="" /></div>
-  </noscript>
+  <noscript></noscript>
   <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+  <script type="module" src="/src/index.tsx"></script>
+  <!-- Cache Bust: 2026-02-09 FORCE V4 -->
 </body>
 
 </html>

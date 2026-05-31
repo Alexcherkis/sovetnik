@@ -1,14 +1,21 @@
 {
-  "name": "советникъ---экспертное-бюро",
+  "name": "sovetnik-expert-buro",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
+    "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev:clone": "TAILWIND_CONFIG=tailwind.config.clone.js vite --mode clone --port 3002",
+    "build": "vite build && node scripts/generate-sitemap.cjs",
+    "build:clone": "TAILWIND_CONFIG=tailwind.config.clone.js vite build --mode clone",
+    "postbuild": "node scripts/generate-sitemap.cjs && node scripts/generate-yandex-feed.cjs",
+    "preview": "vite preview",
+    "deploy": "node scripts/deploy.js",
+    "seo:generate": "node scripts/generate-sitemap.cjs && node scripts/generate-yandex-feed.cjs"
   },
   "dependencies": {
+    "basic-ftp": "^5.1.0",
+    "fuse.js": "^7.1.0",
     "lucide-react": "^0.555.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.3",
@@ -22,6 +29,7 @@
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.3",
     "typescript": "~5.8.2",
     "vite": "^6.4.1"

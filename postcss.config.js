@@ -1,6 +1,8 @@
 export default {
     plugins: {
-        tailwindcss: {},
+        tailwindcss: process.env.TAILWIND_CONFIG
+            ? { config: process.env.TAILWIND_CONFIG }
+            : {},
         autoprefixer: {},
     },
 }

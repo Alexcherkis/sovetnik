@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Варианты Логотипа</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Выберите вариант логотипа</h1>
+    <div class="grid">
+        <div class="card">
+            <img src="/favicon_options/option_1_shield.svg" alt="Вариант 1">
+            <div class="label">Вариант 1: Щит</div>
+            <div class="desc">Символ защиты и надежности</div>
+        </div>
+        <div class="card">
+            <img src="/favicon_options/option_2_scales.svg" alt="Вариант 2">
+            <div class="label">Вариант 2: Весы</div>
+            <div class="desc">Классический символ правосудия</div>
+        </div>
+        <div class="card">
+            <img src="/favicon_options/option_3_monogram.svg" alt="Вариант 3">
+            <div class="label">Вариант 3: Монограмма</div>
+            <div class="desc">Современный знак. "Глаз" эксперта</div>
+        </div>
+        <div class="card">
+            <img src="/favicon_options/option_4_column.svg" alt="Вариант 4">
+            <div class="label">Вариант 4: Колонна</div>
+            <div class="desc">Монументальность и устойчивость</div>
+        </div>
+    </div>
+</body>
+
+</html>

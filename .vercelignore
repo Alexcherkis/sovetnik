@@ -1,0 +1,7 @@
+.git
+node_modules
+__ARCHIVE__
+backups
+site_backups
+*.zip
+*.tar.gz

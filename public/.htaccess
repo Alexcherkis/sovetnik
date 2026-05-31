@@ -1,40 +1,98 @@
-# Default charset
-AddDefaultCharset UTF-8
+# ===========================================
+# EXPERT BUREAU «SOVETNIK» — .HTACCESS
+# ===========================================
 
-# Turn on Rewrite Engine
-RewriteEngine On
+# === SPA Routing ===
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
 
-# 1. Redirect HTTP to HTTPS (301 Permanent Redirect)
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-# 2. Redirect www to non-www (Optional, but recommended for consistency)
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+  # Non-www → www (choose ONE: uncomment to enable)
+  # RewriteCond %{HTTP_HOST} !^www\. [NC]
+  # RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
-# 3. Handle React Routing (Fallback to index.html)
-# Don't rewrite files or directories that exist
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.html [QSA,L]
-
-# 4. Gzip Compression (Speed up site load)
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+  # SPA: all non-file requests → index.html
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
 </IfModule>
 
-# 5. Browser Caching (Optimize PageSpeed)
+# === Security Headers ===
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # HSTS (enable only after HTTPS is confirmed working)
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# === Gzip Compression ===
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf
+
+  # Exclude old browsers
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+# === Cache Control ===
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType image/jpg "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/gif "access plus 1 year"
+
+  # HTML (no-cache for SPA)
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # Assets: long cache (fingerprinted by Vite)
+  ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/pdf "access plus 1 month"
-  ExpiresByType text/javascript "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
-  ExpiresDefault "access plus 2 days"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+
+  # Sitemaps & feeds
+  ExpiresByType application/xml "access plus 1 hour"
 </IfModule>
+
+# === File Access Protection ===
+<FilesMatch "^\.env|\.ftp|composer\.json|package\.json|package-lock\.json|tsconfig\.json|vite\.config\.ts">
+  Require all denied
+</FilesMatch>
+
+# === Custom Error Pages ===
+ErrorDocument 404 /index.html
+ErrorDocument 403 /index.html
+
+# === PHP Settings ===
+<IfModule mod_php.c>
+  php_flag display_errors Off
+  php_flag log_errors On
+  php_value upload_max_filesize 10M
+  php_value post_max_size 10M
+  php_value max_execution_time 60
+</IfModule>
+
+# === WebP Support ===
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+# === Disable directory listing ===
+Options -Indexes
+
+# === UTF-8 charset ===
+AddDefaultCharset UTF-8

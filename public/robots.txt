@@ -1,4 +1,40 @@
 User-agent: *
 Allow: /
 Host: https://buro-sovetnik.com
-Sitemap: https://buro-sovetnik.com/sitemap.xml
+Sitemap: https://buro-sovetnik.com/sitemap-index.xml
+Sitemap: https://buro-sovetnik.com/sitemap-core.xml
+Sitemap: https://buro-sovetnik.com/sitemap-pseo.xml
+
+# Yandex
+Host: https://buro-sovetnik.com
+
+# AI crawlers — allowed for better AI-generated answers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Crawl delay
+Crawl-delay: 5
+
+# Directories with thin content
+Disallow: /tmp_logos/
+Disallow: /favicon_options/
+
+# Disallow pages with URL parameters
+Disallow: /*?utm_
+Disallow: /*?yclid=
+Disallow: /*?gclid=
