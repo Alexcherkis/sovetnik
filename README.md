@@ -8,7 +8,16 @@ This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1QY5maTiODrpeKcZYpSCQigT9ezUSpX9C
 
-## Run Locally
+## ⚠️ Правила разработки и деплоя (Критически важно)
+
+1. **Способ деплоя:** Допускается деплой ТОЛЬКО через FTP с помощью команды `npm run deploy`.
+2. **Рабочий цикл AI:** 
+   - Сначала ИИ должен внести ВСЕ запланированные правки в код.
+   - Сборка (`npm run build`) и деплой (`npm run deploy`) выполняются только после завершения всех работ.
+   - Сайт всегда должен оставаться работоспособным (Zero Downtime Policy).
+3. **Конфигурация сервера:** Не удаляйте файл `public/.htaccess`, он критически важен для работы роутинга на Reg.ru.
+
+## Запуск локально
 
 **Prerequisites:**  Node.js
 

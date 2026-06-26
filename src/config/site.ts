@@ -27,8 +27,8 @@ export const SOCIAL_VK_URL = getEnv('VITE_SOCIAL_VK_URL', 'https://vk.com/sovetn
 export const SOCIAL_WHATSAPP_URL = getEnv('VITE_SOCIAL_WHATSAPP_URL', '');
 
 export const COMPANY_LEGAL_NAME = getEnv('VITE_COMPANY_LEGAL_NAME', 'ООО «ЭБ СОВЕТНИК»');
-export const COMPANY_INN = getEnv('VITE_COMPANY_INN', '0274958117');
-export const COMPANY_OGRN = getEnv('VITE_COMPANY_OGRN', '');
+export const COMPANY_INN = getEnv('VITE_COMPANY_INN', '0274131774');
+export const COMPANY_OGRN = getEnv('VITE_COMPANY_OGRN', '1080274006988');
 
 // External platforms for E-E-A-T and citation authority
 export const YANDEX_BUSINESS_URL = getEnv('VITE_YANDEX_BUSINESS_URL', 'https://yandex.ru/maps/org/sovetnik/');

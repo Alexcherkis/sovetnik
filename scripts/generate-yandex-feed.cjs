@@ -1,185 +1,165 @@
 const fs = require('fs');
+const path = require('path');
 
-// --- НАСТРОЙКИ ---
+// --- SETTINGS ---
 const SITE_URL = 'https://buro-sovetnik.com';
 const COMPANY_NAME = 'Советникъ — Экспертное Бюро';
-const COMPANY_ID = 'sovetnik';
 const DATE = new Date().toISOString().split('T')[0] + 'T00:00:00+03:00';
 
-// --- ДАННЫЕ УСЛУГ (ВКЛЮЧАЯ СКРЫТЫЕ SEO СТРАНИЦЫ) ---
-const SERVICES = [
-    {
-        id: "financial-economic",
-        title: "Финансово-экономическая экспертиза",
-        desc: "Глубокий анализ финансовых показателей компании для выявления причин неплатежеспособности, фиктивного банкротства или хищений.",
-        price: 40000,
-        category: "Финансовая экспертиза",
-        image: "finance_audit.webp"
-    },
-    {
-        id: "accounting",
-        title: "Бухгалтерская экспертиза",
-        desc: "Анализ бухгалтерских записей, отчетности и первичных документов для выявления искажений, нарушений и фактов хищения.",
-        price: 40000,
-        category: "Финансовая экспертиза",
-        image: "finance_accounting.webp"
-    },
-    {
-        id: "tax-expertise",
-        title: "Налоговая экспертиза",
-        desc: "Проверка правильности исчисления и уплаты налогов, анализ налоговых деклараций и расчетов.",
-        price: 40000,
-        category: "Финансовая экспертиза",
-        image: "finance_audit.webp"
-    },
-    {
-        id: "financial-calc",
-        title: "Экспертиза финансовых расчетов",
-        desc: "Проверка правильности расчетов по займам, кредитам, процентам, дивидендам.",
-        price: 40000,
-        category: "Финансовая экспертиза",
-        image: "finance_accounting.webp"
-    },
-    {
-        id: "pre-trial-construction",
-        title: "Экспертиза качества строительства",
-        desc: "Оценка соответствия выполненных строительных работ нормам СНиП и ГОСТ. Приемка квартир.",
-        price: 10000,
-        category: "Строительная экспертиза",
-        image: "construction_pretrial.webp"
-    },
-    {
-        id: "construction-volumes",
-        title: "Экспертиза объемов и стоимости работ",
-        desc: "Проверка смет, актов КС-2/КС-3 и фактически объемов строительства.",
-        price: 10000,
-        category: "Строительная экспертиза",
-        image: "construction_pretrial.webp"
-    },
-    {
-        id: "forensic-construction",
-        title: "Судебная строительная экспертиза",
-        desc: "Независимое исследование зданий и сооружений по определению суда.",
-        price: 20000,
-        category: "Строительная экспертиза",
-        image: "construction_forensic.webp"
-    },
-    {
-        id: "construction-general",
-        title: "Техническое обследование зданий",
-        desc: "Оценка технического состояния несущих конструкций и инженерных систем.",
-        price: 10000,
-        category: "Строительная экспертиза",
-        image: "construction_tech.webp"
-    },
-    {
-        id: "damage",
-        title: "Экспертиза ущерба от залива/пожара",
-        desc: "Оценка стоимости восстановительного ремонта после аварий.",
-        price: 10000,
-        category: "Строительная экспертиза",
-        image: "construction_damage.webp"
-    },
-    {
-        id: "business-valuation",
-        title: "Оценка стоимости бизнеса (ООО/АО)",
-        desc: "Оценка рыночной стоимости долей, акций и активов предприятия.",
-        price: 30000,
-        category: "Оценка",
-        image: "valuation_business.webp"
-    },
-    {
-        id: "apartment-valuation",
-        title: "Оценка недвижимости (квартиры)",
-        desc: "Оценка рыночной стоимости жилья для ипотеки и опеки.",
-        price: 5000,
-        category: "Оценка",
-        image: "valuation_apartment.webp"
-    },
-    {
-        id: "land-valuation",
-        title: "Оценка земельных участков",
-        desc: "Оценка рыночной стоимости земли всех категорий.",
-        price: 10000,
-        category: "Оценка",
-        image: "valuation_land.webp"
-    },
-    {
-        id: "land-surveying",
-        title: "Землеустроительная экспертиза",
-        desc: "Установление границ участков, межевые споры.",
-        price: 20000,
-        category: "Земельная экспертиза",
-        image: "construction_surveying.webp"
-    },
-    {
-        id: "handwriting",
-        title: "Почерковедческая экспертиза",
-        desc: "Установление подлинности подписи и рукописного текста.",
-        price: 15000,
-        category: "Почерковедческая экспертиза",
-        image: "finance_handwriting.webp"
-    },
-    {
-        id: "legal-support",
-        title: "Юридическое сопровождение бизнеса",
-        desc: "Комплексная защита интересов компании в судах.",
-        price: 25000,
-        category: "Юридические услуги",
-        image: "finance_legal.webp"
-    },
-    {
-        id: "legal-arbitration",
-        title: "Представительство в арбитражном суде",
-        desc: "Ведение экономических споров во всех инстанциях.",
-        price: 30000,
-        category: "Юридические услуги",
-        image: "finance_legal.webp"
-    },
-    // --- SEO HIDDEN SERVICES ---
-    {
-        id: "water-damage-court",
-        title: "Оценка ущерба от залива для суда",
-        desc: "Профессиональная оценка стоимости восстановительного ремонта после залива. Заключение по ФЗ-73.",
-        price: 15000,
-        category: "Строительная экспертиза",
-        image: "water_damage_expert_1771709902470.png"
-    },
-    {
-        id: "road-volume-expertise",
-        title: "Экспертиза объемов дорожных работ",
-        desc: "Контрольные обмеры и проверка фактически выполненного асфальтирования по ГОСТ.",
-        price: 35000,
-        category: "Строительная экспертиза",
-        image: "road_construction_expert_1771709915978.png"
-    },
-    {
-        id: "estimate-verification",
-        title: "Проверка достоверности сметной стоимости",
-        desc: "Анализ смет на предмет обоснованности цен и объемов. Экономия до 30% бюджета.",
-        price: 20000,
-        category: "Строительная экспертиза",
-        image: "construction_estimate_expert_1771709934929.png"
-    },
-    {
-        id: "equipment-valuation",
-        title: "Оценка оборудования и станков",
-        desc: "Рыночная оценка промышленного оборудования и линий для банков и залога.",
-        price: 25000,
-        category: "Оценка",
-        image: "industrial_machinery_valuation_1771709948073.png"
-    },
-    {
-        id: "project-docs-audit",
-        title: "Аудит разделов проектной документации",
-        desc: "Экспертиза разделов АР, КР, ИОС на соответствие нормам и ТЗ.",
-        price: 15000,
-        category: "Строительная экспертиза",
-        image: "blueprints_digital_audit_1771709962079.png"
-    }
-];
+const constantsPath = path.join(process.cwd(), 'src/data/constants.tsx');
 
-// --- ГЕНЕРАЦИЯ XML ---
+if (!fs.existsSync(constantsPath)) {
+    console.error(`❌ Constants file not found at: ${constantsPath}`);
+    process.exit(1);
+}
+
+const content = fs.readFileSync(constantsPath, 'utf8');
+
+// --- 1. PARSE IMAGE IMPORTS ---
+const imageMap = {};
+const importRegex = /import\s+([a-zA-Z0-9_]+)\s+from\s+['"].*?\/([a-zA-Z0-9_-]+\.[a-zA-Z0-9]+)['"]/g;
+let match;
+while ((match = importRegex.exec(content)) !== null) {
+    imageMap[match[1]] = match[2];
+}
+
+// --- 2. EXTRACT SERVICES BLOCK ---
+const startIdx = content.indexOf('export const SERVICES: Service[] = [');
+if (startIdx === -1) {
+    console.error('❌ SERVICES array block not found in constants.tsx');
+    process.exit(1);
+}
+
+let bracketCount = 1;
+let endIdx = startIdx + 'export const SERVICES: Service[] = ['.length;
+let servicesText = '';
+
+while (bracketCount > 0 && endIdx < content.length) {
+    const char = content[endIdx];
+    if (char === '[') bracketCount++;
+    if (char === ']') bracketCount--;
+    servicesText += char;
+    endIdx++;
+}
+
+// --- 3. EXTRACT INDIVIDUAL SERVICE OBJECTS ---
+const serviceBlocks = [];
+let tempBlock = '';
+let braceCount = 0;
+let inString = false;
+let stringChar = '';
+
+for (let i = 0; i < servicesText.length; i++) {
+    const char = servicesText[i];
+    if ((char === '"' || char === "'" || char === "`") && servicesText[i-1] !== '\\') {
+        if (!inString) {
+            inString = true;
+            stringChar = char;
+        } else if (stringChar === char) {
+            inString = false;
+        }
+    }
+    if (!inString) {
+        if (char === '{') {
+            braceCount++;
+        }
+        if (char === '}') {
+            braceCount--;
+            if (braceCount === 0) {
+                tempBlock += char;
+                serviceBlocks.push(tempBlock);
+                tempBlock = '';
+                continue;
+            }
+        }
+    }
+    if (braceCount > 0) {
+        tempBlock += char;
+    }
+}
+
+// --- 4. LIST OF KNOWN FEED IMAGES FOR DEFENSIVE FALLBACKS ---
+const feedImages = new Set([
+    "auto_technical_hero_1771709887787.webp",
+    "blueprints_digital_audit_1771709962079.webp",
+    "construction.webp",
+    "construction_damage.webp",
+    "construction_estimate_expert_1771709934929.webp",
+    "construction_forensic.webp",
+    "construction_pretrial.webp",
+    "construction_surveying.webp",
+    "construction_tech.webp",
+    "finance_accounting.webp",
+    "finance_audit.webp",
+    "finance_handwriting.webp",
+    "finance_insolvency.webp",
+    "finance_legal.webp",
+    "financial.webp",
+    "hero_court.webp",
+    "home-hero.webp",
+    "industrial_machinery_valuation_1771709948073.webp",
+    "road_construction_expert_1771709915978.webp",
+    "themis.webp",
+    "valuation.webp",
+    "valuation_apartment.webp",
+    "valuation_business.webp",
+    "valuation_commercial.webp",
+    "valuation_ip.webp",
+    "valuation_land.webp",
+    "water_damage_expert_1771709902470.webp"
+]);
+
+// --- 5. PARSE SERVICES ---
+const parsedServices = serviceBlocks.map((block) => {
+    const getField = (fieldRegex) => {
+        const match = block.match(fieldRegex);
+        return match ? match[1] : null;
+    };
+    
+    const id = getField(/id:\s*["'`](.*?)["'`]/);
+    const title = getField(/title:\s*["'`](.*?)["'`]/);
+    const shortDesc = getField(/shortDesc:\s*["'`](.*?)["'`]/);
+    const fullDesc = getField(/fullDesc:\s*["'`](.*?)["'`]/);
+    const priceStart = getField(/priceStart:\s*["'`](.*?)["'`]/);
+    const categorySlug = getField(/categorySlug:\s*["'`](.*?)["'`]/);
+    const categoryLabel = getField(/categoryLabel:\s*["'`](.*?)["'`]/);
+    const duration = getField(/duration:\s*["'`](.*?)["'`]/);
+    const slug = getField(/slug:\s*["'`](.*?)["'`]/);
+    const heroImageVar = getField(/heroImage:\s*([a-zA-Z0-9_]+)/);
+
+    const actualSlug = slug || id;
+
+    // Resolve image filename using map & verify existence in feed folder
+    let imageFilename = imageMap[heroImageVar] || 'logo-clone.webp';
+    if (!feedImages.has(imageFilename)) {
+        // Fallback mapping based on category slug
+        if (categorySlug === 'financial') imageFilename = 'finance_audit.webp';
+        else if (categorySlug === 'construction') imageFilename = 'construction_pretrial.webp';
+        else if (categorySlug === 'valuation') imageFilename = 'valuation_business.webp';
+        else if (categorySlug === 'land') imageFilename = 'construction_surveying.webp';
+        else if (categorySlug === 'handwriting') imageFilename = 'finance_handwriting.webp';
+        else if (categorySlug === 'legal') imageFilename = 'finance_legal.webp';
+        else if (categorySlug === 'intellectual_property') imageFilename = 'valuation_ip.webp';
+        else if (categorySlug === 'reviews') imageFilename = 'construction_forensic.webp';
+        else if (categorySlug === 'auto') imageFilename = 'auto_technical_hero_1771709887787.webp';
+        else imageFilename = 'finance_audit.webp';
+    }
+
+    // Parse price to integer
+    const price = priceStart ? parseInt(priceStart.replace(/[^0-9]/g, ''), 10) : 10000;
+
+    return {
+        id: actualSlug,
+        title,
+        desc: shortDesc || fullDesc || title,
+        price: price || 10000,
+        categorySlug,
+        categoryLabel: categoryLabel || 'Услуги',
+        imageFilename
+    };
+});
+
+// --- 6. GENERATE XML ---
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <yml_catalog date="${DATE}">
     <shop>
@@ -196,25 +176,56 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
             <category id="4">Земельная экспертиза</category>
             <category id="5">Почерковедческая экспертиза</category>
             <category id="6">Юридические услуги</category>
+            <category id="7">Оспаривание экспертиз</category>
+            <category id="8">Автотехническая экспертиза</category>
         </categories>
         <offers>
-            ${SERVICES.map(service => {
-    let catId = 1;
-    if (service.category === 'Строительная экспертиза') catId = 2;
-    if (service.category === 'Оценка') catId = 3;
-    if (service.category === 'Земельная экспертиза') catId = 4;
-    if (service.category === 'Почерковедческая экспертиза') catId = 5;
-    if (service.category === 'Юридические услуги') catId = 6;
+            ${parsedServices.map(service => {
+                let catId = 1;
+                let categoryName = "Финансовая экспертиза";
 
-    return `
+                if (service.categorySlug === 'financial') {
+                    catId = 1;
+                    categoryName = "Финансовая экспертиза";
+                } else if (service.categorySlug === 'construction') {
+                    catId = 2;
+                    categoryName = "Строительная экспертиза";
+                } else if (service.categorySlug === 'valuation') {
+                    catId = 3;
+                    categoryName = "Оценка";
+                } else if (service.categorySlug === 'land') {
+                    catId = 4;
+                    categoryName = "Земельная экспертиза";
+                } else if (service.categorySlug === 'handwriting') {
+                    catId = 5;
+                    categoryName = "Почерковедческая экспертиза";
+                } else if (service.categorySlug === 'legal') {
+                    catId = 6;
+                    categoryName = "Юридические услуги";
+                } else if (service.categorySlug === 'intellectual_property') {
+                    catId = 3;
+                    categoryName = "Оценка";
+                } else if (service.categorySlug === 'reviews') {
+                    catId = 7;
+                    categoryName = "Оспаривание экспертиз";
+                } else if (service.categorySlug === 'auto') {
+                    catId = 8;
+                    categoryName = "Автотехническая экспертиза";
+                }
+
+                // Double escape XML chars
+                const cleanTitle = service.title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const cleanDesc = service.desc.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+                return `
             <offer id="${service.id}">
                 <name>${COMPANY_NAME}</name>
                 <url>${SITE_URL}/services/${service.id}</url>
                 <price>${service.price}</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>${catId}</categoryId>
-                <picture>${SITE_URL}/assets/feed/${service.image}</picture>
-                <description>${service.title}. ${service.desc}</description>
+                <picture>${SITE_URL}/assets/feed/${service.imageFilename}</picture>
+                <description>${cleanTitle}. ${cleanDesc}</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -225,15 +236,25 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
                 <param name="Регион">Россия</param>
                 <param name="Конверсия">100</param>
                 <param name="Исполнитель">${COMPANY_NAME}</param>
-                <param name="Тип услуги">${service.category}</param>
+                <param name="Тип услуги">${categoryName}</param>
                 <param name="Формат работы">В офисе и с выездом</param>
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>`;
-}).join('')}
+            }).join('')}
         </offers>
     </shop>
 </yml_catalog>`;
 
-// --- ЗАПИСЬ ---
-fs.writeFileSync('public/yandex-feed.yml', xml);
-console.log('✅ Yandex Feed Generated Successfully with HIDDEN services!');
+// --- 7. WRITE TO FILE SYSTEM ---
+// Write to public/
+fs.writeFileSync(path.join(process.cwd(), 'public/yandex-feed.yml'), xml);
+console.log(`✅ Generated public/yandex-feed.yml with ${parsedServices.length} services!`);
+
+// Write to dist/ (if it exists)
+const distPath = path.join(process.cwd(), 'dist');
+if (fs.existsSync(distPath)) {
+    fs.writeFileSync(path.join(distPath, 'yandex-feed.yml'), xml);
+    console.log('✅ Copied yandex-feed.yml to dist/ for immediate deployment!');
+} else {
+    console.log('ℹ️ dist/ directory not found yet. It will be copied during the build copy phase.');
+}

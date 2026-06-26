@@ -7,21 +7,41 @@ export default defineConfig(({ mode }) => {
   const isClone = mode === 'clone';
 
   const cloneOrigin = 'https://sovetnik-cno.ru';
+  const cloneHost = cloneOrigin.replace('https://', '').replace('http://', '');
 
   const robotsTxt = isClone
     ? [
         'User-agent: *',
         'Disallow: /',
-        `Host: ${cloneOrigin}`
+        `Host: ${cloneHost}`
       ].join('\n')
     : [
         'User-agent: *',
         'Allow: /',
-        'Host: https://buro-sovetnik.com',
+        'Host: buro-sovetnik.com',
         'Crawl-delay: 5',
         'Sitemap: https://buro-sovetnik.com/sitemap-index.xml',
         'Sitemap: https://buro-sovetnik.com/sitemap-core.xml',
         'Sitemap: https://buro-sovetnik.com/sitemap-pseo.xml',
+        '',
+        '# AI crawlers — allowed for better AI-generated answers',
+        'User-agent: GPTBot',
+        'Allow: /',
+        '',
+        'User-agent: OAI-SearchBot',
+        'Allow: /',
+        '',
+        'User-agent: PerplexityBot',
+        'Allow: /',
+        '',
+        'User-agent: ClaudeBot',
+        'Allow: /',
+        '',
+        'User-agent: CCBot',
+        'Allow: /',
+        '',
+        'User-agent: Google-Extended',
+        'Allow: /',
         '',
         '# Disallow tracking parameters',
         'Disallow: /*?utm_',

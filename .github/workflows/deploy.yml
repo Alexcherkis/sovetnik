@@ -1,0 +1,56 @@
+name: Cloud FTP Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - seo
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium
+
+      - name: Build project
+        run: npm run build
+        env:
+          VITE_SITE_ORIGIN: https://buro-sovetnik.com
+          VITE_SITE_NAME: "Советникъ — Экспертное Бюро"
+          VITE_CONTACT_PHONE: "+7 (987) 022-49-99"
+          VITE_CONTACT_PHONE_E164: "+79870224999"
+          VITE_CONTACT_EMAIL: "expert-sovetnik-rf@ya.ru"
+          VITE_INDEXABLE: "true"
+          VITE_ANALYTICS_ENABLED: "true"
+          VITE_ENABLE_AGGREGATE_RATING: "true"
+          VITE_FAVICON_SVG: "/favicon.svg"
+          VITE_LOGO_URL: "https://buro-sovetnik.com/favicon.svg"
+          VITE_OG_IMAGE_URL: "https://buro-sovetnik.com/og-image.webp"
+          VITE_CONTACT_ADDRESS_STREET: "ул. 50 лет СССР, 34"
+          VITE_CONTACT_ADDRESS_CITY: "Уфа"
+          VITE_CONTACT_ADDRESS_POSTAL: "450000"
+          VITE_CONTACT_ADDRESS_COUNTRY: "RU"
+          VITE_COMPANY_LEGAL_NAME: "ООО «Экспертное Бюро Советникъ»"
+          VITE_COMPANY_INN: "0274131774"
+          VITE_COMPANY_OGRN: "1080274006988"
+
+      - name: Deploy to Reg.ru FTP
+        run: node scripts/deploy.js
+        env:
+          FTP_HOST: buro-sovetnik.com
+          FTP_USER: u3364657_buro_deploy
+          FTP_PASSWORD: mD0jU0nK2svP1tC1
+          FTP_REMOTE_DIR: /

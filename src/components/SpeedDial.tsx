@@ -31,6 +31,7 @@ export const SpeedDial: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-[#229ED9] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all"
+                    aria-label="Написать в Telegram"
                     onClick={() => ANALYTICS_ENABLED && typeof window.ym !== 'undefined' && window.ym(YANDEX_METRICA_ID, 'reachGoal', 'click_tg')}
                 >
                     <TelegramIcon />
@@ -44,6 +45,7 @@ export const SpeedDial: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all"
+                    aria-label="Написать в WhatsApp"
                     onClick={() => ANALYTICS_ENABLED && typeof window.ym !== 'undefined' && window.ym(YANDEX_METRICA_ID, 'reachGoal', 'click_wa')}
                 >
                     <WhatsappIcon />
@@ -54,6 +56,7 @@ export const SpeedDial: React.FC = () => {
                 <a
                     href={`tel:${CONTACT_PHONE_E164}`}
                     className="w-12 h-12 bg-white text-brand-900 border border-gray-100 rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all"
+                    aria-label="Позвонить по телефону"
                     onClick={() => ANALYTICS_ENABLED && typeof window.ym !== 'undefined' && window.ym(YANDEX_METRICA_ID, 'reachGoal', 'click_phone')}
                 >
                     <Phone size={20} />

@@ -8,7 +8,15 @@ $CHAT_ID = getenv('TELEGRAM_CHAT_ID') ?: '';
 $EMAIL_TO = getenv('LEADS_EMAIL_TO') ?: 'kireev-rinat@list.ru';
 $ALLOWED_ORIGINS = [
     'https://buro-sovetnik.com',
-    'https://www.buro-sovetnik.com'
+    'https://www.buro-sovetnik.com',
+    'https://sovetnik-cno.ru',
+    'https://www.sovetnik-cno.ru',
+    'http://localhost:3000',
+    'http://localhost:3002',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:3002',
+    'http://localhost:4174',
+    'http://127.0.0.1:4174'
 ];
 
 // 2. HEADERS + CORS (restricted)

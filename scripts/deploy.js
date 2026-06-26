@@ -1,3 +1,8 @@
+/**
+ * СТРОГО: Единственный официальный скрипт деплоя проекта.
+ * Метод: FTP загрузка директории dist/.
+ * Правило для AI: Выполнять только ПОСЛЕ завершения всех правок и успешного npm run build.
+ */
 import { Client } from 'basic-ftp';
 import process from 'process';
 import fs from 'fs';

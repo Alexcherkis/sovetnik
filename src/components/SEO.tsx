@@ -17,7 +17,10 @@ import {
     SOCIAL_TELEGRAM_URL,
     SOCIAL_VK_URL,
     YANDEX_BUSINESS_URL,
-    G2GIS_URL
+    G2GIS_URL,
+    COMPANY_LEGAL_NAME,
+    COMPANY_INN,
+    COMPANY_OGRN
 } from '../config/site';
 import { REVIEWS } from '../data/constants';
 
@@ -54,12 +57,20 @@ interface SEOProps {
     dateModified?: string;
 }
 
+// Автоопределение текущего URL для canonical, если пропущен
+const getCurrentPath = (): string => {
+    if (typeof window !== 'undefined') {
+        return window.location.pathname;
+    }
+    return '/';
+};
+
 export const SEO: React.FC<SEOProps> = ({
     title,
     description,
     keywords,
     image = OG_IMAGE_URL,
-    url = '/',
+    url,
     type = 'website',
     breadcrumbs,
     schema,
@@ -83,14 +94,17 @@ export const SEO: React.FC<SEOProps> = ({
         return `${SITE_ORIGIN}${path}`;
     };
 
-    const canonicalUrl = normalizeToAbsoluteUrl(url);
+    const resolvedUrl = url ?? getCurrentPath();
+    const canonicalUrl = normalizeToAbsoluteUrl(resolvedUrl);
     const cityInText = city ? `в ${city}` : 'в РФ';
 
     // --- PREMIUM SEO: Dynamic LocalBusiness / ProfessionalService ---
     const serviceName = city ? `${siteTitle} в ${city}` : siteTitle;
-    const ratingValue = "5.0";
-    const reviewCountBase = 54;
-    const cityReviewCount = city ? (reviewCountBase + (city.length % 5)) : reviewCountBase;
+    const realReviews = REVIEWS || [];
+    const totalRating = realReviews.reduce((sum, r) => sum + Number(r.rating), 0);
+    const realRating = realReviews.length > 0 ? (totalRating / realReviews.length).toFixed(1) : "5.0";
+    const ratingValue = realRating;
+    const reviewCount = realReviews.length;
 
     const defaultSchema = {
         "@context": "https://schema.org",
@@ -98,6 +112,9 @@ export const SEO: React.FC<SEOProps> = ({
         "@id": `${canonicalUrl}#identity`,
         "name": serviceName,
         "alternateName": siteTitle,
+        "legalName": COMPANY_LEGAL_NAME,
+        "taxID": COMPANY_INN,
+        ...(COMPANY_OGRN ? { "leiCode": COMPANY_OGRN } : {}),
         "image": OG_IMAGE_URL,
         "url": canonicalUrl,
         "logo": LOGO_URL,
@@ -107,16 +124,24 @@ export const SEO: React.FC<SEOProps> = ({
         "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 5, "maxValue": 15 },
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": currentCityAddress || CONTACT_ADDRESS_STREET,
-            "addressLocality": city || CONTACT_ADDRESS_CITY,
-            "postalCode": CONTACT_ADDRESS_POSTAL,
-            "addressCountry": CONTACT_ADDRESS_COUNTRY
+            ...(city ? {
+                "addressLocality": city,
+                "addressCountry": CONTACT_ADDRESS_COUNTRY,
+                ...(currentCityAddress ? { "streetAddress": currentCityAddress } : {})
+            } : {
+                "streetAddress": CONTACT_ADDRESS_STREET,
+                "addressLocality": CONTACT_ADDRESS_CITY,
+                "postalCode": CONTACT_ADDRESS_POSTAL,
+                "addressCountry": CONTACT_ADDRESS_COUNTRY
+            })
         },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 54.750645,
-            "longitude": 56.015079
-        },
+        ...(!city ? {
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 54.750645,
+                "longitude": 56.015079
+            }
+        } : {}),
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -143,7 +168,7 @@ export const SEO: React.FC<SEOProps> = ({
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": ratingValue,
-                "reviewCount": cityReviewCount.toString(),
+                "reviewCount": reviewCount.toString(),
                 "bestRating": "5"
             }
         } : {}),
@@ -270,9 +295,18 @@ export const SEO: React.FC<SEOProps> = ({
             <meta name="keywords" content={keywords || "судебная экспертиза, строительная экспертиза, финансовая экспертиза, оценка бизнеса, почерковедческая экспертиза, рецензия эксперта, экспертиза для суда, независимая экспертиза, фз-73, оценка недвижимости, землеустроительная экспертиза, экспертное бюро"} />
 
             {/* Geo Tags for Local SEO */}
-            <meta name="geo.region" content="RU-BA" />
-            <meta name="geo.placename" content={city || CONTACT_ADDRESS_CITY || "Уфа"} />
-            <meta name="ICBM" content={`${defaultSchema.geo.latitude}, ${defaultSchema.geo.longitude}`} />
+            {!city && (
+                <>
+                    <meta name="geo.region" content="RU-BA" />
+                    <meta name="geo.placename" content={CONTACT_ADDRESS_CITY || "Уфа"} />
+                    <meta name="ICBM" content="54.750645, 56.015079" />
+                </>
+            )}
+            {city && (
+                <>
+                    <meta name="geo.placename" content={city} />
+                </>
+            )}
 
             {/* Additional SEO Meta Tags */}
             <meta name="author" content={siteTitle} />

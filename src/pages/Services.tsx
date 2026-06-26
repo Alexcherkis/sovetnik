@@ -6,7 +6,7 @@ import { CheckCircle2, ArrowRight, FileText, HelpCircle, Briefcase, FileCheck, M
 import { SEO } from '../components/SEO';
 import { RegionalInterlinking } from '../components/RegionalInterlinking';
 import { getDynamicSEO } from '../utils/seoUtils';
-import { SITE_NAME, CONTACT_PHONE_E164, OG_IMAGE_URL, CONTACT_ADDRESS_CITY } from '../config/site';
+import { SITE_NAME, SITE_ORIGIN, CONTACT_PHONE_E164, OG_IMAGE_URL, CONTACT_ADDRESS_CITY } from '../config/site';
 import { getCitySpecificContent, CitySpecificContent } from '../data/citySpecifics';
 import { getAuthorForService } from '../data/authors';
 
@@ -82,7 +82,7 @@ export const ServicesList: React.FC = () => {
           "itemListElement": SERVICES.map((s, index) => ({
             "@type": "ListItem",
             "position": index + 1,
-            "url": `https://buro-sovetnik.com/services/${s.slug}`,
+            "url": `${SITE_ORIGIN}/services/${s.slug}`,
             "name": s.title
           }))
         }}
@@ -264,10 +264,13 @@ export const ServiceDetail: React.FC = () => {
   // If city is provided but unknown, return 404 to avoid duplicate/garbage PSEO URLs.
   if (city && !currentCity) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-center p-4">
-        <h2 className="text-3xl font-serif font-bold mb-4 text-brand-900">Страница не найдена</h2>
-        <Button onClick={() => navigate('/services')}>Вернуться в каталог</Button>
-      </div>
+      <>
+        <SEO noindex />
+        <div className="min-h-screen flex flex-col items-center justify-center text-center p-4">
+          <h2 className="text-3xl font-serif font-bold mb-4 text-brand-900">Страница не найдена</h2>
+          <Button onClick={() => navigate('/services')}>Вернуться в каталог</Button>
+        </div>
+      </>
     );
   }
   const cityIn = currentCity?.nameIn || 'в РФ';
@@ -288,7 +291,7 @@ export const ServiceDetail: React.FC = () => {
   }
 
   // --- Dynamic Structured Data (SEO) ---
-  const dynamicSEO = getDynamicSEO(service.title, cityIn, service.priceStart, service.duration, slug || '');
+  const dynamicSEO = getDynamicSEO(service.title, cityIn, service.priceStart, service.duration, slug || '', cityName);
 
   // Base service schema
   const serviceSchema = {
@@ -382,7 +385,7 @@ export const ServiceDetail: React.FC = () => {
         author={serviceAuthor ? {
           name: serviceAuthor.name,
           honorific: serviceAuthor.honorific,
-          url: `https://buro-sovetnik.com/authors/${serviceAuthor.slug}`
+          url: `${SITE_ORIGIN}/authors/${serviceAuthor.slug}`
         } : undefined}
         datePublished="2023-01-01"
         dateModified={serviceDateModified}

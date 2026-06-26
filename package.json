@@ -3,12 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-    "scripts": {
+  "scripts": {
     "dev": "vite",
     "dev:clone": "TAILWIND_CONFIG=tailwind.config.clone.js vite --mode clone --port 3002",
-    "build": "vite build && node scripts/generate-sitemap.cjs",
+    "build": "vite build",
     "build:clone": "TAILWIND_CONFIG=tailwind.config.clone.js vite build --mode clone",
-    "postbuild": "node scripts/generate-sitemap.cjs && node scripts/generate-yandex-feed.cjs",
+    "postbuild": "node scripts/generate-sitemap.cjs && node scripts/prerender.mjs && node scripts/generate-yandex-feed.cjs",
+    "prerender": "node scripts/prerender.mjs",
     "preview": "vite preview",
     "deploy": "node scripts/deploy.js",
     "seo:generate": "node scripts/generate-sitemap.cjs && node scripts/generate-yandex-feed.cjs"
@@ -28,6 +29,7 @@
     "@types/react-input-mask": "^3.0.6",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.19",
+    "playwright": "^1.61.1",
     "postcss": "^8.4.38",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.3",

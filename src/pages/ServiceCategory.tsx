@@ -97,7 +97,7 @@ export const ServiceCategoryLanding: React.FC = () => {
   const combinedSchemas: any[] = [categorySchema];
   if (faqSchema) combinedSchemas.push(faqSchema);
 
-  const dynamicSEO = getDynamicSEO(categoryData.title, cityIn, "10 000 ₽", "3 дней", categorySlug || '');
+  const dynamicSEO = getDynamicSEO(categoryData.title, cityIn, "10 000 ₽", "3 дней", categorySlug || '', cityName);
 
   return (
     <div className="bg-white min-h-screen">

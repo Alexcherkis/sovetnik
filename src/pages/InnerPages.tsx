@@ -6,6 +6,7 @@ import { MapPin, Phone, Mail, Clock, CheckCircle2, User, HelpCircle, FileText, C
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { YANDEX_METRICA_ID } from '../config/analytics';
 import { SEO } from '../components/SEO';
+import { SITE_ORIGIN } from '../config/site';
 import homeHeroImg from '../assets/images/home-hero.webp';
 
 // --- HELPER COMPONENTS ---
@@ -511,7 +512,7 @@ export const Blog: React.FC = () => {
             "@type": "BlogPosting",
             "headline": post.title,
             "description": post.excerpt,
-            "url": `https://buro-sovetnik.com/blog/${post.slug}`,
+            "url": `${SITE_ORIGIN}/blog/${post.slug}`,
             "image": post.image
           }))
         }}
@@ -604,19 +605,19 @@ export const BlogPostPage: React.FC = () => {
     "author": {
       "@type": "Organization",
       "name": "Советникъ — Экспертное Бюро",
-      "url": "https://buro-sovetnik.com"
+      "url": SITE_ORIGIN
     },
     "publisher": {
       "@type": "Organization",
       "name": "Советникъ",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://buro-sovetnik.com/favicon.svg"
+        "url": `${SITE_ORIGIN}/favicon.svg`
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://buro-sovetnik.com/blog/${post.slug}`
+      "@id": `${SITE_ORIGIN}/blog/${post.slug}`
     },
     "description": post.excerpt
   };

@@ -404,5 +404,6 @@ export const CITY_SPECIFICS: Record<string, CitySpecificContent> = {
  * Если город не найден, возвращаем undefined.
  */
 export const getCitySpecificContent = (citySlug: string): CitySpecificContent | undefined => {
-  return CITY_SPECIFICS[citySlug];
+  const normalizedKey = citySlug.replace(/-/g, '_');
+  return CITY_SPECIFICS[citySlug] || CITY_SPECIFICS[normalizedKey];
 };

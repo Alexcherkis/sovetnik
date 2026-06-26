@@ -16,7 +16,7 @@ import cloneImgValuation from '../assets/images/clone-stock/valuation.webp';
 import cloneImgLand from '../assets/images/clone-stock/land.webp';
 import cloneImgHandwriting from '../assets/images/clone-stock/handwriting.webp';
 import googleGIcon from '../assets/icons/google-g.svg';
-import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '../config/site';
+import { SITE_ORIGIN, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '../config/site';
 
 const StatItem: React.FC<{ number: number, label: string, suffix?: string, prefix?: string }> = ({ number, label, suffix, prefix }) => (
   <div className="text-center p-4 xs:p-6 border-b sm:border-b-0 sm:border-r border-white/10 last:border-0 flex flex-col items-center justify-center relative group">
@@ -90,10 +90,10 @@ export const Home: React.FC = () => {
         schema={{
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "url": isClone ? "https://sovetnik-cno.ru/" : "https://buro-sovetnik.com/",
+          "url": SITE_ORIGIN,
           "potentialAction": {
             "@type": "SearchAction",
-            "target": (isClone ? "https://sovetnik-cno.ru/price?q={search_term_string}" : "https://buro-sovetnik.com/price?q={search_term_string}"),
+            "target": `${SITE_ORIGIN}/price?q={search_term_string}`,
             "query-input": "required name=search_term_string"
           }
         }}

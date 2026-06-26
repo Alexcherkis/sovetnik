@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-05-31T00:00:00+03:00">
+<yml_catalog date="2026-06-26T00:00:00+03:00">
     <shop>
         <name>Советникъ — Экспертное Бюро</name>
         <company>Советникъ — Экспертное Бюро</company>
@@ -14,6 +14,8 @@
             <category id="4">Земельная экспертиза</category>
             <category id="5">Почерковедческая экспертиза</category>
             <category id="6">Юридические услуги</category>
+            <category id="7">Оспаривание экспертиз</category>
+            <category id="8">Автотехническая экспертиза</category>
         </categories>
         <offers>
             
@@ -24,7 +26,7 @@
                 <currencyId>RUR</currencyId>
                 <categoryId>1</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/finance_audit.webp</picture>
-                <description>Финансово-экономическая экспертиза. Глубокий анализ финансовых показателей компании для выявления причин неплатежеспособности, фиктивного банкротства или хищений.</description>
+                <description>Финансово-экономическая экспертиза. Финансово-экономическая экспертиза — это независимое исследование финансовой отчетности компании для выявления признаков фиктивного банкротства, скрытых хищений и истинного финансового положения по ФЗ-73.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -42,11 +44,11 @@
             <offer id="accounting">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/accounting</url>
-                <price>40000</price>
+                <price>50000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>1</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/finance_accounting.webp</picture>
-                <description>Бухгалтерская экспертиза. Анализ бухгалтерских записей, отчетности и первичных документов для выявления искажений, нарушений и фактов хищения.</description>
+                <description>Судебная бухгалтерская экспертиза. Реконструкция учета и выявление хищений.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -64,11 +66,11 @@
             <offer id="tax-expertise">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/tax-expertise</url>
-                <price>40000</price>
+                <price>60000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>1</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/finance_audit.webp</picture>
-                <description>Налоговая экспертиза. Проверка правильности исчисления и уплаты налогов, анализ налоговых деклараций и расчетов.</description>
+                <description>Налоговая экспертиза и аудит рисков. Защита при камеральных и выездных проверках.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -90,7 +92,95 @@
                 <currencyId>RUR</currencyId>
                 <categoryId>1</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/finance_accounting.webp</picture>
-                <description>Экспертиза финансовых расчетов. Проверка правильности расчетов по займам, кредитам, процентам, дивидендам.</description>
+                <description>Экспертиза финансовых расчетов. Проверка расчетов по займам и кредитам.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Финансовая экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="investment">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/investment</url>
+                <price>40000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/finance_audit.webp</picture>
+                <description>Экспертиза инвестиционных проектов. Оценка целесообразности инвестиций.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Финансовая экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="corporate-finance">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/corporate-finance</url>
+                <price>40000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/finance_insolvency.webp</picture>
+                <description>Экспертиза корпоративных финансов. Анализ структуры капитала и управления.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Финансовая экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="bankruptcy">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/bankruptcy</url>
+                <price>70000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/finance_insolvency.webp</picture>
+                <description>Финансово-экономическая экспертиза банкротства. Выявление признаков преднамеренности и КДЛ.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Финансовая экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="damage-financial">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/damage-financial</url>
+                <price>40000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/finance_audit.webp</picture>
+                <description>Экспертиза финансового ущерба. Расчет убытков и упущенной выгоды.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -108,11 +198,11 @@
             <offer id="pre-trial-construction">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/pre-trial-construction</url>
-                <price>10000</price>
+                <price>15000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/construction_pretrial.webp</picture>
-                <description>Экспертиза качества строительства. Оценка соответствия выполненных строительных работ нормам СНиП и ГОСТ. Приемка квартир.</description>
+                <description>Технический надзор и аудит качества СМР. Идентификация дефектов и строительного брака.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -130,11 +220,33 @@
             <offer id="construction-volumes">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/construction-volumes</url>
-                <price>10000</price>
+                <price>25000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/construction_pretrial.webp</picture>
-                <description>Экспертиза объемов и стоимости работ. Проверка смет, актов КС-2/КС-3 и фактически объемов строительства.</description>
+                <description>Экспертиза объемов и стоимости (Сметный аудит). Проверка обоснованности смет и актов КС-2/КС-3.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Строительная экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="construction-project-docs">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/construction-project-docs</url>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_tech.webp</picture>
+                <description>Экспертиза проектной документации. Проверка проектов на нормы.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -152,11 +264,11 @@
             <offer id="forensic-construction">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/forensic-construction</url>
-                <price>20000</price>
+                <price>40000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/construction_forensic.webp</picture>
-                <description>Судебная строительная экспертиза. Независимое исследование зданий и сооружений по определению суда.</description>
+                <description>Судебная строительно-техническая экспертиза. Процессуальный контроль качества и объемов.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -178,7 +290,7 @@
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/construction_tech.webp</picture>
-                <description>Техническое обследование зданий. Оценка технического состояния несущих конструкций и инженерных систем.</description>
+                <description>Техническое обследование зданий. Оценка состояния конструкций.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -200,7 +312,7 @@
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/construction_damage.webp</picture>
-                <description>Экспертиза ущерба от залива/пожара. Оценка стоимости восстановительного ремонта после аварий.</description>
+                <description>Экспертиза ущерба. Оценка ущерба от заливов/пожаров.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -215,14 +327,234 @@
                 <param name="Формат работы">В офисе и с выездом</param>
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
-            <offer id="business-valuation">
+            <offer id="construction-organization">
                 <name>Советникъ — Экспертное Бюро</name>
-                <url>https://buro-sovetnik.com/services/business-valuation</url>
-                <price>30000</price>
+                <url>https://buro-sovetnik.com/services/construction-organization</url>
+                <price>15000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_tech.webp</picture>
+                <description>Экспертиза организации строительства. Анализ процессов и управления.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Строительная экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="construction-engineering">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/construction-engineering</url>
+                <price>20000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_tech.webp</picture>
+                <description>Процессуальный аудит инженерных систем. Верификация состояния коммуникаций и сетей.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Строительная экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="construction-elements">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/construction-elements</url>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_tech.webp</picture>
+                <description>Экспертиза конструктивных элементов. Анализ отдельных частей здания.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Строительная экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="construction-road">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/construction-road</url>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_surveying.webp</picture>
+                <description>Экспертиза дорог и сооружений. Дороги, мосты, тоннели.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Строительная экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="construction-wooden">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/construction-wooden</url>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_damage.webp</picture>
+                <description>Экспертиза деревянных домов. Срубы, каркасные дома, бани.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Строительная экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="business-valuation-llc">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/business-valuation-llc</url>
+                <price>45000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>3</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/valuation_business.webp</picture>
-                <description>Оценка стоимости бизнеса (ООО/АО). Оценка рыночной стоимости долей, акций и активов предприятия.</description>
+                <description>Оценка бизнеса и пакетов акций (долей). Верификация стоимости чистых активов и бизнеса.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Оценка</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="startup-valuation">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/startup-valuation</url>
+                <price>50000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/valuation_business.webp</picture>
+                <description>Оценка стартапов и венчурных проектов. Инвестиционная оценка IT-проектов и стартапов.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Оценка</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="trademark-valuation">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/trademark-valuation</url>
+                <price>30000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/valuation_ip.webp</picture>
+                <description>Регистрация и оценка товарных знаков. Защита бренда в Роспатенте и оценка стоимости.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Оценка</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="patent-valuation">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/patent-valuation</url>
+                <price>40000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/valuation_ip.webp</picture>
+                <description>Патентование и оценка изобретений. Защита разработок и оценка патентов для бизнеса.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Оценка</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="software-valuation">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/software-valuation</url>
+                <price>45000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/valuation_ip.webp</picture>
+                <description>Регистрация ПО и оценка IT-активов. Внесение в реестр отечественного ПО и оценка кода.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Оценка</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="knowhow-valuation">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/knowhow-valuation</url>
+                <price>35000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/valuation_ip.webp</picture>
+                <description>Оценка Ноу-Хау и Авторских прав. Оценка секретов производства и произведений.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -244,7 +576,29 @@
                 <currencyId>RUR</currencyId>
                 <categoryId>3</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/valuation_apartment.webp</picture>
-                <description>Оценка недвижимости (квартиры). Оценка рыночной стоимости жилья для ипотеки и опеки.</description>
+                <description>Оценка недвижимости. Оценка рыночной стоимости жилой недвижимости.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Оценка</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="commercial-valuation">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/commercial-valuation</url>
+                <price>25000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/valuation_commercial.webp</picture>
+                <description>Рыночная оценка капитальных строений и ТЦ. Оценка офисов, складов и индустриальных баз.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -262,11 +616,11 @@
             <offer id="land-valuation">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/land-valuation</url>
-                <price>10000</price>
+                <price>15000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>3</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/valuation_land.webp</picture>
-                <description>Оценка земельных участков. Оценка рыночной стоимости земли всех категорий.</description>
+                <description>Оценка земельных активов и участков. Оценка земель всех категорий и ВРИ.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -284,11 +638,11 @@
             <offer id="land-surveying">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/land-surveying</url>
-                <price>20000</price>
+                <price>35000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>4</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/construction_surveying.webp</picture>
-                <description>Землеустроительная экспертиза. Установление границ участков, межевые споры.</description>
+                <description>Комплексная землеустроительная экспертиза. Процессуальное решение земельных споров.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -303,6 +657,50 @@
                 <param name="Формат работы">В офисе и с выездом</param>
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
+            <offer id="land-partition">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/land-partition</url>
+                <price>15000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>4</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_surveying.webp</picture>
+                <description>Раздел земельного участка. Варианты раздела участка между собственниками.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Земельная экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="forensic-review">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/forensic-review</url>
+                <price>25000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>7</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_forensic.webp</picture>
+                <description>Комплексная рецензия на судебную экспертизу. Оспаривание и аудит заключений оппонента.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Оспаривание экспертиз</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
             <offer id="handwriting">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/handwriting</url>
@@ -310,7 +708,29 @@
                 <currencyId>RUR</currencyId>
                 <categoryId>5</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/finance_handwriting.webp</picture>
-                <description>Почерковедческая экспертиза. Установление подлинности подписи и рукописного текста.</description>
+                <description>Судебная почерковедческая экспертиза. Идентификация исполнителя и выявление подделок.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Почерковедческая экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="doc-technical">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/doc-technical</url>
+                <price>25000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>5</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/finance_handwriting.webp</picture>
+                <description>ТЭД (Давность документа). Установление давности и факта монтажа.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -332,7 +752,7 @@
                 <currencyId>RUR</currencyId>
                 <categoryId>6</categoryId>
                 <picture>https://buro-sovetnik.com/assets/feed/finance_legal.webp</picture>
-                <description>Юридическое сопровождение бизнеса. Комплексная защита интересов компании в судах.</description>
+                <description>Юридическое сопровождение. Защита интересов в суде и спорах.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -350,11 +770,11 @@
             <offer id="legal-arbitration">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/legal-arbitration</url>
-                <price>30000</price>
+                <price>70000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>6</categoryId>
-                <picture>https://buro-sovetnik.com/assets/feed/finance_legal.webp</picture>
-                <description>Представительство в арбитражном суде. Ведение экономических споров во всех инстанциях.</description>
+                <picture>https://buro-sovetnik.com/assets/feed/finance_insolvency.webp</picture>
+                <description>Arbitration &amp; Litigation (Арбитражные споры). Защита интересов бизнеса в судах всех инстанций.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -372,11 +792,11 @@
             <offer id="water-damage-court">
                 <name>Советникъ — Экспертное Бюро</name>
                 <url>https://buro-sovetnik.com/services/water-damage-court</url>
-                <price>15000</price>
+                <price>25000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
-                <picture>https://buro-sovetnik.com/assets/feed/water_damage_expert_1771709902470.png</picture>
-                <description>Оценка ущерба от залива для суда. Профессиональная оценка стоимости восстановительного ремонта после залива. Заключение по ФЗ-73.</description>
+                <picture>https://buro-sovetnik.com/assets/feed/water_damage_expert_1771709902470.webp</picture>
+                <description>Процессуальная детерминация ущерба от залива. Подготовка экспертной базы для судебных споров.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -397,8 +817,8 @@
                 <price>35000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
-                <picture>https://buro-sovetnik.com/assets/feed/road_construction_expert_1771709915978.png</picture>
-                <description>Экспертиза объемов дорожных работ. Контрольные обмеры и проверка фактически выполненного асфальтирования по ГОСТ.</description>
+                <picture>https://buro-sovetnik.com/assets/feed/road_construction_expert_1771709915978.webp</picture>
+                <description>Экспертиза объемов дорожных работ. Проверка фактически выполненных объемов асфальтирования.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -419,8 +839,8 @@
                 <price>20000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
-                <picture>https://buro-sovetnik.com/assets/feed/construction_estimate_expert_1771709934929.png</picture>
-                <description>Проверка достоверности сметной стоимости. Анализ смет на предмет обоснованности цен и объемов. Экономия до 30% бюджета.</description>
+                <picture>https://buro-sovetnik.com/assets/feed/construction_estimate_expert_1771709934929.webp</picture>
+                <description>Проверка достоверности сметной стоимости. Анализ обоснованности цен в строительных сметах.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -441,8 +861,8 @@
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>3</categoryId>
-                <picture>https://buro-sovetnik.com/assets/feed/industrial_machinery_valuation_1771709948073.png</picture>
-                <description>Оценка оборудования и станков. Рыночная оценка промышленного оборудования и линий для банков и залога.</description>
+                <picture>https://buro-sovetnik.com/assets/feed/industrial_machinery_valuation_1771709948073.webp</picture>
+                <description>Оценка оборудования и станков. Определение стоимости производственных линий и техники.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -463,8 +883,8 @@
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>2</categoryId>
-                <picture>https://buro-sovetnik.com/assets/feed/blueprints_digital_audit_1771709962079.png</picture>
-                <description>Аудит разделов проектной документации. Экспертиза разделов АР, КР, ИОС на соответствие нормам и ТЗ.</description>
+                <picture>https://buro-sovetnik.com/assets/feed/blueprints_digital_audit_1771709962079.webp</picture>
+                <description>Аудит разделов проектной документации. Экспертиза АР, КР и инженерных систем проекта.</description>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
@@ -476,6 +896,28 @@
                 <param name="Конверсия">100</param>
                 <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
+                <param name="Формат работы">В офисе и с выездом</param>
+                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+            </offer>
+            <offer id="dtp-review">
+                <name>Советникъ — Экспертное Бюро</name>
+                <url>https://buro-sovetnik.com/services/dtp-review</url>
+                <price>20000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>8</categoryId>
+                <picture>https://buro-sovetnik.com/assets/feed/auto_technical_hero_1771709887787.webp</picture>
+                <description>Рецензия на автотехническую экспертизу. Оспаривание заключений по ДТП в суде.</description>
+                <delivery>false</delivery>
+                <pickup>false</pickup>
+                <store>false</store>
+                <set-ids>sovetnik_services</set-ids>
+                <param name="Рейтинг">5.0</param>
+                <param name="Число отзывов">54</param>
+                <param name="Годы опыта">15</param>
+                <param name="Регион">Россия</param>
+                <param name="Конверсия">100</param>
+                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип услуги">Автотехническая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
