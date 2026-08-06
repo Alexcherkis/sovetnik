@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Host: buro-sovetnik.com
-Sitemap: https://buro-sovetnik.com/sitemap-index.xml
 Sitemap: https://buro-sovetnik.com/sitemap-core.xml
 Sitemap: https://buro-sovetnik.com/sitemap-pseo.xml
 
