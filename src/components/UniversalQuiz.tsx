@@ -95,13 +95,17 @@ export const UniversalQuiz: React.FC = () => {
 
     if (!isOpen) {
         return (
-            <div className="fixed bottom-24 left-6 md:bottom-24 md:right-6 md:left-auto z-40 animate-fade-in-up">
+            <div className="fixed bottom-6 left-6 md:bottom-24 md:right-6 md:left-auto z-40 animate-fade-in-up">
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="group flex items-center gap-2 bg-white text-brand-900 px-3 py-2 md:px-4 md:py-2.5 rounded-full shadow-lg border border-gray-200 hover:border-brand-red hover:text-brand-red hover:shadow-xl transition-all duration-300"
+                    className="relative group flex items-center gap-2 bg-gradient-to-r from-brand-950 via-brand-900 to-brand-950 text-white px-3.5 py-2.5 md:px-4 md:py-2.5 rounded-full shadow-lg border border-brand-gold/30 hover:border-brand-gold hover:shadow-brand-gold/20 transition-all duration-300"
                 >
-                    <Sparkles size={14} className="text-brand-gold" />
-                    <span className="text-[11px] md:text-xs font-bold whitespace-nowrap">Нужна экспертиза?</span>
+                    <Sparkles size={14} className="text-brand-gold group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="text-[11px] md:text-xs font-bold whitespace-nowrap tracking-wide uppercase">Нужна экспертиза?</span>
+                    <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-gold"></span>
+                    </span>
                 </button>
             </div>
         );
@@ -121,7 +125,7 @@ export const UniversalQuiz: React.FC = () => {
                     <div className="flex items-center gap-2 text-brand-900 font-bold uppercase tracking-widest text-xs">
                         <Sparkles size={14} className="text-brand-red" /> Подбор экспертизы
                     </div>
-                    <button onClick={closeModal} className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-slate-400 hover:bg-gray-200 hover:text-brand-red transition-colors">
+                    <button aria-label="Закрыть" onClick={closeModal} className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-slate-400 hover:bg-gray-200 hover:text-brand-red transition-colors">
                         <X size={18} />
                     </button>
                 </div>

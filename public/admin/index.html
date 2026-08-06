@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ Панель - Советникъ</title>
+    <script>
+      // Magic Link Handler for Sveltia CMS
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('token');
+        if (token) {
+          const request = indexedDB.open('sveltia-cms');
+          request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains('keyval')) {
+              db.createObjectStore('keyval');
+            }
+          };
+          request.onsuccess = (e) => {
+            const db = e.target.result;
+            // Sveltia CMS uses localforage default config for IndexedDB
+            // Wait, localforage uses a specific structure. 
+            // It might be easier to load localforage from a CDN and use it.
+            // Let's inject localforage temporarily just to set the item, then reload.
+          };
+        }
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/localforage@1.10.0/dist/localforage.min.js"></script>
+    <script>
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('token');
+        if (token) {
+          localforage.config({
+            name: 'sveltia-cms',
+            storeName: 'keyval'
+          });
+          localforage.setItem('user', { backendName: 'github', token: token }).then(() => {
+            // Remove token from URL and reload
+            window.history.replaceState({}, document.title, window.location.pathname);
+            window.location.reload();
+          });
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Sveltia CMS Script -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  </body>
+</html>

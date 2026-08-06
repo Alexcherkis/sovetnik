@@ -88,9 +88,8 @@ export const ServicesList: React.FC = () => {
         }}
       />
 
-      {/* COMPACT HERO */}
       <div className="bg-brand-900 text-white pt-28 pb-12 md:pt-36 md:pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="absolute inset-0 z-0 opacity-10 bg-[url('/cubes.png')]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-3xl md:text-4xl font-serif font-bold mb-3">Стоимость услуг</h1>
           <p className="text-slate-400 text-sm md:text-base font-light max-w-xl">
@@ -233,7 +232,7 @@ export const ServicesList: React.FC = () => {
             {/* FOOTER CTA */}
             <div className="mt-16 pt-8 border-t border-gray-100">
               <div className="bg-brand-900 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                <div className="absolute inset-0 bg-[url('/cubes.png')] opacity-10"></div>
                 <div className="relative z-10 text-center md:text-left">
                   <h3 className="text-white text-lg font-bold mb-1">Не нашли нужную услугу?</h3>
                   <p className="text-slate-400 text-sm">Свяжитесь с нами, мы поможем.</p>
@@ -397,7 +396,7 @@ export const ServiceDetail: React.FC = () => {
       />
 
       {/* 1. HERO SECTION (Immersive) */}
-      <div className="relative bg-brand-900 text-white min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center overflow-hidden pt-24 pb-16">
+      <div className="relative bg-brand-900 text-white min-h-[50vh] md:min-h-[70vh] flex flex-col justify-center overflow-hidden pt-24 pb-24 md:pb-16">
         {/* Background Layer */}
         <div className="absolute inset-0 z-0">
           <img
@@ -407,7 +406,7 @@ export const ServiceDetail: React.FC = () => {
             decoding="async"
             className="w-full h-full object-cover opacity-20 scale-105 animate-[kenburns_20s_infinite_alternate]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-900/95 to-brand-900/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-brand-950 via-brand-900/95 to-brand-900/40"></div>
 
         </div>
 
@@ -421,12 +420,12 @@ export const ServiceDetail: React.FC = () => {
             </Link>
 
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-black mb-6 leading-[1.1] text-white">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-black mb-6 leading-[1.15] text-white">
               {service.title} <span className="text-brand-gold">{cityIn}</span>
             </h1>
 
             {/* Leads */}
-            <p className="text-base sm:text-lg md:text-2xl text-slate-300 font-light max-w-2xl leading-relaxed border-l-2 border-brand-red pl-6 mb-10">
+            <p className="text-sm xs:text-base md:text-2xl text-slate-300 font-light max-w-2xl leading-relaxed border-l-2 border-brand-red pl-4 xs:pl-6 mb-10">
               {service.shortDesc}
             </p>
 
@@ -497,16 +496,16 @@ export const ServiceDetail: React.FC = () => {
 
             {/* Tasks (Grid cards) */}
             <section>
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-900 mb-8 flex items-center">
-                <Briefcase className="text-brand-red mr-3" size={28} />
+              <h2 className="text-xl xs:text-2xl md:text-3xl font-serif font-bold text-brand-900 mb-6 md:mb-8 flex items-center">
+                <Briefcase className="text-brand-red mr-2.5 md:mr-3 shrink-0 w-6 h-6 md:w-7 md:h-7" />
                 Ключевые задачи
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 xs:gap-4">
                 {service.tasks.map((task, i) => (
-                  <div key={i} className="bg-slate-50 p-6 rounded-2xl border border-transparent hover:border-brand-gold/30 hover:bg-white hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-4">
-                      <CheckCircle2 className="text-brand-red shrink-0 mt-1" size={20} />
-                      <p className="text-brand-900 font-medium leading-snug">{task}</p>
+                  <div key={i} className="bg-slate-50 p-4 xs:p-6 rounded-2xl border border-transparent hover:border-brand-gold/30 hover:bg-white hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-3 xs:gap-4">
+                      <CheckCircle2 className="text-brand-red shrink-0 mt-0.5 w-5 h-5" />
+                      <p className="text-brand-900 font-medium leading-snug text-sm xs:text-base">{task}</p>
                     </div>
                   </div>
                 ))}
@@ -515,21 +514,21 @@ export const ServiceDetail: React.FC = () => {
 
             {/* Documents */}
             {/* Documents - Premium Redesign */}
-            <section className="bg-white border border-slate-200 rounded-3xl p-8 md:p-10 shadow-xl shadow-slate-200/50 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
+            <section className="bg-white border border-slate-200 rounded-3xl p-5 xs:p-8 md:p-10 shadow-xl shadow-slate-200/50 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
               <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-bl-full -mr-20 -mt-20 transition-transform duration-700 group-hover:scale-110"></div>
 
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-900 mb-8 flex items-center relative z-10">
-                <FileCheck className="text-brand-red mr-3" size={28} />
+              <h2 className="text-xl xs:text-2xl md:text-3xl font-serif font-bold text-brand-900 mb-6 md:mb-8 flex items-center relative z-10">
+                <FileCheck className="text-brand-red mr-2.5 md:mr-3 shrink-0 w-6 h-6 md:w-7 md:h-7" />
                 Необходимые документы
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 xs:gap-4 relative z-10">
                 {service.documents.map((doc, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-gold/50 hover:bg-white hover:shadow-md transition-all duration-300">
-                    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white text-brand-900 font-serif font-bold text-sm shrink-0 shadow-sm border border-slate-100">
+                  <div key={i} className="flex items-center gap-3 xs:gap-4 p-3 xs:p-4 rounded-xl xs:rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-gold/50 hover:bg-white hover:shadow-md transition-all duration-300">
+                    <span className="flex items-center justify-center w-8 h-8 xs:w-10 xs:h-10 rounded-full bg-white text-brand-900 font-serif font-bold text-xs xs:text-sm shrink-0 shadow-sm border border-slate-100">
                       {i + 1}
                     </span>
-                    <span className="text-base md:text-lg text-slate-700 font-medium leading-tight">{doc}</span>
+                    <span className="text-sm xs:text-base md:text-lg text-slate-700 font-medium leading-tight">{doc}</span>
                   </div>
                 ))}
               </div>
@@ -538,7 +537,7 @@ export const ServiceDetail: React.FC = () => {
             {/* Questions Box */}
             {service.questions.length > 0 && (
               <section className="bg-brand-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                <div className="absolute inset-0 bg-[url('/cubes.png')] opacity-10"></div>
                 {/* Glows */}
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand-gold rounded-full blur-[100px] opacity-20"></div>
 

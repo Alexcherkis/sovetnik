@@ -28,7 +28,7 @@ export const About: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-transparent to-transparent opacity-90"></div>
 
                     {/* Texture */}
-                    <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+                    <div className="absolute inset-0 opacity-[0.05] bg-[url('/cubes.png')] mix-blend-overlay"></div>
                 </div>
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-5xl">
@@ -141,7 +141,7 @@ export const About: React.FC = () => {
             {/* 3. EXPERTISE SECTION - Premium Cards */}
             <section className="py-12 md:py-24 bg-brand-950 border-y border-brand-900 relative overflow-hidden">
                 {/* Background Pattern */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+                <div className="absolute inset-0 bg-[url('/cubes.png')] opacity-5"></div>
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="text-center max-w-3xl mx-auto mb-10 md:mb-20">

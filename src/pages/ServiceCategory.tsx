@@ -147,6 +147,14 @@ export const ServiceCategoryLanding: React.FC = () => {
               <p className="text-base md:text-xl text-slate-300 leading-relaxed font-light max-w-xl">
                 {categoryData.subtitle}
               </p>
+              
+              {categoryData.definition && (
+                <div className="mt-6 p-5 md:p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm max-w-2xl">
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-light">
+                    {categoryData.definition}
+                  </p>
+                </div>
+              )}
 
               <div className="flex flex-col sm:flex-row gap-3 mt-6 md:mt-10">
                 <Button
@@ -303,21 +311,21 @@ export const ServiceCategoryLanding: React.FC = () => {
             const IconComp = SERVICE_ICONS[featured.slug];
             return (
               <div className="max-w-4xl mx-auto mb-6 md:mb-10">
-                <div className="group relative bg-white rounded-xl md:rounded-2xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                <div className="group relative bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
                   <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-900 via-brand-red to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative z-10 p-4 md:p-8 md:flex md:items-center md:justify-between md:gap-6">
+                  <div className="relative z-10 p-5 md:p-8 md:flex md:items-center md:justify-between md:gap-6">
                     <div className="flex items-start gap-4 md:gap-5">
                       <div className="hidden md:flex w-14 h-14 rounded-xl bg-brand-50 items-center justify-center text-brand-900 shrink-0">
                         {IconComp ? <IconComp size={28} /> : <PieChart size={28} />}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="md:hidden w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-900 shrink-0">
+                        <div className="flex items-start gap-3 mb-3">
+                          <div className="md:hidden w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-900 shrink-0 mt-0.5">
                             {IconComp ? <IconComp size={20} /> : <PieChart size={20} />}
                           </div>
-                          <h3 className="text-base md:text-2xl font-serif font-bold text-brand-900">{featured.title}</h3>
+                          <h3 className="text-base xs:text-lg md:text-2xl font-serif font-bold text-brand-900 leading-snug">{featured.title}</h3>
                         </div>
-                        <p className="text-sm md:text-sm text-slate-500 leading-relaxed line-clamp-3 md:line-clamp-none">{featured.fullDesc}</p>
+                        <p className="text-sm text-slate-500 leading-relaxed line-clamp-3 md:line-clamp-none mb-3 md:mb-0">{featured.fullDesc}</p>
                         <div className="flex items-center gap-3 md:gap-4 mt-3 text-xs md:text-sm">
                           <span className="text-brand-red font-bold font-serif text-base md:text-lg">{featured.priceStart}</span>
                           <span className="text-slate-300 hidden md:inline">|</span>
@@ -330,7 +338,7 @@ export const ServiceCategoryLanding: React.FC = () => {
                               window.dispatchEvent(event);
                             }}
                             size="sm"
-                            className="w-full text-sm shadow-md"
+                            className="w-full text-sm shadow-md py-3 justify-center"
                           >
                             Заказать оценку
                           </Button>
@@ -361,10 +369,10 @@ export const ServiceCategoryLanding: React.FC = () => {
               return (
                 <div
                   key={service.id}
-                  className="group relative bg-white rounded-xl md:rounded-2xl border border-slate-200 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 hover:border-brand-red/20 flex flex-col"
+                  className="group relative bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 hover:border-brand-red/20 flex flex-col"
                 >
                   <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-900 via-brand-red to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute top-3 right-3 md:top-5 md:right-5 bg-brand-900 text-white px-2 py-0.5 md:px-3 md:py-1.5 rounded-md md:rounded-lg font-bold text-[11px] md:text-sm font-serif shadow-lg group-hover:bg-brand-red transition-colors duration-300 z-10">
+                  <div className="hidden md:block absolute top-5 right-5 bg-brand-900 text-white px-3 py-1.5 rounded-lg font-bold text-sm font-serif shadow-lg group-hover:bg-brand-red transition-colors duration-300 z-10">
                     от {service.priceStart.replace(/\s/g, '')}
                   </div>
                   <div className="p-4 md:p-6 pt-5 md:pt-8 pb-0 flex flex-col flex-1">
@@ -374,12 +382,17 @@ export const ServiceCategoryLanding: React.FC = () => {
                     <h3 className="text-base md:text-lg font-serif font-bold text-brand-900 mb-2 md:mb-3 leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-sm md:text-sm text-slate-500 leading-relaxed line-clamp-2 md:line-clamp-3 mb-3 md:mb-4 flex-1">
+                    <p className="text-sm text-slate-500 leading-relaxed line-clamp-2 md:line-clamp-3 mb-3 md:mb-4 flex-1">
                       {service.shortDesc}
                     </p>
-                    <div className="flex items-center text-xs md:text-xs text-slate-400 mb-4 md:mb-5">
-                      <Clock size={13} className="mr-1.5 text-brand-gold" />
-                      Срок: <span className="text-slate-600 font-medium ml-1">{service.duration}</span>
+                    <div className="flex justify-between items-center text-xs text-slate-400 mb-4 md:mb-5">
+                      <div className="flex items-center">
+                        <Clock size={13} className="mr-1.5 text-brand-gold" />
+                        Срок: <span className="text-slate-600 font-medium ml-1">{service.duration}</span>
+                      </div>
+                      <div className="md:hidden text-brand-red font-bold font-serif text-sm">
+                        от {service.priceStart.replace(/\s/g, '')}
+                      </div>
                     </div>
                   </div>
                   <div className="px-4 md:px-6 pb-4 md:pb-6">
@@ -389,7 +402,7 @@ export const ServiceCategoryLanding: React.FC = () => {
                         window.dispatchEvent(event);
                       }}
                       size="sm"
-                      className="w-full justify-center text-sm shadow-md"
+                      className="w-full justify-center text-sm shadow-md py-2.5"
                     >
                       Заказать расчёт
                     </Button>
@@ -438,14 +451,14 @@ export const ServiceCategoryLanding: React.FC = () => {
             {/* Desktop: connecting line */}
             <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-brand-gold/20 via-brand-gold/40 to-brand-gold/20"></div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
+            <div className="flex flex-col md:grid md:grid-cols-4 gap-4 md:gap-0">
               {[
                 { step: '01', title: 'Заявка', desc: 'Оставляете заявку — уточняем задачу', icon: '📋' },
                 { step: '02', title: 'Анализ', desc: 'Собираем документы, считаем стоимость', icon: '📊' },
                 { step: '03', title: 'Отчёт', desc: 'Готовим официальный отчёт с выводами', icon: '📄' },
                 { step: '04', title: 'Готово', desc: 'Получаете отчёт для сделки или суда', icon: '✅' },
               ].map((p, idx) => (
-                <div key={idx} className="text-center relative group md:px-6">
+                <div key={idx} className="flex md:block items-center md:text-center relative group p-4 md:p-0 bg-slate-50/50 md:bg-transparent rounded-2xl md:rounded-none border border-slate-100/70 md:border-none md:px-6">
                   {/* Step connector dot (desktop) */}
                   <div className="hidden md:flex items-center justify-center mb-8">
                     <div className="w-5 h-5 rounded-full bg-brand-900 border-4 border-brand-gold/30 group-hover:border-brand-gold group-hover:scale-125 transition-all duration-500 relative z-10">
@@ -454,13 +467,13 @@ export const ServiceCategoryLanding: React.FC = () => {
                   </div>
                   
                   {/* Number circle */}
-                  <div className="w-12 h-12 md:w-20 md:h-20 rounded-full bg-brand-50 border-2 border-brand-100 text-brand-900 flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:border-brand-gold group-hover:shadow-lg group-hover:shadow-brand-gold/20 transition-all duration-500">
+                  <div className="w-12 h-12 md:w-20 md:h-20 rounded-full bg-white md:bg-brand-50 border-2 border-brand-100 text-brand-900 flex items-center justify-center shrink-0 mr-4 md:mx-auto md:mb-6 group-hover:border-brand-gold group-hover:shadow-lg group-hover:shadow-brand-gold/20 transition-all duration-500 shadow-sm md:shadow-none">
                     <span className="text-lg md:text-3xl font-serif font-bold">{p.step}</span>
                   </div>
                   
-                  <div className="md:px-2">
-                    <h3 className="text-sm md:text-lg font-serif font-bold text-brand-900 mb-1 md:mb-3">{p.title}</h3>
-                    <p className="text-xs md:text-sm text-slate-500 leading-relaxed max-w-[180px] mx-auto">{p.desc}</p>
+                  <div className="md:px-2 text-left md:text-center">
+                    <h3 className="text-sm xs:text-base md:text-lg font-serif font-bold text-brand-900 mb-0.5 md:mb-3">{p.title}</h3>
+                    <p className="text-xs md:text-sm text-slate-500 leading-relaxed max-w-[240px] md:max-w-[180px] md:mx-auto">{p.desc}</p>
                   </div>
                 </div>
               ))}

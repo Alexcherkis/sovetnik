@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: Alexcherkis/sovetnik
+  branch: main
+  base_url: https://github.com
+
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "settings"
+    label: "Глобальные настройки"
+    files:
+      - label: "Контакты и данные"
+        name: "global"
+        file: "src/content/settings/global.json"
+        fields:
+          - {label: "Телефон (Отображение)", name: "contact_phone_display", widget: "string"}
+          - {label: "Телефон (Для ссылок, без пробелов)", name: "contact_phone_e164", widget: "string"}
+          - {label: "E-mail", name: "contact_email", widget: "string"}
+          - {label: "Улица и дом", name: "contact_address_street", widget: "string"}
+          - {label: "Город", name: "contact_address_city", widget: "string"}
+          - {label: "Индекс", name: "contact_address_postal", widget: "string"}
+          - {label: "Telegram", name: "social_telegram_url", widget: "string"}
+          - {label: "ВКонтакте", name: "social_vk_url", widget: "string"}
+          - {label: "WhatsApp", name: "social_whatsapp_url", widget: "string"}
+          - {label: "Юридическое название", name: "company_legal_name", widget: "string"}
+          - {label: "ИНН", name: "company_inn", widget: "string"}
+          - {label: "ОГРН", name: "company_ogrn", widget: "string"}
+
+  - name: "blog"
+    label: "Статьи (Блог)"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Заголовок", name: "title", widget: "string"}
+      - {label: "Краткое описание (excerpt)", name: "excerpt", widget: "string"}
+      - {label: "Категория", name: "category", widget: "string"}
+      - {label: "Дата публикации", name: "datePublished", widget: "string"}
+      - {label: "Дата создания", name: "date", widget: "string"}
+      - {label: "Дата изменения", name: "dateModified", widget: "string"}
+      - {label: "Время чтения", name: "readTime", widget: "string"}
+      - {label: "Имя изображения (image)", name: "image", widget: "string"}
+      - {label: "Содержание", name: "body", widget: "markdown"}

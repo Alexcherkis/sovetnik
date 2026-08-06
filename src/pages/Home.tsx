@@ -668,7 +668,7 @@ alt="Эксперт проводит финансовый аудит в офис
       <section className="py-12 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="bg-brand-900 rounded-3xl md:rounded-[3rem] p-8 xs:p-10 md:p-14 lg:p-20 text-center shadow-2xl relative overflow-hidden isolate">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-[url('/cubes.png')] opacity-5"></div>
             <div className="absolute -top-24 -right-24 w-64 md:w-96 lg:w-[600px] h-64 md:h-96 lg:h-[600px] bg-brand-red blur-[120px] opacity-20"></div>
             <div className="absolute bottom-0 left-0 w-64 md:w-96 lg:w-[500px] h-64 md:h-96 lg:h-[500px] bg-brand-gold blur-[120px] opacity-10"></div>
 

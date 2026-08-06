@@ -57,9 +57,37 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
       host: '0.0.0.0',
+      proxy: {
+        '/send-form.php': {
+          target: 'https://buro-sovetnik.com',
+          changeOrigin: true,
+          secure: false,
+          headers: {
+            'Origin': 'http://localhost:3000'
+          }
+        }
+      }
     },
     plugins: [
       react(),
+      {
+        name: 'browser-logger',
+        configureServer(server) {
+          server.middlewares.use('/api/log', (req, res) => {
+            let body = '';
+            req.on('data', chunk => body += chunk);
+            req.on('end', () => {
+              try {
+                const log = JSON.parse(body);
+                console.log(`\n🚨 [BROWSER ${log.type.toUpperCase()}] ${log.message}`);
+                if (log.stack) console.log(`Stack: ${log.stack}\n`);
+              } catch (e) {}
+              res.statusCode = 200;
+              res.end('ok');
+            });
+          });
+        }
+      },
       {
         name: 'robots-per-mode',
         apply: 'build',

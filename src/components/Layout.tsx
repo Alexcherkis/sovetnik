@@ -356,7 +356,7 @@ const FooterColumn: React.FC<FooterColumnProps> = ({ title, children }) => {
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const isClone = import.meta.env.MODE === 'clone';
-  const mapLink = "https://yandex.ru/maps/172/ufa/house/ulitsa_50_let_sssr_34/YU8YdgZlSUIPQFtufXt0cXpnYQ==/?ll=56.015079%2C54.750645&z=16.92";
+  const mapLink = "https://yandex.ru/maps/172/ufa/search/%D0%9B%D0%B5%D1%81%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4%208%2F3/";
 
   return (
     <footer className="bg-brand-950 text-white relative overflow-hidden border-t border-brand-800/20">
@@ -456,8 +456,7 @@ const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-slate-400 text-sm leading-relaxed hover:text-brand-gold transition-colors"
                   >
-                    г. Уфа, ул. 50 лет СССР, 34,<br />
-                    ЖК «Статус»
+                    г. Уфа, Лесной пр-д, д. 8/3<br />
                   </a>
                   <span className="text-brand-gold text-xs font-bold mt-2 uppercase tracking-wide">Работаем по всей России</span>
                 </div>

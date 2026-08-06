@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Search as SearchIcon, X, ArrowRight, FileText, Briefcase, HelpCircle, ChevronRight, Hash } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { SERVICES, BLOG_POSTS, FAQ_GROUPS } from '../data/constants';
+import { SERVICES, FAQ_GROUPS } from '../data/constants';
+import { BLOG_POSTS_DYNAMIC as BLOG_POSTS } from '../utils/getBlogPosts';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -120,6 +121,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
       <div className="container mx-auto px-4 md:px-6 pt-6 md:pt-12 pb-6 flex-shrink-0">
         <div className="flex justify-end mb-8">
           <button
+            aria-label="Закрыть поиск"
             onClick={onClose}
             className="p-3 rounded-full bg-slate-800 text-slate-300 hover:text-white hover:bg-brand-red transition-all duration-300 group shadow-lg border border-slate-700"
           >
@@ -143,6 +145,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
             />
             {query && (
               <button
+                aria-label="Очистить поиск"
                 onClick={() => setQuery('')}
                 className="absolute inset-y-0 right-4 flex items-center text-slate-500 hover:text-white transition-colors"
               >

@@ -19,6 +19,7 @@ export interface ServiceCategoryData {
   icon: LucideIcon;
   benefits: { title: string; desc: string }[];
   process?: { title: string; desc: string; icon?: LucideIcon }[];
+  definition?: string;
 }
 
 export interface Service {
@@ -73,6 +74,8 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
+  datePublished?: string;
+  dateModified?: string;
   category: string;
   image: string;
   readTime: string;

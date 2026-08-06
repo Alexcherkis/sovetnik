@@ -292,7 +292,7 @@ export const SEO: React.FC<SEOProps> = ({
         <Helmet>
             <title>{fullTitle}</title>
             <meta name="description" content={metaDescription} />
-            <meta name="keywords" content={keywords || "судебная экспертиза, строительная экспертиза, финансовая экспертиза, оценка бизнеса, почерковедческая экспертиза, рецензия эксперта, экспертиза для суда, независимая экспертиза, фз-73, оценка недвижимости, землеустроительная экспертиза, экспертное бюро"} />
+            <meta name="keywords" content={keywords || "судебная экспертиза, строительная экспертиза, финансовая экспертиза, оценка бизнеса, независимая экспертиза, фз-73, экспертное бюро"} />
 
             {/* Geo Tags for Local SEO */}
             {!city && (
@@ -312,7 +312,7 @@ export const SEO: React.FC<SEOProps> = ({
             <meta name="author" content={siteTitle} />
             <meta name="copyright" content={`© ${new Date().getFullYear()} ${siteTitle}`} />
             <meta name="dateModified" content={dateModified || new Date().toISOString().split('T')[0]} />
-            <meta name="datePublished" content={datePublished || "2023-01-01"} />
+            <meta name="datePublished" content={datePublished || `${new Date().getFullYear()}-01-01`} />
             <meta name="theme-color" content="#0B1221" />
             <meta name="format-detection" content="telephone=yes" />
             <meta name="mobile-web-app-capable" content="yes" />

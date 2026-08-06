@@ -1,7 +1,11 @@
+import { BlogCTA } from "../components/BlogCTA";
+import rehypeRaw from 'rehype-raw';
+import ReactMarkdown from 'react-markdown';
 import React, { useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import { SectionHeader, Button, AccordionItem } from '../components/Components';
-import { TEAM, FAQ_GROUPS, PRICES, BLOG_POSTS, SERVICES, SERVICE_CATEGORIES } from '../data/constants';
+import { TEAM, FAQ_GROUPS, PRICES, SERVICES, SERVICE_CATEGORIES } from '../data/constants';
+import { BLOG_POSTS_DYNAMIC as BLOG_POSTS } from '../utils/getBlogPosts';
 import { MapPin, Phone, Mail, Clock, CheckCircle2, User, HelpCircle, FileText, ChevronDown, ChevronUp, Tag, Calendar, ArrowLeft, ArrowRight, Share2, Send, ChevronRight, Scale, Briefcase, FileCheck, Search, X, LayoutGrid } from 'lucide-react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { YANDEX_METRICA_ID } from '../config/analytics';
@@ -111,6 +115,7 @@ export const FAQ: React.FC = () => {
         }}
       />
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+        <h1 className="sr-only">Часто задаваемые вопросы</h1>
         <SectionHeader
           title="База знаний"
           subtitle="Ответы экспертов на вопросы о процедуре, сроках и стоимости"
@@ -287,7 +292,7 @@ export const Price: React.FC = () => {
 
       {/* HEADER */}
       <div className="bg-brand-900 text-white pt-24 pb-12 md:pt-36 md:pb-16 relative overflow-hidden shadow-xl">
-        <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] animate-[pulse_10s_infinite]"></div>
+        <div className="absolute inset-0 z-0 opacity-10 bg-[url('/cubes.png')] animate-[pulse_10s_infinite]"></div>
         <div className="container mx-auto px-4 relative z-10 text-center md:text-left">
           <h1 className="text-2xl md:text-4xl font-serif font-bold mb-2">Каталог услуг</h1>
           <p className="text-slate-400 text-sm md:text-base font-light">
@@ -301,15 +306,15 @@ export const Price: React.FC = () => {
         {/* --- MOBILE VIEW --- */}
         <div className="md:hidden">
           {/* Mobile Search */}
-          <div className="relative mb-6">
+          <div className="relative mb-6 group">
             <input
               type="text"
               placeholder="Найти услугу..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-gray-200 rounded-xl py-3 pl-10 pr-4 shadow-sm text-sm focus:ring-2 focus:ring-brand-red/20 outline-none placeholder:text-slate-400"
+              className="w-full bg-white border border-slate-200 rounded-2xl py-3.5 pl-11 pr-4 shadow-sm text-sm focus:ring-4 focus:ring-brand-gold/10 focus:border-brand-gold/50 outline-none placeholder:text-slate-400 transition-all duration-300"
             />
-            <Search className="absolute left-3 top-3.5 text-slate-400" size={18} />
+            <Search className="absolute left-4 top-4 text-slate-400 group-focus-within:text-brand-gold transition-colors duration-300" size={18} />
           </div>
 
           {/* Content Switching: Search Results OR Category Grid */}
@@ -321,32 +326,32 @@ export const Price: React.FC = () => {
                   <Link
                     key={service.id}
                     to={`/services/${service.slug}`}
-                    className="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm active:scale-[0.99] transition-transform"
+                    className="flex items-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm active:scale-[0.98] transition-all duration-200"
                   >
                     <div className="flex-1 pr-4">
                       <h4 className="font-bold text-brand-900 text-sm mb-1">{service.title}</h4>
-                      <span className="text-xs text-slate-500">{service.shortDesc}</span>
+                      <span className="text-xs text-slate-500 line-clamp-2">{service.shortDesc}</span>
                     </div>
-                    <div className="bg-brand-50 p-2 rounded-full text-brand-red">
+                    <div className="bg-brand-50 p-2.5 rounded-xl text-brand-red shrink-0 shadow-inner">
                       <ArrowRight size={16} />
                     </div>
                   </Link>
                 ))
               ) : (
-                <div className="text-center py-10 text-slate-500 text-sm">Ничего не найдено</div>
+                <div className="text-center py-12 text-slate-400 text-sm bg-white rounded-2xl border border-slate-100 p-6">Ничего не найдено</div>
               )}
             </div>
           ) : (
             /* Category Grid */
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {categories.map(cat => (
                 <button
                   key={cat.slug}
                   onClick={() => setMobileCategorySlug(cat.slug)}
-                  className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl shadow-sm border border-gray-100 active:scale-95 transition-transform h-32 text-center"
+                  className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-brand-gold/20 active:scale-95 transition-all duration-300 ease-out h-36 text-center"
                 >
-                  <div className="mb-3 p-3 bg-brand-50 text-brand-red rounded-full">
-                    <cat.icon size={24} strokeWidth={1.5} />
+                  <div className="mb-3 p-3 bg-brand-50 text-brand-red rounded-2xl shadow-inner transition-transform duration-300">
+                    <cat.icon size={26} strokeWidth={1.5} />
                   </div>
                   <span className="text-xs font-bold text-brand-900 leading-tight px-1">{cat.title}</span>
                 </button>
@@ -452,45 +457,35 @@ export const Price: React.FC = () => {
                 <p className="text-[10px] text-slate-400 mt-0.5">{mobileDrawerContent.subtitle}</p>
               </div>
             </div>
-            <button onClick={() => setMobileCategorySlug(null)} className="p-2 bg-gray-50 rounded-full text-slate-400 hover:text-brand-red ml-2 shrink-0">
+            <button aria-label="Закрыть" onClick={() => setMobileCategorySlug(null)} className="p-2 bg-gray-50 rounded-full text-slate-400 hover:text-brand-red ml-2 shrink-0">
               <X size={20} />
             </button>
           </div>
         )}
 
         {/* List */}
-        <div className="overflow-y-auto p-4 space-y-3 overscroll-contain pb-20">
+        <div className="overflow-y-auto p-4 space-y-3.5 overscroll-contain pb-24">
           {mobileDrawerServices.map(service => (
-            <Link key={service.id} to={`/services/${service.slug}`} className="flex items-center p-4 bg-gray-50 rounded-xl active:bg-brand-50 transition-colors" onClick={() => setMobileCategorySlug(null)}>
+            <Link key={service.id} to={`/services/${service.slug}`} className="flex items-center p-4 bg-slate-50 hover:bg-brand-50/30 rounded-2xl border border-slate-100/70 active:scale-[0.98] transition-all duration-200" onClick={() => setMobileCategorySlug(null)}>
               <div className="flex-1 pr-4">
-                <h4 className="font-bold text-brand-900 text-sm mb-1">{service.title}</h4>
-                <div className="flex items-center text-[10px] text-slate-500 gap-2">
-                  <span className="px-1.5 py-0.5 bg-white rounded border border-gray-200 shadow-sm">{service.priceStart}</span>
-                  <span>{service.duration}</span>
+                <h4 className="font-bold text-brand-900 text-sm mb-1.5 leading-snug">{service.title}</h4>
+                <div className="flex items-center text-[10px] text-slate-500 gap-2.5">
+                  <span className="px-2 py-0.5 bg-white text-brand-red font-serif font-bold rounded-lg border border-slate-200 shadow-sm text-xs">{service.priceStart}</span>
+                  <span className="flex items-center text-slate-400"><Clock size={11} className="mr-1 text-brand-gold" /> {service.duration}</span>
                 </div>
               </div>
-              <div className="bg-white p-2 rounded-full text-brand-900 shadow-sm">
+              <div className="bg-white p-2.5 rounded-xl text-brand-900 shadow-sm border border-slate-100 shrink-0">
                 <ArrowRight size={16} />
               </div>
             </Link>
           ))}
-          <div className="p-4 rounded-xl bg-brand-900/5 border border-brand-900/10 text-center mt-4 mb-4">
-            <p className="text-xs text-brand-900 font-medium mb-2">Не нашли нужную услугу?</p>
-            <button onClick={() => { setMobileCategorySlug(null); window.dispatchEvent(new CustomEvent('openContactModal', { detail: { service: 'Не нашел в прайсе' } })); }} className="text-brand-red text-xs font-bold uppercase tracking-wider">
+          <div className="p-5 rounded-2xl bg-brand-900/5 border border-brand-900/10 text-center mt-6 mb-4">
+            <p className="text-sm text-brand-900 font-semibold mb-2">Не нашли нужную услугу?</p>
+            <button onClick={() => { setMobileCategorySlug(null); window.dispatchEvent(new CustomEvent('openContactModal', { detail: { service: 'Не нашел в прайсе' } })); }} className="text-brand-red text-xs font-bold uppercase tracking-widest hover:underline">
               Связаться с менеджером
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Floating Call Button for Mobile */}
-      <div className="md:hidden fixed bottom-6 right-6 z-50">
-        <a
-          href="tel:+79870224999"
-          className="flex items-center justify-center w-14 h-14 bg-brand-green text-white rounded-full shadow-2xl shadow-green-900/40 animate-pulse-slow active:scale-90 transition-transform"
-        >
-          <Phone size={24} fill="currentColor" />
-        </a>
       </div>
 
     </div>
@@ -518,6 +513,7 @@ export const Blog: React.FC = () => {
         }}
       />
       <div className="container mx-auto px-4 md:px-6">
+        <h1 className="sr-only">Блог экспертов</h1>
         <SectionHeader title="Блог экспертов" subtitle="Практические кейсы, новости законодательства и советы" />
 
         {/* Grid: 2 cols on Tablet, 3 cols on Desktop */}
@@ -593,15 +589,16 @@ export const BlogPostPage: React.FC = () => {
       return `${year}-${month}-${day}`;
     } catch { return new Date().toISOString().split('T')[0]; }
   };
-  const isoDate = parseRuDate(post.date);
+  const isoDatePub = post.datePublished ? parseRuDate(post.datePublished) : parseRuDate(post.date);
+  const isoDateMod = post.dateModified ? parseRuDate(post.dateModified) : isoDatePub;
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": post.title,
     "image": [post.image],
-    "datePublished": isoDate,
-    "dateModified": isoDate,
+    "datePublished": isoDatePub,
+    "dateModified": isoDateMod,
     "author": {
       "@type": "Organization",
       "name": "Советникъ — Экспертное Бюро",
@@ -630,6 +627,8 @@ export const BlogPostPage: React.FC = () => {
         image={post.image}
         url={`/blog/${post.slug}`}
         type="article"
+        datePublished={isoDatePub}
+        dateModified={isoDateMod}
         schema={articleSchema}
         breadcrumbs={[
           { name: 'Блог', item: '/blog' },
@@ -649,8 +648,11 @@ export const BlogPostPage: React.FC = () => {
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-tight">
             {post.title}
           </h1>
-          <div className="flex items-center justify-center space-x-6 text-slate-400 text-sm">
-            <span className="flex items-center"><Calendar size={14} className="mr-2" /> {post.date}</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-slate-400 text-sm">
+            <span className="flex items-center"><Calendar size={14} className="mr-2" /> Опубликовано: {post.datePublished || post.date}</span>
+            {post.dateModified && (
+              <span className="flex items-center"><Calendar size={14} className="mr-2 text-brand-gold" /> Обновлено: {post.dateModified}</span>
+            )}
             <span className="flex items-center"><Clock size={14} className="mr-2" /> {post.readTime} чтения</span>
           </div>
         </div>
@@ -660,7 +662,7 @@ export const BlogPostPage: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl 2xl:max-w-4xl mx-auto -mt-12 bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100 relative z-20">
           <div className="prose prose-lg 2xl:prose-xl prose-slate max-w-none first-letter:text-5xl first-letter:font-serif first-letter:text-brand-red first-letter:font-bold first-letter:mr-2 first-letter:float-left">
-            {post.content}
+            <ReactMarkdown rehypePlugins={[rehypeRaw]} components={{ blogcta: ({ node, ...props }: any) => <BlogCTA {...props} /> } as any}>{post.content as string}</ReactMarkdown>
           </div>
 
           <div className="border-t border-gray-100 mt-12 pt-8 flex justify-between items-center">
@@ -668,7 +670,7 @@ export const BlogPostPage: React.FC = () => {
               <ArrowLeft size={16} className="mr-2" /> Все статьи
             </Button>
             <div className="flex space-x-2">
-              <button className="p-2 text-slate-400 hover:text-brand-900 hover:bg-gray-100 rounded-full transition-colors">
+              <button aria-label="Поделиться" className="p-2 text-slate-400 hover:text-brand-900 hover:bg-gray-100 rounded-full transition-colors">
                 <Share2 size={20} />
               </button>
             </div>
@@ -767,10 +769,10 @@ export const Contacts: React.FC = () => {
 
                 <div className="pl-16">
                   <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0B1221] leading-tight mb-3">
-                    Уфа, ул. 50 лет СССР, 34
+                    Уфа, Лесной пр-д, д. 8/3
                   </h2>
                   <p className="text-base md:text-lg text-slate-500 font-light leading-relaxed">
-                    ЖК «Статус», 1 этаж <br /> <span className="text-sm text-slate-400">Удобная парковка для клиентов</span>
+                    450071, Республика Башкортостан <br /> <span className="text-sm text-slate-400">Удобная парковка для клиентов</span>
                   </p>
 
                   <div className="mt-5 inline-flex items-center gap-x-2 bg-brand-50 border border-brand-100 px-4 py-2 rounded-lg">
@@ -812,7 +814,7 @@ export const Contacts: React.FC = () => {
           {/* RIGHT: Visual Map Section */}
           <div className="w-full lg:w-7/12 relative h-[450px] md:h-[500px] lg:h-auto bg-slate-100">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=56.015079%2C54.750645&z=17.2&pt=56.015079,54.750645,pm2rdm"
+              src="https://yandex.ru/map-widget/v1/?ll=56.031548%2C54.758410&z=17&pt=56.031548,54.758410,pm2rdm"
               width="100%"
               height="100%"
               frameBorder="0"
@@ -825,10 +827,10 @@ export const Contacts: React.FC = () => {
             <div className="hidden lg:block absolute bottom-12 left-12 bg-white/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl max-w-xs border border-white/50">
               <p className="text-[#0B1221] font-serif font-bold text-lg mb-2">Как добраться?</p>
               <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                Мы находимся в самом центре города. Для наших клиентов всегда доступна парковка.
+                Мы находимся по адресу: Лесной проезд 8/3. Для наших клиентов всегда доступна парковка.
               </p>
               <a
-                href="https://yandex.ru/maps/-/CDu~MR~9"
+                href="https://yandex.ru/maps/172/ufa/search/%D0%9B%D0%B5%D1%81%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4%208%2F3/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-bold uppercase tracking-widest text-[#0B1221] hover:text-[#D4AF37] flex items-center gap-2 transition-colors"
@@ -839,7 +841,7 @@ export const Contacts: React.FC = () => {
 
             {/* Mobile Map Button - Integrated and Clean */}
             <a
-              href="https://yandex.ru/maps/-/CDu~MR~9"
+              href="https://yandex.ru/maps/172/ufa/search/%D0%9B%D0%B5%D1%81%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4%208%2F3/"
               target="_blank"
               rel="noopener noreferrer"
               className="lg:hidden absolute bottom-6 right-6 left-6 bg-white/95 backdrop-blur-sm text-[#0B1221] py-3 rounded-xl shadow-lg border border-white/20 flex items-center justify-center gap-2 font-bold text-sm"
@@ -874,11 +876,11 @@ export const Contacts: React.FC = () => {
 
                 <div>
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">ИНН</p>
-                  <p className="font-mono text-lg text-[#0B1221] select-all">0276966601</p>
+                  <p className="font-mono text-lg text-[#0B1221] select-all">0274131774</p>
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">ОГРН</p>
-                  <p className="font-mono text-lg text-[#0B1221] select-all">1210200055740</p>
+                  <p className="font-mono text-lg text-[#0B1221] select-all">1080274006988</p>
                 </div>
               </div>
             </div>
