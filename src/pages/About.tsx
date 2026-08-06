@@ -4,6 +4,7 @@ import { SEO } from '../components/SEO';
 import { Scale, Briefcase, FileCheck, Award, MapPin, Clock, Phone, Mail, CheckCircle2, Shield, Users, ShieldCheck, HardHat, PieChart } from 'lucide-react';
 import aboutHeroImg from '../assets/images/hero_court.webp'; // Using proven hero image
 import { Link } from 'react-router-dom';
+import aboutData from '../content/pages/about.json';
 
 export const About: React.FC = () => {
     return (
@@ -33,20 +34,20 @@ export const About: React.FC = () => {
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-5xl">
                     <div className="inline-flex items-center space-x-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-2 rounded-full text-brand-gold text-xs font-bold uppercase tracking-[0.2em] mb-8 shadow-2xl">
-                        <Shield size={14} /> <span>Экспертное бюро</span>
+                        <Shield size={14} /> <span>{aboutData.hero_badge || "Экспертное бюро"}</span>
                     </div>
 
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 leading-tight drop-shadow-xl">
-                        Мы создаем доказательства,<br />
+                        {aboutData.hero_title_line1 || "Мы создаем доказательства,"}<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-100 to-brand-gold relative inline-block">
-                            которые побеждают в суде
+                            {aboutData.hero_title_line2 || "которые побеждают в суде"}
                             {/* Text Glow */}
                             <div className="absolute -inset-4 bg-brand-gold/20 blur-2xl -z-10 rounded-full opacity-50"></div>
                         </span>
                     </h1>
 
                     <p className="text-lg md:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed border-l-2 border-brand-gold pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-                        15 лет на страже интересов бизнеса и частных лиц.<br className="hidden md:block" /> <span className="text-white font-medium">Независимость. Компетентность. Результат.</span>
+                        {aboutData.hero_subtitle || "15 лет на страже интересов бизнеса и частных лиц. Независимость. Компетентность. Результат."}
                     </p>
                 </div>
 

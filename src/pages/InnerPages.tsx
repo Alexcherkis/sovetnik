@@ -12,6 +12,7 @@ import { YANDEX_METRICA_ID } from '../config/analytics';
 import { SEO } from '../components/SEO';
 import { SITE_ORIGIN } from '../config/site';
 import homeHeroImg from '../assets/images/home-hero.webp';
+import faqData from '../content/pages/faq.json';
 
 // --- HELPER COMPONENTS ---
 const ServiceGridItem = ({ service }: { service: any }) => (
@@ -65,12 +66,14 @@ export const FAQ: React.FC = () => {
     includeScore: true
   };
 
+  const currentFaqGroups = (faqData?.groups && faqData.groups.length > 0) ? (faqData.groups as typeof FAQ_GROUPS) : FAQ_GROUPS;
+
   // Filter Logic with Fuse
   const filteredGroups = React.useMemo(() => {
-    if (!searchQuery.trim()) return FAQ_GROUPS;
+    if (!searchQuery.trim()) return currentFaqGroups;
 
     // Flatten all items for searching, preserving original group and item indices
-    const allItems = FAQ_GROUPS.flatMap((group, groupIdx) =>
+    const allItems = currentFaqGroups.flatMap((group, groupIdx) =>
       group.items.map((item, itemIdx) => ({ ...item, groupTitle: group.title, originalGroupIdx: groupIdx, originalItemIdx: itemIdx }))
     );
     const fuse = new Fuse(allItems, fuseOptions);
@@ -102,7 +105,7 @@ export const FAQ: React.FC = () => {
         schema={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "mainEntity": FAQ_GROUPS.flatMap(group =>
+          "mainEntity": currentFaqGroups.flatMap(group =>
             group.items.map(item => ({
               "@type": "Question",
               "name": item.question,
@@ -166,8 +169,8 @@ export const FAQ: React.FC = () => {
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
                   {group.items.map((item, itemIdx) => {
                     // Find original index to maintain stable keys and state
-                    const originalGroupIdx = FAQ_GROUPS.findIndex(g => g.title === group.title);
-                    const originalItemIdx = FAQ_GROUPS[originalGroupIdx]?.items.findIndex(i => i.question === item.question) ?? itemIdx;
+                    const originalGroupIdx = currentFaqGroups.findIndex(g => g.title === group.title);
+                    const originalItemIdx = currentFaqGroups[originalGroupIdx]?.items.findIndex(i => i.question === item.question) ?? itemIdx;
                     const key = `${originalGroupIdx}-${originalItemIdx}`;
 
                     return (

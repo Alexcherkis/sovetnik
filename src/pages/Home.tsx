@@ -17,6 +17,7 @@ import cloneImgLand from '../assets/images/clone-stock/land.webp';
 import cloneImgHandwriting from '../assets/images/clone-stock/handwriting.webp';
 import googleGIcon from '../assets/icons/google-g.svg';
 import { SITE_ORIGIN, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '../config/site';
+import homeData from '../content/pages/home.json';
 
 const StatItem: React.FC<{ number: number, label: string, suffix?: string, prefix?: string }> = ({ number, label, suffix, prefix }) => (
   <div className="text-center p-4 xs:p-6 border-b sm:border-b-0 sm:border-r border-white/10 last:border-0 flex flex-col items-center justify-center relative group">
@@ -210,18 +211,18 @@ export const Home: React.FC = () => {
           <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col items-center md:items-start pt-32 md:pt-48 pb-24 md:pb-0">
             <div className="max-w-3xl text-center md:text-left">
               <div className="hidden md:inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full text-brand-gold text-xs font-bold uppercase tracking-wider mb-8 animate-fade-in-up">
-                <Scale size={14} /> <span>Федеральное экспертное бюро</span>
+                <Scale size={14} /> <span>{homeData.hero_badge || "Федеральное экспертное бюро"}</span>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-8 leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                <span className="block">Независимая</span>
+                <span className="block">{homeData.hero_title_line1 || "Независимая"}</span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold relative inline-block">
                   экспертиза
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-brand-gold/50 rounded-full blur-sm"></div>
                 </span>
-                <span className="block text-2xl md:text-4xl lg:text-5xl mt-4 font-light text-slate-200">весомый аргумент в суде</span>
+                <span className="block text-2xl md:text-4xl lg:text-5xl mt-4 font-light text-slate-200">{homeData.hero_title_line2 || "весомый аргумент в суде"}</span>
               </h1>
               <p className="text-lg md:text-2xl text-slate-300 max-w-2xl leading-relaxed font-light mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                Судебная, строительная и финансовая экспертиза по всей России. Заключения по ФЗ-73. Команда аттестованных экспертов. Работаем с 2009 года.
+                {homeData.hero_subtitle || "Судебная, строительная и финансовая экспертиза по всей России. Заключения по ФЗ-73. Команда аттестованных экспертов. Работаем с 2009 года."}
               </p>
               <div className="flex flex-col sm:flex-row gap-5 justify-center md:justify-start animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <Button
@@ -232,7 +233,7 @@ export const Home: React.FC = () => {
                   }}
                   className="shadow-[0_20px_50px_-10px_rgba(220,38,38,0.3)] px-10 py-5 text-lg"
                 >
-                  Получить консультацию
+                  {homeData.hero_cta_text || "Получить консультацию"}
                 </Button>
                 <Button size="lg" to="/price" variant="outline-white" className="px-10 py-5 text-lg">
                   Стоимость услуг

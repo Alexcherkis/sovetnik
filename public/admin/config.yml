@@ -8,38 +8,102 @@ media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
 collections:
-  - name: "settings"
-    label: "Глобальные настройки"
+  - name: "pages"
+    label: "📄 Страницы сайта"
+    description: "Управление текстами, заголовками и ключевыми блоками"
     files:
-      - label: "Контакты и данные"
+      - label: "🏠 Главная страница"
+        name: "home"
+        file: "src/content/pages/home.json"
+        description: "Тексты первого экрана, ключевые цифры и блок О компании"
+        fields:
+          - {label: "Верхний бейдж", name: "hero_badge", widget: "string", hint: "Например: Экспертное бюро судебных экспертиз"}
+          - {label: "Заголовок (Строка 1)", name: "hero_title_line1", widget: "string", hint: "Например: Независимая судебная"}
+          - {label: "Заголовок (Строка 2)", name: "hero_title_line2", widget: "string", hint: "Например: экспертиза по всей России"}
+          - {label: "Подзаголовок", name: "hero_subtitle", widget: "text", hint: "Описание услуг под заголовком"}
+          - {label: "Текст на кнопке", name: "hero_cta_text", widget: "string", hint: "Например: Получить консультацию эксперта"}
+          - {label: "Опыт работы (лет)", name: "stats_experience", widget: "number"}
+          - {label: "Подпись под опытом", name: "stats_experience_label", widget: "string"}
+          - {label: "Проведено экспертиз (число)", name: "stats_completed", widget: "number"}
+          - {label: "Подпись под экспертизами", name: "stats_completed_label", widget: "string"}
+          - {label: "Выиграно дел (%)", name: "stats_win_rate", widget: "number"}
+          - {label: "Подпись под выигрышами", name: "stats_win_rate_label", widget: "string"}
+          - {label: "Заключений по ФЗ-73 (%)", name: "stats_fz73", widget: "number"}
+          - {label: "Подпись под ФЗ-73", name: "stats_fz73_label", widget: "string"}
+          - {label: "Бейдж секции «О бюро»", name: "about_section_badge", widget: "string"}
+          - {label: "Заголовок секции «О бюро»", name: "about_section_title", widget: "string"}
+          - {label: "Текст описания «О бюро»", name: "about_section_text", widget: "text"}
+
+      - label: "ℹ️ Страница «О компании»"
+        name: "about"
+        file: "src/content/pages/about.json"
+        description: "Тексты и статистика на странице /about"
+        fields:
+          - {label: "Верхний бейдж", name: "hero_badge", widget: "string"}
+          - {label: "Главный заголовок (Строка 1)", name: "hero_title_line1", widget: "string"}
+          - {label: "Главный заголовок (Строка 2)", name: "hero_title_line2", widget: "string"}
+          - {label: "Подзаголовок страницы", name: "hero_subtitle", widget: "text"}
+          - {label: "Бейдж миссии", name: "mission_badge", widget: "string"}
+          - {label: "Заголовок миссии", name: "mission_title", widget: "string"}
+          - {label: "Текст миссии и принципов", name: "mission_text", widget: "text"}
+          - {label: "Опыт (лет)", name: "stats_years", widget: "number"}
+          - {label: "Текст под годами опыта", name: "stats_years_text", widget: "string"}
+          - {label: "Количество дел", name: "stats_cases", widget: "number"}
+          - {label: "Текст под количеством дел", name: "stats_cases_text", widget: "string"}
+
+      - label: "❓ Частые вопросы (FAQ)"
+        name: "faq"
+        file: "src/content/pages/faq.json"
+        description: "База вопросов и ответов на странице /faq"
+        fields:
+          - label: "Категории вопросов"
+            name: "groups"
+            widget: "list"
+            fields:
+              - {label: "Название категории", name: "title", widget: "string", hint: "Например: Судебная экспертиза и процедура"}
+              - label: "Список вопросов"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Вопрос", name: "question", widget: "string"}
+                  - {label: "Развернутый ответ", name: "answer", widget: "text"}
+
+  - name: "settings"
+    label: "📞 Контакты и реквизиты"
+    description: "Шапка сайта, подвал, номера телефонов, соцсети и юридические данные"
+    files:
+      - label: "Общие контакты"
         name: "global"
         file: "src/content/settings/global.json"
         fields:
-          - {label: "Телефон (Отображение)", name: "contact_phone_display", widget: "string"}
-          - {label: "Телефон (Для ссылок, без пробелов)", name: "contact_phone_e164", widget: "string"}
-          - {label: "E-mail", name: "contact_email", widget: "string"}
-          - {label: "Улица и дом", name: "contact_address_street", widget: "string"}
-          - {label: "Город", name: "contact_address_city", widget: "string"}
-          - {label: "Индекс", name: "contact_address_postal", widget: "string"}
-          - {label: "Telegram", name: "social_telegram_url", widget: "string"}
-          - {label: "ВКонтакте", name: "social_vk_url", widget: "string"}
-          - {label: "WhatsApp", name: "social_whatsapp_url", widget: "string"}
-          - {label: "Юридическое название", name: "company_legal_name", widget: "string"}
+          - {label: "Телефон (Для отображения)", name: "contact_phone_display", widget: "string", hint: "Как номер виден клиентам, например: +7 (987) 022-49-99"}
+          - {label: "Телефон (Для клика / ссылки)", name: "contact_phone_e164", widget: "string", hint: "Без пробелов для набора номера при клике: +79870224999"}
+          - {label: "Электронная почта (E-mail)", name: "contact_email", widget: "string", hint: "expert-sovetnik-rf@ya.ru"}
+          - {label: "График работы", name: "contact_schedule", widget: "string", hint: "Например: Пн-Пт: 09:00 — 18:00 (МСК+2)"}
+          - {label: "Город", name: "contact_address_city", widget: "string", hint: "Уфа"}
+          - {label: "Улица и дом", name: "contact_address_street", widget: "string", hint: "Лесной пр-д, д. 8/3"}
+          - {label: "Почтовый индекс", name: "contact_address_postal", widget: "string", hint: "450071"}
+          - {label: "Telegram (Ссылка)", name: "social_telegram_url", widget: "string", hint: "https://t.me/sovetnik_buro"}
+          - {label: "ВКонтакте (Ссылка)", name: "social_vk_url", widget: "string", hint: "https://vk.com/sovetnik_buro"}
+          - {label: "WhatsApp (Ссылка)", name: "social_whatsapp_url", widget: "string", hint: "https://wa.me/79870224999"}
+          - {label: "Юридическое лицо", name: "company_legal_name", widget: "string", hint: "ООО «ЭБ СОВЕТНИК»"}
           - {label: "ИНН", name: "company_inn", widget: "string"}
           - {label: "ОГРН", name: "company_ogrn", widget: "string"}
+          - {label: "Ссылка на Яндекс Карты", name: "yandex_business_url", widget: "string"}
+          - {label: "Ссылка на 2ГИС", name: "g2gis_url", widget: "string"}
 
   - name: "blog"
-    label: "Статьи (Блог)"
+    label: "📝 Статьи и Блог"
+    description: "Публикация экспертных статей, новостей и аналитики"
     folder: "src/content/blog"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Краткое описание (excerpt)", name: "excerpt", widget: "string"}
-      - {label: "Категория", name: "category", widget: "string"}
-      - {label: "Дата публикации", name: "datePublished", widget: "string"}
-      - {label: "Дата создания", name: "date", widget: "string"}
-      - {label: "Дата изменения", name: "dateModified", widget: "string"}
-      - {label: "Время чтения", name: "readTime", widget: "string"}
-      - {label: "Имя изображения (image)", name: "image", widget: "string"}
-      - {label: "Содержание", name: "body", widget: "markdown"}
+      - {label: "Заголовок статьи", name: "title", widget: "string", hint: "Главный заголовок публикации"}
+      - {label: "Краткий анонс (excerpt)", name: "excerpt", widget: "text", hint: "1-2 предложения для карточки статьи в общем списке"}
+      - {label: "Категория", name: "category", widget: "string", hint: "Например: Строительная экспертиза, Судебная практика, Оценка"}
+      - {label: "Дата публикации", name: "datePublished", widget: "string", hint: "Формат: ГГГГ-ММ-ДД, например 2026-08-06"}
+      - {label: "Дата создания", name: "date", widget: "string", hint: "Формат: 2026-08-06"}
+      - {label: "Время чтения", name: "readTime", widget: "string", hint: "Например: 5 мин"}
+      - {label: "Имя изображения (в папке images)", name: "image", widget: "string", hint: "Например: building-inspection.webp"}
+      - {label: "Текст статьи", name: "body", widget: "markdown", hint: "Полный текст статьи. Поддерживает форматирование, списки и заголовки"}

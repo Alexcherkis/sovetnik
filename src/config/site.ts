@@ -13,6 +13,7 @@ export const SITE_NAME = globalData.site_name || getEnv('VITE_SITE_NAME', 'Со�
 export const CONTACT_PHONE_DISPLAY = globalData.contact_phone_display || getEnv('VITE_CONTACT_PHONE', '+7 (987) 022-49-99');
 export const CONTACT_PHONE_E164 = globalData.contact_phone_e164 || getEnv('VITE_CONTACT_PHONE_E164', '+79870224999');
 export const CONTACT_EMAIL = globalData.contact_email || getEnv('VITE_CONTACT_EMAIL', 'expert-sovetnik-rf@ya.ru');
+export const CONTACT_SCHEDULE = (globalData as any).contact_schedule || getEnv('VITE_CONTACT_SCHEDULE', 'Пн-Пт: 09:00 — 18:00 (МСК+2)');
 
 // Address
 export const CONTACT_ADDRESS_STREET = globalData.contact_address_street || getEnv('VITE_CONTACT_ADDRESS_STREET', 'Лесной пр-д, д. 8/3');
