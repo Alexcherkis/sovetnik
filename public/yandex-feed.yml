@@ -20,7 +20,7 @@
         <offers>
             
             <offer id="financial-economic">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Финансово-экономическая экспертиза</name>
                 <url>https://buro-sovetnik.com/services/financial-economic</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -42,7 +42,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="accounting">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Судебная бухгалтерская экспертиза</name>
                 <url>https://buro-sovetnik.com/services/accounting</url>
                 <price>50000</price>
                 <currencyId>RUR</currencyId>
@@ -64,7 +64,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="tax-expertise">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Налоговая экспертиза и аудит рисков</name>
                 <url>https://buro-sovetnik.com/services/tax-expertise</url>
                 <price>60000</price>
                 <currencyId>RUR</currencyId>
@@ -86,7 +86,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="financial-calc">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза финансовых расчетов</name>
                 <url>https://buro-sovetnik.com/services/financial-calc</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -108,7 +108,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="investment">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза инвестиционных проектов</name>
                 <url>https://buro-sovetnik.com/services/investment</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -130,7 +130,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="corporate-finance">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза корпоративных финансов</name>
                 <url>https://buro-sovetnik.com/services/corporate-finance</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -152,7 +152,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="bankruptcy">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Финансово-экономическая экспертиза банкротства</name>
                 <url>https://buro-sovetnik.com/services/bankruptcy</url>
                 <price>70000</price>
                 <currencyId>RUR</currencyId>
@@ -174,7 +174,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="damage-financial">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза финансового ущерба</name>
                 <url>https://buro-sovetnik.com/services/damage-financial</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -196,7 +196,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="pre-trial-construction">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Технический надзор и аудит качества СМР</name>
                 <url>https://buro-sovetnik.com/services/pre-trial-construction</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -218,7 +218,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="construction-volumes">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза объемов и стоимости (Сметный аудит)</name>
                 <url>https://buro-sovetnik.com/services/construction-volumes</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -240,7 +240,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="construction-project-docs">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза проектной документации</name>
                 <url>https://buro-sovetnik.com/services/construction-project-docs</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -262,7 +262,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="forensic-construction">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Судебная строительно-техническая экспертиза</name>
                 <url>https://buro-sovetnik.com/services/forensic-construction</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -284,7 +284,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="construction-general">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Техническое обследование зданий</name>
                 <url>https://buro-sovetnik.com/services/construction-general</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -306,7 +306,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="damage">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза ущерба</name>
                 <url>https://buro-sovetnik.com/services/damage</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -328,7 +328,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="construction-organization">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза организации строительства</name>
                 <url>https://buro-sovetnik.com/services/construction-organization</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -350,7 +350,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="construction-engineering">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Процессуальный аудит инженерных систем</name>
                 <url>https://buro-sovetnik.com/services/construction-engineering</url>
                 <price>20000</price>
                 <currencyId>RUR</currencyId>
@@ -372,7 +372,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="construction-elements">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза конструктивных элементов</name>
                 <url>https://buro-sovetnik.com/services/construction-elements</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -394,7 +394,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="construction-road">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза дорог и сооружений</name>
                 <url>https://buro-sovetnik.com/services/construction-road</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -416,7 +416,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="construction-wooden">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза деревянных домов</name>
                 <url>https://buro-sovetnik.com/services/construction-wooden</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -438,7 +438,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="business-valuation-llc">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Оценка бизнеса и пакетов акций (долей)</name>
                 <url>https://buro-sovetnik.com/services/business-valuation-llc</url>
                 <price>45000</price>
                 <currencyId>RUR</currencyId>
@@ -460,7 +460,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="startup-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Оценка стартапов и венчурных проектов</name>
                 <url>https://buro-sovetnik.com/services/startup-valuation</url>
                 <price>50000</price>
                 <currencyId>RUR</currencyId>
@@ -482,7 +482,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="trademark-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Регистрация и оценка товарных знаков</name>
                 <url>https://buro-sovetnik.com/services/trademark-valuation</url>
                 <price>30000</price>
                 <currencyId>RUR</currencyId>
@@ -504,7 +504,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="patent-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Патентование и оценка изобретений</name>
                 <url>https://buro-sovetnik.com/services/patent-valuation</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -526,7 +526,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="software-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Регистрация ПО и оценка IT-активов</name>
                 <url>https://buro-sovetnik.com/services/software-valuation</url>
                 <price>45000</price>
                 <currencyId>RUR</currencyId>
@@ -548,7 +548,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="knowhow-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Оценка Ноу-Хау и Авторских прав</name>
                 <url>https://buro-sovetnik.com/services/knowhow-valuation</url>
                 <price>35000</price>
                 <currencyId>RUR</currencyId>
@@ -570,7 +570,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="apartment-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Оценка недвижимости</name>
                 <url>https://buro-sovetnik.com/services/apartment-valuation</url>
                 <price>5000</price>
                 <currencyId>RUR</currencyId>
@@ -592,7 +592,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="commercial-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Рыночная оценка капитальных строений и ТЦ</name>
                 <url>https://buro-sovetnik.com/services/commercial-valuation</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -614,7 +614,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="land-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Оценка земельных активов и участков</name>
                 <url>https://buro-sovetnik.com/services/land-valuation</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -636,7 +636,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="land-surveying">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Комплексная землеустроительная экспертиза</name>
                 <url>https://buro-sovetnik.com/services/land-surveying</url>
                 <price>35000</price>
                 <currencyId>RUR</currencyId>
@@ -658,7 +658,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="land-partition">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Раздел земельного участка</name>
                 <url>https://buro-sovetnik.com/services/land-partition</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -680,7 +680,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="forensic-review">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Комплексная рецензия на судебную экспертизу</name>
                 <url>https://buro-sovetnik.com/services/forensic-review</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -702,7 +702,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="handwriting">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Судебная почерковедческая экспертиза</name>
                 <url>https://buro-sovetnik.com/services/handwriting</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -724,7 +724,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="doc-technical">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>ТЭД (Давность документа)</name>
                 <url>https://buro-sovetnik.com/services/doc-technical</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -746,7 +746,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="legal-support">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Юридическое сопровождение</name>
                 <url>https://buro-sovetnik.com/services/legal-support</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -768,7 +768,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="legal-arbitration">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Arbitration &amp; Litigation (Арбитражные споры)</name>
                 <url>https://buro-sovetnik.com/services/legal-arbitration</url>
                 <price>70000</price>
                 <currencyId>RUR</currencyId>
@@ -790,7 +790,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="water-damage-court">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Процессуальная детерминация ущерба от залива</name>
                 <url>https://buro-sovetnik.com/services/water-damage-court</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -812,7 +812,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="road-volume-expertise">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Экспертиза объемов дорожных работ</name>
                 <url>https://buro-sovetnik.com/services/road-volume-expertise</url>
                 <price>35000</price>
                 <currencyId>RUR</currencyId>
@@ -834,7 +834,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="estimate-verification">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Проверка достоверности сметной стоимости</name>
                 <url>https://buro-sovetnik.com/services/estimate-verification</url>
                 <price>20000</price>
                 <currencyId>RUR</currencyId>
@@ -856,7 +856,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="equipment-valuation">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Оценка оборудования и станков</name>
                 <url>https://buro-sovetnik.com/services/equipment-valuation</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -878,7 +878,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="project-docs-audit">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Аудит разделов проектной документации</name>
                 <url>https://buro-sovetnik.com/services/project-docs-audit</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -900,7 +900,7 @@
                 <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
             </offer>
             <offer id="dtp-review">
-                <name>Советникъ — Экспертное Бюро</name>
+                <name>Рецензия на автотехническую экспертизу</name>
                 <url>https://buro-sovetnik.com/services/dtp-review</url>
                 <price>20000</price>
                 <currencyId>RUR</currencyId>

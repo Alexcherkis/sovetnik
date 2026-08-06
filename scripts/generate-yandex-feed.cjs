@@ -219,7 +219,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 
                 return `
             <offer id="${service.id}">
-                <name>${COMPANY_NAME}</name>
+                <name>${cleanTitle}</name>
                 <url>${SITE_URL}/services/${service.id}</url>
                 <price>${service.price}</price>
                 <currencyId>RUR</currencyId>
