@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-08-06T00:00:00+03:00">
+<yml_catalog date="2026-08-07T00:00:00+03:00">
     <shop>
         <name>Советникъ — Экспертное Бюро</name>
         <company>Советникъ — Экспертное Бюро</company>
@@ -31,15 +31,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="accounting">
                 <name>Судебная бухгалтерская экспертиза</name>
@@ -53,15 +49,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="tax-expertise">
                 <name>Налоговая экспертиза и аудит рисков</name>
@@ -75,15 +67,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="financial-calc">
                 <name>Экспертиза финансовых расчетов</name>
@@ -97,15 +85,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="investment">
                 <name>Экспертиза инвестиционных проектов</name>
@@ -119,15 +103,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="corporate-finance">
                 <name>Экспертиза корпоративных финансов</name>
@@ -141,15 +121,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="bankruptcy">
                 <name>Финансово-экономическая экспертиза банкротства</name>
@@ -163,15 +139,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="damage-financial">
                 <name>Экспертиза финансового ущерба</name>
@@ -185,15 +157,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="pre-trial-construction">
                 <name>Технический надзор и аудит качества СМР</name>
@@ -207,15 +175,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-volumes">
                 <name>Экспертиза объемов и стоимости (Сметный аудит)</name>
@@ -229,15 +193,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-project-docs">
                 <name>Экспертиза проектной документации</name>
@@ -251,15 +211,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="forensic-construction">
                 <name>Судебная строительно-техническая экспертиза</name>
@@ -273,15 +229,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-general">
                 <name>Техническое обследование зданий</name>
@@ -295,15 +247,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="damage">
                 <name>Экспертиза ущерба</name>
@@ -317,15 +265,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-organization">
                 <name>Экспертиза организации строительства</name>
@@ -339,15 +283,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-engineering">
                 <name>Процессуальный аудит инженерных систем</name>
@@ -361,15 +301,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-elements">
                 <name>Экспертиза конструктивных элементов</name>
@@ -383,15 +319,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-road">
                 <name>Экспертиза дорог и сооружений</name>
@@ -405,15 +337,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-wooden">
                 <name>Экспертиза деревянных домов</name>
@@ -427,15 +355,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="business-valuation-llc">
                 <name>Оценка бизнеса и пакетов акций (долей)</name>
@@ -449,15 +373,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="startup-valuation">
                 <name>Оценка стартапов и венчурных проектов</name>
@@ -471,15 +391,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="trademark-valuation">
                 <name>Регистрация и оценка товарных знаков</name>
@@ -493,15 +409,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="patent-valuation">
                 <name>Патентование и оценка изобретений</name>
@@ -515,15 +427,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="software-valuation">
                 <name>Регистрация ПО и оценка IT-активов</name>
@@ -537,15 +445,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="knowhow-valuation">
                 <name>Оценка Ноу-Хау и Авторских прав</name>
@@ -559,15 +463,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="apartment-valuation">
                 <name>Оценка недвижимости</name>
@@ -581,15 +481,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="commercial-valuation">
                 <name>Рыночная оценка капитальных строений и ТЦ</name>
@@ -603,15 +499,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="land-valuation">
                 <name>Оценка земельных активов и участков</name>
@@ -625,15 +517,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="land-surveying">
                 <name>Комплексная землеустроительная экспертиза</name>
@@ -647,15 +535,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Земельная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="land-partition">
                 <name>Раздел земельного участка</name>
@@ -669,15 +553,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Земельная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="forensic-review">
                 <name>Комплексная рецензия на судебную экспертизу</name>
@@ -691,15 +571,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оспаривание экспертиз</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="handwriting">
                 <name>Судебная почерковедческая экспертиза</name>
@@ -713,15 +589,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Почерковедческая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="doc-technical">
                 <name>ТЭД (Давность документа)</name>
@@ -735,15 +607,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Почерковедческая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="legal-support">
                 <name>Юридическое сопровождение</name>
@@ -757,15 +625,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Юридические услуги</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="legal-arbitration">
                 <name>Arbitration &amp; Litigation (Арбитражные споры)</name>
@@ -779,15 +643,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Юридические услуги</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="water-damage-court">
                 <name>Процессуальная детерминация ущерба от залива</name>
@@ -801,15 +661,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="road-volume-expertise">
                 <name>Экспертиза объемов дорожных работ</name>
@@ -823,15 +679,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="estimate-verification">
                 <name>Проверка достоверности сметной стоимости</name>
@@ -845,15 +697,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="equipment-valuation">
                 <name>Оценка оборудования и станков</name>
@@ -867,15 +715,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="project-docs-audit">
                 <name>Аудит разделов проектной документации</name>
@@ -889,15 +733,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
             <offer id="dtp-review">
                 <name>Рецензия на автотехническую экспертизу</name>
@@ -911,15 +751,11 @@
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">Советникъ — Экспертное Бюро</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Автотехническая экспертиза</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>
         </offers>
     </shop>

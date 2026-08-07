@@ -230,15 +230,11 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
                 <pickup>false</pickup>
                 <store>false</store>
                 <set-ids>sovetnik_services</set-ids>
-                <param name="Рейтинг">5.0</param>
-                <param name="Число отзывов">54</param>
-                <param name="Годы опыта">15</param>
-                <param name="Регион">Россия</param>
-                <param name="Конверсия">100</param>
-                <param name="Исполнитель">${COMPANY_NAME}</param>
+                <param name="Тип предложения">Услуга</param>
+                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">${categoryName}</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Предмет экспертизы">Документы, объекты, недвижимость</param>
+                <param name="Годы опыта">15</param>
             </offer>`;
             }).join('')}
         </offers>
