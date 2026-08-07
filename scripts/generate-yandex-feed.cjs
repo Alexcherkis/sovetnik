@@ -219,7 +219,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 
                 return `
             <offer id="${service.id}">
-                <name>${cleanTitle}</name>
+                <name>Советникъ — ${cleanTitle}</name>
                 <url>${SITE_URL}/services/${service.id}</url>
                 <price>${service.price}</price>
                 <currencyId>RUR</currencyId>
@@ -229,7 +229,6 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">${categoryName}</param>

@@ -20,7 +20,7 @@
         <offers>
             
             <offer id="financial-economic">
-                <name>Финансово-экономическая экспертиза</name>
+                <name>Советникъ — Финансово-экономическая экспертиза</name>
                 <url>https://buro-sovetnik.com/services/financial-economic</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -30,7 +30,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
@@ -38,7 +37,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="accounting">
-                <name>Судебная бухгалтерская экспертиза</name>
+                <name>Советникъ — Судебная бухгалтерская экспертиза</name>
                 <url>https://buro-sovetnik.com/services/accounting</url>
                 <price>50000</price>
                 <currencyId>RUR</currencyId>
@@ -48,7 +47,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
@@ -56,7 +54,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="tax-expertise">
-                <name>Налоговая экспертиза и аудит рисков</name>
+                <name>Советникъ — Налоговая экспертиза и аудит рисков</name>
                 <url>https://buro-sovetnik.com/services/tax-expertise</url>
                 <price>60000</price>
                 <currencyId>RUR</currencyId>
@@ -66,7 +64,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
@@ -74,7 +71,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="financial-calc">
-                <name>Экспертиза финансовых расчетов</name>
+                <name>Советникъ — Экспертиза финансовых расчетов</name>
                 <url>https://buro-sovetnik.com/services/financial-calc</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -84,7 +81,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
@@ -92,7 +88,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="investment">
-                <name>Экспертиза инвестиционных проектов</name>
+                <name>Советникъ — Экспертиза инвестиционных проектов</name>
                 <url>https://buro-sovetnik.com/services/investment</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -102,7 +98,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
@@ -110,7 +105,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="corporate-finance">
-                <name>Экспертиза корпоративных финансов</name>
+                <name>Советникъ — Экспертиза корпоративных финансов</name>
                 <url>https://buro-sovetnik.com/services/corporate-finance</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -120,7 +115,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
@@ -128,7 +122,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="bankruptcy">
-                <name>Финансово-экономическая экспертиза банкротства</name>
+                <name>Советникъ — Финансово-экономическая экспертиза банкротства</name>
                 <url>https://buro-sovetnik.com/services/bankruptcy</url>
                 <price>70000</price>
                 <currencyId>RUR</currencyId>
@@ -138,7 +132,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
@@ -146,7 +139,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="damage-financial">
-                <name>Экспертиза финансового ущерба</name>
+                <name>Советникъ — Экспертиза финансового ущерба</name>
                 <url>https://buro-sovetnik.com/services/damage-financial</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -156,7 +149,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Финансовая экспертиза</param>
@@ -164,7 +156,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="pre-trial-construction">
-                <name>Технический надзор и аудит качества СМР</name>
+                <name>Советникъ — Технический надзор и аудит качества СМР</name>
                 <url>https://buro-sovetnik.com/services/pre-trial-construction</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -174,7 +166,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -182,7 +173,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-volumes">
-                <name>Экспертиза объемов и стоимости (Сметный аудит)</name>
+                <name>Советникъ — Экспертиза объемов и стоимости (Сметный аудит)</name>
                 <url>https://buro-sovetnik.com/services/construction-volumes</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -192,7 +183,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -200,7 +190,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-project-docs">
-                <name>Экспертиза проектной документации</name>
+                <name>Советникъ — Экспертиза проектной документации</name>
                 <url>https://buro-sovetnik.com/services/construction-project-docs</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -210,7 +200,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -218,7 +207,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="forensic-construction">
-                <name>Судебная строительно-техническая экспертиза</name>
+                <name>Советникъ — Судебная строительно-техническая экспертиза</name>
                 <url>https://buro-sovetnik.com/services/forensic-construction</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -228,7 +217,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -236,7 +224,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-general">
-                <name>Техническое обследование зданий</name>
+                <name>Советникъ — Техническое обследование зданий</name>
                 <url>https://buro-sovetnik.com/services/construction-general</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -246,7 +234,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -254,7 +241,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="damage">
-                <name>Экспертиза ущерба</name>
+                <name>Советникъ — Экспертиза ущерба</name>
                 <url>https://buro-sovetnik.com/services/damage</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -264,7 +251,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -272,7 +258,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-organization">
-                <name>Экспертиза организации строительства</name>
+                <name>Советникъ — Экспертиза организации строительства</name>
                 <url>https://buro-sovetnik.com/services/construction-organization</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -282,7 +268,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -290,7 +275,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-engineering">
-                <name>Процессуальный аудит инженерных систем</name>
+                <name>Советникъ — Процессуальный аудит инженерных систем</name>
                 <url>https://buro-sovetnik.com/services/construction-engineering</url>
                 <price>20000</price>
                 <currencyId>RUR</currencyId>
@@ -300,7 +285,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -308,7 +292,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-elements">
-                <name>Экспертиза конструктивных элементов</name>
+                <name>Советникъ — Экспертиза конструктивных элементов</name>
                 <url>https://buro-sovetnik.com/services/construction-elements</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -318,7 +302,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -326,7 +309,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-road">
-                <name>Экспертиза дорог и сооружений</name>
+                <name>Советникъ — Экспертиза дорог и сооружений</name>
                 <url>https://buro-sovetnik.com/services/construction-road</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -336,7 +319,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -344,7 +326,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="construction-wooden">
-                <name>Экспертиза деревянных домов</name>
+                <name>Советникъ — Экспертиза деревянных домов</name>
                 <url>https://buro-sovetnik.com/services/construction-wooden</url>
                 <price>10000</price>
                 <currencyId>RUR</currencyId>
@@ -354,7 +336,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -362,7 +343,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="business-valuation-llc">
-                <name>Оценка бизнеса и пакетов акций (долей)</name>
+                <name>Советникъ — Оценка бизнеса и пакетов акций (долей)</name>
                 <url>https://buro-sovetnik.com/services/business-valuation-llc</url>
                 <price>45000</price>
                 <currencyId>RUR</currencyId>
@@ -372,7 +353,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -380,7 +360,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="startup-valuation">
-                <name>Оценка стартапов и венчурных проектов</name>
+                <name>Советникъ — Оценка стартапов и венчурных проектов</name>
                 <url>https://buro-sovetnik.com/services/startup-valuation</url>
                 <price>50000</price>
                 <currencyId>RUR</currencyId>
@@ -390,7 +370,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -398,7 +377,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="trademark-valuation">
-                <name>Регистрация и оценка товарных знаков</name>
+                <name>Советникъ — Регистрация и оценка товарных знаков</name>
                 <url>https://buro-sovetnik.com/services/trademark-valuation</url>
                 <price>30000</price>
                 <currencyId>RUR</currencyId>
@@ -408,7 +387,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -416,7 +394,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="patent-valuation">
-                <name>Патентование и оценка изобретений</name>
+                <name>Советникъ — Патентование и оценка изобретений</name>
                 <url>https://buro-sovetnik.com/services/patent-valuation</url>
                 <price>40000</price>
                 <currencyId>RUR</currencyId>
@@ -426,7 +404,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -434,7 +411,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="software-valuation">
-                <name>Регистрация ПО и оценка IT-активов</name>
+                <name>Советникъ — Регистрация ПО и оценка IT-активов</name>
                 <url>https://buro-sovetnik.com/services/software-valuation</url>
                 <price>45000</price>
                 <currencyId>RUR</currencyId>
@@ -444,7 +421,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -452,7 +428,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="knowhow-valuation">
-                <name>Оценка Ноу-Хау и Авторских прав</name>
+                <name>Советникъ — Оценка Ноу-Хау и Авторских прав</name>
                 <url>https://buro-sovetnik.com/services/knowhow-valuation</url>
                 <price>35000</price>
                 <currencyId>RUR</currencyId>
@@ -462,7 +438,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -470,7 +445,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="apartment-valuation">
-                <name>Оценка недвижимости</name>
+                <name>Советникъ — Оценка недвижимости</name>
                 <url>https://buro-sovetnik.com/services/apartment-valuation</url>
                 <price>5000</price>
                 <currencyId>RUR</currencyId>
@@ -480,7 +455,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -488,7 +462,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="commercial-valuation">
-                <name>Рыночная оценка капитальных строений и ТЦ</name>
+                <name>Советникъ — Рыночная оценка капитальных строений и ТЦ</name>
                 <url>https://buro-sovetnik.com/services/commercial-valuation</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -498,7 +472,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -506,7 +479,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="land-valuation">
-                <name>Оценка земельных активов и участков</name>
+                <name>Советникъ — Оценка земельных активов и участков</name>
                 <url>https://buro-sovetnik.com/services/land-valuation</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -516,7 +489,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -524,7 +496,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="land-surveying">
-                <name>Комплексная землеустроительная экспертиза</name>
+                <name>Советникъ — Комплексная землеустроительная экспертиза</name>
                 <url>https://buro-sovetnik.com/services/land-surveying</url>
                 <price>35000</price>
                 <currencyId>RUR</currencyId>
@@ -534,7 +506,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Земельная экспертиза</param>
@@ -542,7 +513,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="land-partition">
-                <name>Раздел земельного участка</name>
+                <name>Советникъ — Раздел земельного участка</name>
                 <url>https://buro-sovetnik.com/services/land-partition</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -552,7 +523,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Земельная экспертиза</param>
@@ -560,7 +530,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="forensic-review">
-                <name>Комплексная рецензия на судебную экспертизу</name>
+                <name>Советникъ — Комплексная рецензия на судебную экспертизу</name>
                 <url>https://buro-sovetnik.com/services/forensic-review</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -570,7 +540,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оспаривание экспертиз</param>
@@ -578,7 +547,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="handwriting">
-                <name>Судебная почерковедческая экспертиза</name>
+                <name>Советникъ — Судебная почерковедческая экспертиза</name>
                 <url>https://buro-sovetnik.com/services/handwriting</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -588,7 +557,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Почерковедческая экспертиза</param>
@@ -596,7 +564,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="doc-technical">
-                <name>ТЭД (Давность документа)</name>
+                <name>Советникъ — ТЭД (Давность документа)</name>
                 <url>https://buro-sovetnik.com/services/doc-technical</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -606,7 +574,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Почерковедческая экспертиза</param>
@@ -614,7 +581,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="legal-support">
-                <name>Юридическое сопровождение</name>
+                <name>Советникъ — Юридическое сопровождение</name>
                 <url>https://buro-sovetnik.com/services/legal-support</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -624,7 +591,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Юридические услуги</param>
@@ -632,7 +598,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="legal-arbitration">
-                <name>Arbitration &amp; Litigation (Арбитражные споры)</name>
+                <name>Советникъ — Arbitration &amp; Litigation (Арбитражные споры)</name>
                 <url>https://buro-sovetnik.com/services/legal-arbitration</url>
                 <price>70000</price>
                 <currencyId>RUR</currencyId>
@@ -642,7 +608,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Юридические услуги</param>
@@ -650,7 +615,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="water-damage-court">
-                <name>Процессуальная детерминация ущерба от залива</name>
+                <name>Советникъ — Процессуальная детерминация ущерба от залива</name>
                 <url>https://buro-sovetnik.com/services/water-damage-court</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -660,7 +625,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -668,7 +632,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="road-volume-expertise">
-                <name>Экспертиза объемов дорожных работ</name>
+                <name>Советникъ — Экспертиза объемов дорожных работ</name>
                 <url>https://buro-sovetnik.com/services/road-volume-expertise</url>
                 <price>35000</price>
                 <currencyId>RUR</currencyId>
@@ -678,7 +642,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -686,7 +649,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="estimate-verification">
-                <name>Проверка достоверности сметной стоимости</name>
+                <name>Советникъ — Проверка достоверности сметной стоимости</name>
                 <url>https://buro-sovetnik.com/services/estimate-verification</url>
                 <price>20000</price>
                 <currencyId>RUR</currencyId>
@@ -696,7 +659,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -704,7 +666,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="equipment-valuation">
-                <name>Оценка оборудования и станков</name>
+                <name>Советникъ — Оценка оборудования и станков</name>
                 <url>https://buro-sovetnik.com/services/equipment-valuation</url>
                 <price>25000</price>
                 <currencyId>RUR</currencyId>
@@ -714,7 +676,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Оценка</param>
@@ -722,7 +683,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="project-docs-audit">
-                <name>Аудит разделов проектной документации</name>
+                <name>Советникъ — Аудит разделов проектной документации</name>
                 <url>https://buro-sovetnik.com/services/project-docs-audit</url>
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
@@ -732,7 +693,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Строительная экспертиза</param>
@@ -740,7 +700,7 @@
                 <param name="Годы опыта">15</param>
             </offer>
             <offer id="dtp-review">
-                <name>Рецензия на автотехническую экспертизу</name>
+                <name>Советникъ — Рецензия на автотехническую экспертизу</name>
                 <url>https://buro-sovetnik.com/services/dtp-review</url>
                 <price>20000</price>
                 <currencyId>RUR</currencyId>
@@ -750,7 +710,6 @@
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
-                <set-ids>sovetnik_services</set-ids>
                 <param name="Тип предложения">Услуга</param>
                 <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">Автотехническая экспертиза</param>
