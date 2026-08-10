@@ -219,7 +219,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 
                 return `
             <offer id="${service.id}">
-                <name>Советникъ — ${cleanTitle}</name>
+                <name>ООО «Экспертное Бюро Советникъ»</name>
                 <url>${SITE_URL}/services/${service.id}</url>
                 <price>${service.price}</price>
                 <currencyId>RUR</currencyId>
@@ -229,11 +229,11 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
                 <delivery>false</delivery>
                 <pickup>false</pickup>
                 <store>false</store>
+                <param name="Услуга">${cleanTitle}</param>
                 <param name="Тип предложения">Услуга</param>
-                <param name="Исполнитель">ООО «Экспертное Бюро Советникъ»</param>
                 <param name="Тип услуги">${categoryName}</param>
                 <param name="Формат работы">В офисе и с выездом</param>
-                <param name="Годы опыта">15</param>
+                <param name="Регион">Республика Башкортостан</param>
             </offer>`;
             }).join('')}
         </offers>
