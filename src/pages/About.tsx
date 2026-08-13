@@ -191,6 +191,66 @@ export const About: React.FC = () => {
 
 
 
+            {/* 4. CERTIFICATES SECTION */}
+            {aboutData.certificates && aboutData.certificates.length > 0 && (
+                <section className="py-16 md:py-24 bg-slate-50">
+                    <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-5xl font-serif font-bold text-brand-900 mb-6">Документы и лицензии</h2>
+                            <p className="text-slate-600 text-lg font-light max-w-2xl mx-auto">Аттестаты экспертов, членство в СРО и профильные дипломы</p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                            {aboutData.certificates.map((cert: any, i: number) => (
+                                <div key={i} className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow cursor-pointer group relative overflow-hidden">
+                                    <div className="aspect-[3/4] bg-slate-100 rounded-lg mb-4 overflow-hidden">
+                                        <img src={`/assets/images/${cert.image}`} alt={cert.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    </div>
+                                    <p className="text-sm font-semibold text-brand-900 text-center">{cert.title}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* 5. CASES SECTION */}
+            {aboutData.cases && aboutData.cases.length > 0 && (
+                <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+                    <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-5xl font-serif font-bold text-brand-900 mb-6">Судебная практика</h2>
+                            <p className="text-slate-600 text-lg font-light max-w-2xl mx-auto">Реальные дела, где наши экспертизы сыграли решающую роль</p>
+                        </div>
+                        <div className="space-y-6 md:space-y-8">
+                            {aboutData.cases.map((c: any, i: number) => (
+                                <div key={i} className="bg-white border border-gray-100 rounded-3xl p-6 md:p-10 shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-bl-full -z-10"></div>
+                                    <h3 className="text-xl md:text-2xl font-serif font-bold text-brand-900 mb-6">{c.title}</h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                                        <div className="bg-slate-50 p-6 rounded-2xl">
+                                            <div className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-brand-red rounded-full"></div>Задача
+                                            </div>
+                                            <p className="text-slate-600 text-sm md:text-base leading-relaxed">{c.task}</p>
+                                        </div>
+                                        <div className="bg-brand-50 p-6 rounded-2xl">
+                                            <div className="font-bold text-brand-900 mb-2 flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>Результат
+                                            </div>
+                                            <p className="text-slate-700 text-sm md:text-base leading-relaxed">{c.result}</p>
+                                        </div>
+                                    </div>
+                                    {c.profit && (
+                                        <div className="inline-flex items-center gap-3 bg-green-50 text-green-800 px-6 py-3 rounded-full font-bold">
+                                            <CheckCircle2 size={20} className="text-green-600" /> Выгода клиента: {c.profit}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
         </div>
     );
 };

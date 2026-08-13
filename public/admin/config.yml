@@ -50,6 +50,20 @@ collections:
           - {label: "Текст под годами опыта", name: "stats_years_text", widget: "string"}
           - {label: "Количество дел", name: "stats_cases", widget: "number"}
           - {label: "Текст под количеством дел", name: "stats_cases_text", widget: "string"}
+          - label: "Сертификаты и дипломы"
+            name: "certificates"
+            widget: "list"
+            fields:
+              - {label: "Название (Alt)", name: "title", widget: "string"}
+              - {label: "Изображение (Скан)", name: "image", widget: "image"}
+          - label: "Судебные кейсы"
+            name: "cases"
+            widget: "list"
+            fields:
+              - {label: "Заголовок дела", name: "title", widget: "string"}
+              - {label: "Задача", name: "task", widget: "text"}
+              - {label: "Результат", name: "result", widget: "text"}
+              - {label: "Экономия/Выгода (цифра)", name: "profit", widget: "string", required: false}
 
       - label: "❓ Частые вопросы (FAQ)"
         name: "faq"
